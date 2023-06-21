@@ -1,0 +1,5 @@
+C:\Users\svilen\OneDrive\Desktop\programing\Csharp\PROJECTS\RentReview\RentReview.Data\obj\Debug\net6.0\RentReview.Data.csproj.AssemblyReference.cache
+C:\Users\svilen\OneDrive\Desktop\programing\Csharp\PROJECTS\RentReview\RentReview.Data\obj\Debug\net6.0\RentReview.Data.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\svilen\OneDrive\Desktop\programing\Csharp\PROJECTS\RentReview\RentReview.Data\obj\Debug\net6.0\RentReview.Data.AssemblyInfoInputs.cache
+C:\Users\svilen\OneDrive\Desktop\programing\Csharp\PROJECTS\RentReview\RentReview.Data\obj\Debug\net6.0\RentReview.Data.AssemblyInfo.cs
+C:\Users\svilen\OneDrive\Desktop\programing\Csharp\PROJECTS\RentReview\RentReview.Data\obj\Debug\net6.0\RentReview.Data.csproj.CoreCompileInputs.cache
