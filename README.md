@@ -1,0 +1,1 @@
+Web application where people can leave a review about a property they rented
