@@ -4,11 +4,11 @@ using RentReview.Data.Models;
 
 namespace RentReview.Data
 {
-    internal class DbContext : IdentityDbContext
+    public class RentDbContext : IdentityDbContext
     {
-        public DbContext() { }
+        public RentDbContext() { }
 
-        public DbContext(DbContextOptions<DbContext> options) : base(options) { }
+        public RentDbContext(DbContextOptions<DbContext> options) : base(options) { }
 
         public DbSet<Property> Properties { get; set; }
         public DbSet<Review> Reviews { get; set; }
@@ -17,11 +17,13 @@ namespace RentReview.Data
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
             if (!optionsBuilder.IsConfigured)
-                optionsBuilder.UseSqlServer("Server=;Integrated Security=true;Database=RentReview");
+                optionsBuilder.UseSqlServer("Server=; Database=RentReview; Trusted_Connection = SSPI; Encrypt = false; TrustServerCertificate = true");
         }
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
+            base.OnModelCreating(modelBuilder);
+
             modelBuilder.Entity<Review>()
            .HasKey(x => new { x.PropertyId, x.TenantId });
         }
