@@ -12,15 +12,15 @@ namespace RentReview.Data.Models
         public string ReviewOfLandlord { get; set; }
         public string ReviewOfProperty { get; set; }
         public string ReviewOfNeighbour { get; set; }
+        public string Pros { get; set; }
+        public string Cons { get; set; }
 
-        [NotMapped]
-        public ICollection<string> Pros { get; set; } = new List<string>();
-
-        [NotMapped]
-        public ICollection<string> Cons { get; set; } = new List<string>();
+        [Column("Rented", TypeName = "Date")]
         public DateTime Rented { get; set; }
+
+        [Column("Vacated", TypeName = "Date")]
         public DateTime Vacated { get; set; }
-        public string Picture { get; set; }
-        public string Url { get; set; }
+        public string? Picture { get; set; }
+        public string? Url { get; set; }
     }
 }

@@ -3,6 +3,7 @@ using System;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using RentReview.Data;
 
@@ -11,9 +12,11 @@ using RentReview.Data;
 namespace RentReview.Data.Migrations
 {
     [DbContext(typeof(RentDbContext))]
-    partial class RentDbContextModelSnapshot : ModelSnapshot
+    [Migration("20230622075955_Change structure of Property table")]
+    partial class ChangestructureofPropertytable
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        /// <inheritdoc />
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -244,8 +247,7 @@ namespace RentReview.Data.Migrations
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<DateTime>("Rented")
-                        .HasColumnType("Date")
-                        .HasColumnName("Rented");
+                        .HasColumnType("datetime2");
 
                     b.Property<string>("ReviewOfLandlord")
                         .IsRequired()
@@ -263,8 +265,7 @@ namespace RentReview.Data.Migrations
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<DateTime>("Vacated")
-                        .HasColumnType("Date")
-                        .HasColumnName("Vacated");
+                        .HasColumnType("datetime2");
 
                     b.HasKey("Id");
 
