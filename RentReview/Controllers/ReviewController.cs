@@ -13,5 +13,10 @@ namespace RentReview.Controllers
         {
             return View();
         }
+
+        public IActionResult All()
+        {
+            return View();
+        }
     }
 }

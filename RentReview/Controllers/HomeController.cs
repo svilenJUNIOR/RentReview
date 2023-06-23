@@ -15,7 +15,7 @@ namespace RentReview.Controllers
 
         public IActionResult Index()
         {
-            return View();
+            return RedirectToAction("All", "Review");
         }
 
         [ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]

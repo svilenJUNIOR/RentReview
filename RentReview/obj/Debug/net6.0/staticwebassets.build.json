@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "5O3FHbhxwbNX2yHFsQfpngijaexE909BM+5WoC7DqcA=",
+  "Hash": "WJ3zqK7kvK1O/iEwEA/LlUCUG4XKO/G+i5M7HsS0WzU=",
   "Source": "RentReview",
   "BasePath": "_content/RentReview",
   "Mode": "Default",
@@ -1071,12 +1071,12 @@
       "OriginalItemSpec": "C:\\Users\\svilen\\OneDrive\\Desktop\\programing\\Csharp\\PROJECTS\\RentReview\\RentReview\\obj\\Debug\\net6.0\\scopedcss\\projectbundle\\RentReview.bundle.scp.css"
     },
     {
-      "Identity": "C:\\Users\\svilen\\OneDrive\\Desktop\\programing\\Csharp\\PROJECTS\\RentReview\\RentReview\\wwwroot\\css\\index.css",
+      "Identity": "C:\\Users\\svilen\\OneDrive\\Desktop\\programing\\Csharp\\PROJECTS\\RentReview\\RentReview\\wwwroot\\css\\Review\\Add.css",
       "SourceId": "RentReview",
       "SourceType": "Discovered",
       "ContentRoot": "C:\\Users\\svilen\\OneDrive\\Desktop\\programing\\Csharp\\PROJECTS\\RentReview\\RentReview\\wwwroot\\",
       "BasePath": "_content/RentReview",
-      "RelativePath": "css/index.css",
+      "RelativePath": "css/Review/Add.css",
       "AssetKind": "All",
       "AssetMode": "All",
       "AssetRole": "Primary",
@@ -1085,7 +1085,24 @@
       "AssetTraitValue": "",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "wwwroot\\css\\index.css"
+      "OriginalItemSpec": "wwwroot\\css\\Review\\Add.css"
+    },
+    {
+      "Identity": "C:\\Users\\svilen\\OneDrive\\Desktop\\programing\\Csharp\\PROJECTS\\RentReview\\RentReview\\wwwroot\\css\\Review\\All.css",
+      "SourceId": "RentReview",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\svilen\\OneDrive\\Desktop\\programing\\Csharp\\PROJECTS\\RentReview\\RentReview\\wwwroot\\",
+      "BasePath": "_content/RentReview",
+      "RelativePath": "css/Review/All.css",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\css\\Review\\All.css"
     },
     {
       "Identity": "C:\\Users\\svilen\\OneDrive\\Desktop\\programing\\Csharp\\PROJECTS\\RentReview\\RentReview\\wwwroot\\css\\Review\\View.css",

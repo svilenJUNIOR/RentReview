@@ -22,4 +22,8 @@
     <ProjectReference Include="..\RentReview.Data\RentReview.Data.csproj" />
   </ItemGroup>
 
+  <ItemGroup>
+    <Folder Include="Views\Home\" />
+  </ItemGroup>
+
 </Project>

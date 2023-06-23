@@ -5,12 +5,16 @@
       "PackagePath": "staticwebassets\\RentReview.bundle.scp.css"
     },
     {
-      "Id": "C:\\Users\\svilen\\OneDrive\\Desktop\\programing\\Csharp\\PROJECTS\\RentReview\\RentReview\\wwwroot\\css\\Review\\View.css",
-      "PackagePath": "staticwebassets\\css\\Review\\View.css"
+      "Id": "C:\\Users\\svilen\\OneDrive\\Desktop\\programing\\Csharp\\PROJECTS\\RentReview\\RentReview\\wwwroot\\css\\Review\\Add.css",
+      "PackagePath": "staticwebassets\\css\\Review\\Add.css"
     },
     {
-      "Id": "C:\\Users\\svilen\\OneDrive\\Desktop\\programing\\Csharp\\PROJECTS\\RentReview\\RentReview\\wwwroot\\css\\index.css",
-      "PackagePath": "staticwebassets\\css\\index.css"
+      "Id": "C:\\Users\\svilen\\OneDrive\\Desktop\\programing\\Csharp\\PROJECTS\\RentReview\\RentReview\\wwwroot\\css\\Review\\All.css",
+      "PackagePath": "staticwebassets\\css\\Review\\All.css"
+    },
+    {
+      "Id": "C:\\Users\\svilen\\OneDrive\\Desktop\\programing\\Csharp\\PROJECTS\\RentReview\\RentReview\\wwwroot\\css\\Review\\View.css",
+      "PackagePath": "staticwebassets\\css\\Review\\View.css"
     },
     {
       "Id": "C:\\Users\\svilen\\OneDrive\\Desktop\\programing\\Csharp\\PROJECTS\\RentReview\\RentReview\\wwwroot\\css\\site.css",
