@@ -1,0 +1,43 @@
+﻿img {
+    width: 250px;
+    height: 300px;
+}
+
+.info {
+    margin-left: 270px;
+    margin-top: -300px;
+    width: 250px;
+    height: 300px;
+}
+
+.pros {
+    margin-left: 540px;
+    margin-top: -300px;
+    width: 250px;
+    height: 300px;
+}
+
+.cons {
+    margin-left: 810px;
+    margin-top: -300px;
+    width: 250px;
+    height: 300px;
+}
+
+#reviewBox {
+    display: inline-block;
+    width: 350px;
+    height: 250px;
+    margin-top: 15px;
+}
+
+.list-group li {
+    height: 60px;
+}
+
+.list-group {
+    width: 250px;
+    height: 250px;
+    overflow: hidden;
+    overflow-y: scroll;
+}
