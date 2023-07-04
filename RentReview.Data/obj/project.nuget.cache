@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "1zYqC7Jtr6wwbvVBvLlFetuFXWhnVl861TvxabOn0/cIPWaf27Hx2koAYQ3kA7oy44pIECKJhS26PUj73pSj7A==",
+  "dgSpecHash": "w0/rtur3tt6rG2a2tFDinovY8onKGxK7x8cZptp1Q4n+9kV+aGWAxTbhLKV1jiVEnAB0waBc/Gu5rMbjLON5Lg==",
   "success": true,
   "projectFilePath": "C:\\Users\\svilen\\OneDrive\\Desktop\\programing\\Csharp\\PROJECTS\\RentReview\\RentReview.Data\\RentReview.Data.csproj",
   "expectedPackageFiles": [
@@ -20,6 +20,7 @@
     "C:\\Users\\svilen\\.nuget\\packages\\microsoft.entityframeworkcore.design\\7.0.7\\microsoft.entityframeworkcore.design.7.0.7.nupkg.sha512",
     "C:\\Users\\svilen\\.nuget\\packages\\microsoft.entityframeworkcore.relational\\7.0.7\\microsoft.entityframeworkcore.relational.7.0.7.nupkg.sha512",
     "C:\\Users\\svilen\\.nuget\\packages\\microsoft.entityframeworkcore.sqlserver\\7.0.7\\microsoft.entityframeworkcore.sqlserver.7.0.7.nupkg.sha512",
+    "C:\\Users\\svilen\\.nuget\\packages\\microsoft.entityframeworkcore.tools\\7.0.7\\microsoft.entityframeworkcore.tools.7.0.7.nupkg.sha512",
     "C:\\Users\\svilen\\.nuget\\packages\\microsoft.extensions.caching.abstractions\\7.0.0\\microsoft.extensions.caching.abstractions.7.0.0.nupkg.sha512",
     "C:\\Users\\svilen\\.nuget\\packages\\microsoft.extensions.caching.memory\\7.0.0\\microsoft.extensions.caching.memory.7.0.0.nupkg.sha512",
     "C:\\Users\\svilen\\.nuget\\packages\\microsoft.extensions.configuration.abstractions\\7.0.0\\microsoft.extensions.configuration.abstractions.7.0.0.nupkg.sha512",

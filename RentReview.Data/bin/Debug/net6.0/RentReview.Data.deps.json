@@ -10,7 +10,8 @@
         "dependencies": {
           "Microsoft.AspNetCore.Identity.EntityFrameworkCore": "6.0.11",
           "Microsoft.EntityFrameworkCore.Design": "7.0.7",
-          "Microsoft.EntityFrameworkCore.SqlServer": "7.0.7"
+          "Microsoft.EntityFrameworkCore.SqlServer": "7.0.7",
+          "Microsoft.EntityFrameworkCore.Tools": "7.0.7"
         },
         "runtime": {
           "RentReview.Data.dll": {}
@@ -223,6 +224,11 @@
             "assemblyVersion": "7.0.7.0",
             "fileVersion": "7.0.723.25405"
           }
+        }
+      },
+      "Microsoft.EntityFrameworkCore.Tools/7.0.7": {
+        "dependencies": {
+          "Microsoft.EntityFrameworkCore.Design": "7.0.7"
         }
       },
       "Microsoft.Extensions.Caching.Abstractions/7.0.0": {
@@ -870,6 +876,13 @@
       "sha512": "sha512-XkLuNg99Y0KHmEyygzsqCkqDHE0h3vfNNu3bTaWx8bX6nDaCmK9EWhtCrDKReMpztDKyjrIweuUz346rXk5mbQ==",
       "path": "microsoft.entityframeworkcore.sqlserver/7.0.7",
       "hashPath": "microsoft.entityframeworkcore.sqlserver.7.0.7.nupkg.sha512"
+    },
+    "Microsoft.EntityFrameworkCore.Tools/7.0.7": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-Q5iBac9t7Elrx5qnB0A4V1RlInZrmSYe+FlMdV887Cv+arZXKW80N0gydXJJ2ghD62PoDf4LL/7kJ/uc4GyJlg==",
+      "path": "microsoft.entityframeworkcore.tools/7.0.7",
+      "hashPath": "microsoft.entityframeworkcore.tools.7.0.7.nupkg.sha512"
     },
     "Microsoft.Extensions.Caching.Abstractions/7.0.0": {
       "type": "package",

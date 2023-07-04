@@ -1,6 +1,5 @@
 ﻿using Microsoft.AspNet.Identity;
 using Microsoft.AspNet.Identity.EntityFramework;
-using Microsoft.EntityFrameworkCore;
 using RentReview.Data;
 
 namespace RentReviewRepository
@@ -16,20 +15,20 @@ namespace RentReviewRepository
             this.context = context;
         }
 
-        public async Task AddAsync<T>(T newItem) where T : class
+        public Task AddAsync<T>(T newItem) where T : class
         {
-            await context.Set<T>().AddAsync(newItem);
-            await this.SaveChangesAsync();
+            throw new NotImplementedException();
         }
 
         public T FindById<T>(string Id) where T : class
         {
-            DbSet<T> table = context.Set<T>();
-            return table.Find(Id);
-        } 
+            throw new NotImplementedException();
+        }
 
-        public async IdentityRole FindRoleById(string Id)
-         => await this.roleManager.FindByIdAsync(Id);
+        public IdentityRole FindRoleById(string Id)
+        {
+            throw new NotImplementedException();
+        }
 
         public IdentityUser FindUserByEmail(string email)
         {
@@ -51,7 +50,9 @@ namespace RentReviewRepository
             throw new NotImplementedException();
         }
 
-        public async Task SaveChangesAsync()
-            => await this.context.SaveChangesAsync();
+        public Task SaveChangesAsync()
+        {
+            throw new NotImplementedException();
+        }
     }
 }

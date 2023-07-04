@@ -10,6 +10,5 @@ namespace RentReview.Data.Models
         public string LastName { get; set; }
         public string FullName { get { return this.FirstName + " " + this.LastName; } }
         public int Age { get; set; }
-        public string Gender { get; set; }
     }
 }
