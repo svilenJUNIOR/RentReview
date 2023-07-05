@@ -36,7 +36,7 @@ namespace RentReviewRepository
         => this.context.Set<T>().ToList();
 
         public void Remove<T>(T Item) where T : class
-         => this.context.Set<T>().Remove(Item);
+        => this.context.Set<T>().Remove(Item);
 
         public async Task SaveChangesAsync()
         => await this.context.SaveChangesAsync();
