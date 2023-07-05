@@ -1,0 +1,11 @@
+{
+  "Version": 1,
+  "Hash": "iBJ0pe64RJIEqk12jncGzC3giPxQOqageBcZmtCJdcE=",
+  "Source": "RentReview.Api",
+  "BasePath": "_content/RentReview.Api",
+  "Mode": "Default",
+  "ManifestType": "Build",
+  "ReferencedProjectsConfiguration": [],
+  "DiscoveryPatterns": [],
+  "Assets": []
+}

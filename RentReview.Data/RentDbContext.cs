@@ -23,9 +23,6 @@ namespace RentReview.Data
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
             base.OnModelCreating(modelBuilder);
-
-            modelBuilder.Entity<Review>()
-           .HasKey(x => new { x.PropertyId, x.TenantId });
         }
     }
 }

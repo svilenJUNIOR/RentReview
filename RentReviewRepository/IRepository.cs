@@ -14,6 +14,6 @@ namespace RentReviewRepository
         Task<IdentityUser> FindUserById(string Id);
         Task<IdentityRole> FindRoleById(string Id);
 
-        Task FindById<T>(string Id) where T : class;
+        Task<T> FindByIdAsync<T>(string Id) where T : class;
     }
 }
