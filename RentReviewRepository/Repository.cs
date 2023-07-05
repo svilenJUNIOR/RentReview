@@ -33,18 +33,12 @@ namespace RentReviewRepository
         => await this.userManager.FindByIdAsync(Id);
 
         public ICollection<T> GettAll<T>() where T : class
-        {
-            throw new NotImplementedException();
-        }
+        => this.context.Set<T>().ToList();
 
-        public Task RemoveAsync<T>(T Item) where T : class
-        {
-            throw new NotImplementedException();
-        }
+        public void Remove<T>(T Item) where T : class
+         => this.context.Set<T>().Remove(Item);
 
-        public Task SaveChangesAsync()
-        {
-            throw new NotImplementedException();
-        }
+        public async Task SaveChangesAsync()
+        => await this.context.SaveChangesAsync();
     }
 }
