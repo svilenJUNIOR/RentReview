@@ -230,39 +230,36 @@ namespace RentReview.Data.Migrations
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("Cons")
-                        .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("Picture")
+                        .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<int>("Price")
                         .HasColumnType("int");
 
                     b.Property<string>("Pros")
-                        .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<DateTime>("Rented")
+                    b.Property<DateTime?>("Rented")
                         .HasColumnType("Date")
                         .HasColumnName("Rented");
 
                     b.Property<string>("ReviewOfLandlord")
-                        .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("ReviewOfNeighbour")
-                        .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("ReviewOfProperty")
-                        .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("Url")
+                        .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<DateTime>("Vacated")
+                    b.Property<DateTime?>("Vacated")
                         .HasColumnType("Date")
                         .HasColumnName("Vacated");
 
