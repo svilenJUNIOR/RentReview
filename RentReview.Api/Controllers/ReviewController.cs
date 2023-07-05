@@ -1,4 +1,6 @@
-﻿using Microsoft.AspNetCore.Mvc;
+﻿using Microsoft.AspNet.Identity;
+using Microsoft.AspNet.Identity.EntityFramework;
+using Microsoft.AspNetCore.Mvc;
 using RentReview.Data;
 using RentReview.Data.Models;
 using RentReviewRepository;
@@ -9,23 +11,29 @@ namespace RentReview.Api.Controllers
     [ApiController]
     public class ReviewController : ControllerBase
     {
-        private readonly RentDbContext db = new RentDbContext();
+        private readonly RentDbContext context;
+        private readonly RoleManager<IdentityRole> roleManager;
+        private readonly UserManager<IdentityUser> userManager;
+
+        public ReviewController(RoleManager<IdentityRole> roleManager, UserManager<IdentityUser> userManager, RentDbContext context)
+        {
+            this.roleManager = roleManager;
+            this.context = context;
+            this.userManager = userManager;
+        }
+
         // GET: api/<ReviewController>
         [HttpGet]
-        public ICollection<Review> Get()
+        public async Task<IdentityRole> Get()
         {
-            var context = new Repository(null, null, db);
-            var list = context.GettAll<Review>();
-            return list;
-
+            throw new NotImplementedException();
         }
 
         // GET api/<ReviewController>/5
         [HttpGet("{id}")]
         public async Task<Review> Get(string id)
         {
-            var context = new Repository(null, null, db);
-            return await context.FindByIdAsync<Review>(id);
+            throw new NotImplementedException();
         }
 
         // POST api/<ReviewController>
