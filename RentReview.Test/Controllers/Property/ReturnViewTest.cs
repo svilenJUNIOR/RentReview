@@ -14,5 +14,15 @@ namespace RentReview.Test.Controllers.Property
 
             Assert.IsType<ViewResult>(action);
         }
+
+        [Fact]
+        public void AddActionReturnAllView()
+        {
+            var controller = new PropertyController();
+
+            var action = controller.Add();
+
+            Assert.IsType<ViewResult>(action);
+        }
     }
 }
