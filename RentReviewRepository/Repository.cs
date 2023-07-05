@@ -8,11 +8,13 @@ namespace RentReviewRepository
     {
         private readonly RentDbContext context;
         private readonly RoleManager<IdentityRole> roleManager;
+        private readonly UserManager<IdentityUser> userManager;
 
-        public Repository(RoleManager<IdentityRole> roleManager, RentDbContext context)
+        public Repository(RoleManager<IdentityRole> roleManager, UserManager<IdentityUser> userManager, RentDbContext context)
         {
             this.roleManager = roleManager;
             this.context = context;
+            this.userManager = userManager;
         }
 
         public async Task AddAsync<T>(T newItem) where T : class
@@ -24,15 +26,11 @@ namespace RentReviewRepository
         public async Task<IdentityRole> FindRoleById(string Id)
          => await this.roleManager.FindByIdAsync(Id);
 
-        public IdentityUser FindUserByEmail(string email)
-        {
-            throw new NotImplementedException();
-        }
+        public async Task<IdentityUser> FindUserByEmail(string email)
+         => await this.userManager.FindByEmailAsync(email);
 
-        public IdentityUser FindUserById(string Id)
-        {
-            throw new NotImplementedException();
-        }
+        public async Task<IdentityUser> FindUserById(string Id)
+        => await this.userManager.FindByIdAsync(Id);
 
         public ICollection<T> GettAll<T>() where T : class
         {

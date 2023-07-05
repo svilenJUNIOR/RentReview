@@ -10,8 +10,8 @@ namespace RentReviewRepository
 
         ICollection<T> GettAll<T>() where T : class;
 
-        IdentityUser FindUserByEmail(string email);
-        IdentityUser FindUserById(string Id);
+        Task<IdentityUser> FindUserByEmail(string email);
+        Task<IdentityUser> FindUserById(string Id);
         Task<IdentityRole> FindRoleById(string Id);
 
         Task FindById<T>(string Id) where T : class;
