@@ -12,8 +12,8 @@ namespace RentReviewRepository
 
         IdentityUser FindUserByEmail(string email);
         IdentityUser FindUserById(string Id);
-        IdentityRole FindRoleById(string Id);
+        Task<IdentityRole> FindRoleById(string Id);
 
-        T FindById<T>(string Id) where T : class;
+        Task FindById<T>(string Id) where T : class;
     }
 }

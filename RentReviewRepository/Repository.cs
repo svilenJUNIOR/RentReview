@@ -15,20 +15,14 @@ namespace RentReviewRepository
             this.context = context;
         }
 
-        public Task AddAsync<T>(T newItem) where T : class
-        {
-            throw new NotImplementedException();
-        }
+        public async Task AddAsync<T>(T newItem) where T : class
+         => await this.context.Set<T>().AddAsync(newItem);
 
-        public T FindById<T>(string Id) where T : class
-        {
-            throw new NotImplementedException();
-        }
+        public async Task FindById<T>(string Id) where T : class
+         => await this.context.FindAsync<T>(Id);
 
-        public IdentityRole FindRoleById(string Id)
-        {
-            throw new NotImplementedException();
-        }
+        public async Task<IdentityRole> FindRoleById(string Id)
+         => await this.roleManager.FindByIdAsync(Id);
 
         public IdentityUser FindUserByEmail(string email)
         {
