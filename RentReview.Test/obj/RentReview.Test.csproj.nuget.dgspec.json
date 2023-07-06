@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\svilen\\OneDrive\\Desktop\\programing\\Csharp\\PROJECTS\\RentReview\\RentReview.Test\\RentReview.Test.csproj": {}
+    "C:\\Users\\svilen\\OneDrive\\Desktop\\RentReview\\RentReview.Test\\RentReview.Test.csproj": {}
   },
   "projects": {
-    "C:\\Users\\svilen\\OneDrive\\Desktop\\programing\\Csharp\\PROJECTS\\RentReview\\RentReview.Data\\RentReview.Data.csproj": {
+    "C:\\Users\\svilen\\OneDrive\\Desktop\\RentReview\\RentReview.Data\\RentReview.Data.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\svilen\\OneDrive\\Desktop\\programing\\Csharp\\PROJECTS\\RentReview\\RentReview.Data\\RentReview.Data.csproj",
+        "projectUniqueName": "C:\\Users\\svilen\\OneDrive\\Desktop\\RentReview\\RentReview.Data\\RentReview.Data.csproj",
         "projectName": "RentReview.Data",
-        "projectPath": "C:\\Users\\svilen\\OneDrive\\Desktop\\programing\\Csharp\\PROJECTS\\RentReview\\RentReview.Data\\RentReview.Data.csproj",
+        "projectPath": "C:\\Users\\svilen\\OneDrive\\Desktop\\RentReview\\RentReview.Data\\RentReview.Data.csproj",
         "packagesPath": "C:\\Users\\svilen\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\svilen\\OneDrive\\Desktop\\programing\\Csharp\\PROJECTS\\RentReview\\RentReview.Data\\obj\\",
+        "outputPath": "C:\\Users\\svilen\\OneDrive\\Desktop\\RentReview\\RentReview.Data\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
@@ -94,14 +94,74 @@
         }
       }
     },
-    "C:\\Users\\svilen\\OneDrive\\Desktop\\programing\\Csharp\\PROJECTS\\RentReview\\RentReview.Test\\RentReview.Test.csproj": {
+    "C:\\Users\\svilen\\OneDrive\\Desktop\\RentReview\\RentReview.Models\\RentReview.Models.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\svilen\\OneDrive\\Desktop\\programing\\Csharp\\PROJECTS\\RentReview\\RentReview.Test\\RentReview.Test.csproj",
-        "projectName": "RentReview.Test",
-        "projectPath": "C:\\Users\\svilen\\OneDrive\\Desktop\\programing\\Csharp\\PROJECTS\\RentReview\\RentReview.Test\\RentReview.Test.csproj",
+        "projectUniqueName": "C:\\Users\\svilen\\OneDrive\\Desktop\\RentReview\\RentReview.Models\\RentReview.Models.csproj",
+        "projectName": "RentReview.Models",
+        "projectPath": "C:\\Users\\svilen\\OneDrive\\Desktop\\RentReview\\RentReview.Models\\RentReview.Models.csproj",
         "packagesPath": "C:\\Users\\svilen\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\svilen\\OneDrive\\Desktop\\programing\\Csharp\\PROJECTS\\RentReview\\RentReview.Test\\obj\\",
+        "outputPath": "C:\\Users\\svilen\\OneDrive\\Desktop\\RentReview\\RentReview.Models\\obj\\",
+        "projectStyle": "PackageReference",
+        "fallbackFolders": [
+          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
+        ],
+        "configFilePaths": [
+          "C:\\Users\\svilen\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+        ],
+        "originalTargetFrameworks": [
+          "net6.0"
+        ],
+        "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "C:\\Program Files\\dotnet\\library-packs": {},
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "net6.0": {
+            "targetAlias": "net6.0",
+            "projectReferences": {}
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "net6.0": {
+          "targetAlias": "net6.0",
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48",
+            "net481"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.101\\RuntimeIdentifierGraph.json"
+        }
+      }
+    },
+    "C:\\Users\\svilen\\OneDrive\\Desktop\\RentReview\\RentReview.Services\\RentReview.Services.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "C:\\Users\\svilen\\OneDrive\\Desktop\\RentReview\\RentReview.Services\\RentReview.Services.csproj",
+        "projectName": "RentReview.Services",
+        "projectPath": "C:\\Users\\svilen\\OneDrive\\Desktop\\RentReview\\RentReview.Services\\RentReview.Services.csproj",
+        "packagesPath": "C:\\Users\\svilen\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\svilen\\OneDrive\\Desktop\\RentReview\\RentReview.Services\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
@@ -123,8 +183,78 @@
           "net6.0": {
             "targetAlias": "net6.0",
             "projectReferences": {
-              "C:\\Users\\svilen\\OneDrive\\Desktop\\programing\\Csharp\\PROJECTS\\RentReview\\RentReview\\RentReview.csproj": {
-                "projectPath": "C:\\Users\\svilen\\OneDrive\\Desktop\\programing\\Csharp\\PROJECTS\\RentReview\\RentReview\\RentReview.csproj"
+              "C:\\Users\\svilen\\OneDrive\\Desktop\\RentReview\\RentReview.Data\\RentReview.Data.csproj": {
+                "projectPath": "C:\\Users\\svilen\\OneDrive\\Desktop\\RentReview\\RentReview.Data\\RentReview.Data.csproj"
+              },
+              "C:\\Users\\svilen\\OneDrive\\Desktop\\RentReview\\RentReview.Models\\RentReview.Models.csproj": {
+                "projectPath": "C:\\Users\\svilen\\OneDrive\\Desktop\\RentReview\\RentReview.Models\\RentReview.Models.csproj"
+              },
+              "C:\\Users\\svilen\\OneDrive\\Desktop\\RentReview\\RentReviewRepository\\RentReviewRepository.csproj": {
+                "projectPath": "C:\\Users\\svilen\\OneDrive\\Desktop\\RentReview\\RentReviewRepository\\RentReviewRepository.csproj"
+              }
+            }
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "net6.0": {
+          "targetAlias": "net6.0",
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48",
+            "net481"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.101\\RuntimeIdentifierGraph.json"
+        }
+      }
+    },
+    "C:\\Users\\svilen\\OneDrive\\Desktop\\RentReview\\RentReview.Test\\RentReview.Test.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "C:\\Users\\svilen\\OneDrive\\Desktop\\RentReview\\RentReview.Test\\RentReview.Test.csproj",
+        "projectName": "RentReview.Test",
+        "projectPath": "C:\\Users\\svilen\\OneDrive\\Desktop\\RentReview\\RentReview.Test\\RentReview.Test.csproj",
+        "packagesPath": "C:\\Users\\svilen\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\svilen\\OneDrive\\Desktop\\RentReview\\RentReview.Test\\obj\\",
+        "projectStyle": "PackageReference",
+        "fallbackFolders": [
+          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
+        ],
+        "configFilePaths": [
+          "C:\\Users\\svilen\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+        ],
+        "originalTargetFrameworks": [
+          "net6.0"
+        ],
+        "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "C:\\Program Files\\dotnet\\library-packs": {},
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "net6.0": {
+            "targetAlias": "net6.0",
+            "projectReferences": {
+              "C:\\Users\\svilen\\OneDrive\\Desktop\\RentReview\\RentReview\\RentReview.csproj": {
+                "projectPath": "C:\\Users\\svilen\\OneDrive\\Desktop\\RentReview\\RentReview\\RentReview.csproj"
               }
             }
           }
@@ -180,14 +310,14 @@
         }
       }
     },
-    "C:\\Users\\svilen\\OneDrive\\Desktop\\programing\\Csharp\\PROJECTS\\RentReview\\RentReview\\RentReview.csproj": {
+    "C:\\Users\\svilen\\OneDrive\\Desktop\\RentReview\\RentReviewRepository\\RentReviewRepository.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\svilen\\OneDrive\\Desktop\\programing\\Csharp\\PROJECTS\\RentReview\\RentReview\\RentReview.csproj",
-        "projectName": "RentReview",
-        "projectPath": "C:\\Users\\svilen\\OneDrive\\Desktop\\programing\\Csharp\\PROJECTS\\RentReview\\RentReview\\RentReview.csproj",
+        "projectUniqueName": "C:\\Users\\svilen\\OneDrive\\Desktop\\RentReview\\RentReviewRepository\\RentReviewRepository.csproj",
+        "projectName": "RentReviewRepository",
+        "projectPath": "C:\\Users\\svilen\\OneDrive\\Desktop\\RentReview\\RentReviewRepository\\RentReviewRepository.csproj",
         "packagesPath": "C:\\Users\\svilen\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\svilen\\OneDrive\\Desktop\\programing\\Csharp\\PROJECTS\\RentReview\\RentReview\\obj\\",
+        "outputPath": "C:\\Users\\svilen\\OneDrive\\Desktop\\RentReview\\RentReviewRepository\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
@@ -209,8 +339,75 @@
           "net6.0": {
             "targetAlias": "net6.0",
             "projectReferences": {
-              "C:\\Users\\svilen\\OneDrive\\Desktop\\programing\\Csharp\\PROJECTS\\RentReview\\RentReview.Data\\RentReview.Data.csproj": {
-                "projectPath": "C:\\Users\\svilen\\OneDrive\\Desktop\\programing\\Csharp\\PROJECTS\\RentReview\\RentReview.Data\\RentReview.Data.csproj"
+              "C:\\Users\\svilen\\OneDrive\\Desktop\\RentReview\\RentReview.Data\\RentReview.Data.csproj": {
+                "projectPath": "C:\\Users\\svilen\\OneDrive\\Desktop\\RentReview\\RentReview.Data\\RentReview.Data.csproj"
+              }
+            }
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "net6.0": {
+          "targetAlias": "net6.0",
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48",
+            "net481"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.101\\RuntimeIdentifierGraph.json"
+        }
+      }
+    },
+    "C:\\Users\\svilen\\OneDrive\\Desktop\\RentReview\\RentReview\\RentReview.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "C:\\Users\\svilen\\OneDrive\\Desktop\\RentReview\\RentReview\\RentReview.csproj",
+        "projectName": "RentReview",
+        "projectPath": "C:\\Users\\svilen\\OneDrive\\Desktop\\RentReview\\RentReview\\RentReview.csproj",
+        "packagesPath": "C:\\Users\\svilen\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\svilen\\OneDrive\\Desktop\\RentReview\\RentReview\\obj\\",
+        "projectStyle": "PackageReference",
+        "fallbackFolders": [
+          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
+        ],
+        "configFilePaths": [
+          "C:\\Users\\svilen\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+        ],
+        "originalTargetFrameworks": [
+          "net6.0"
+        ],
+        "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "C:\\Program Files\\dotnet\\library-packs": {},
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "net6.0": {
+            "targetAlias": "net6.0",
+            "projectReferences": {
+              "C:\\Users\\svilen\\OneDrive\\Desktop\\RentReview\\RentReview.Models\\RentReview.Models.csproj": {
+                "projectPath": "C:\\Users\\svilen\\OneDrive\\Desktop\\RentReview\\RentReview.Models\\RentReview.Models.csproj"
+              },
+              "C:\\Users\\svilen\\OneDrive\\Desktop\\RentReview\\RentReview.Services\\RentReview.Services.csproj": {
+                "projectPath": "C:\\Users\\svilen\\OneDrive\\Desktop\\RentReview\\RentReview.Services\\RentReview.Services.csproj"
               }
             }
           }
@@ -231,25 +428,19 @@
             },
             "Microsoft.AspNetCore.Identity.EntityFrameworkCore": {
               "target": "Package",
-              "version": "[6.0.18, )"
+              "version": "[6.0.11, )"
             },
             "Microsoft.AspNetCore.Identity.UI": {
               "target": "Package",
-              "version": "[6.0.18, )"
+              "version": "[6.0.11, )"
             },
             "Microsoft.EntityFrameworkCore.SqlServer": {
               "target": "Package",
               "version": "[7.0.8, )"
             },
             "Microsoft.EntityFrameworkCore.Tools": {
-              "include": "Runtime, Build, Native, ContentFiles, Analyzers, BuildTransitive",
-              "suppressParent": "All",
               "target": "Package",
-              "version": "[7.0.7, )"
-            },
-            "Microsoft.VisualStudio.Web.CodeGeneration.Design": {
-              "target": "Package",
-              "version": "[6.0.14, )"
+              "version": "[6.0.11, )"
             }
           },
           "imports": [

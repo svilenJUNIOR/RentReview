@@ -6,11 +6,6 @@ namespace RentReview.Controllers
 {
     public class HomeController : Controller
     {
-        private readonly ILogger<HomeController> logger;
-
-        public HomeController(ILogger<HomeController> logger)
-        => logger = logger;
-
         public IActionResult Index()
         => RedirectToAction("All", "Review");
 

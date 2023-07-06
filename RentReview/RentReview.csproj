@@ -4,28 +4,20 @@
     <TargetFramework>net6.0</TargetFramework>
     <Nullable>enable</Nullable>
     <ImplicitUsings>enable</ImplicitUsings>
-    <UserSecretsId>aspnet-RentReview-8493602f-5542-409b-91b9-c831fbf0a809</UserSecretsId>
+    <UserSecretsId>aspnet-RentReview-d42799ed-a6e3-413c-a903-bd693bdca75e</UserSecretsId>
   </PropertyGroup>
 
   <ItemGroup>
     <PackageReference Include="Microsoft.AspNetCore.Diagnostics.EntityFrameworkCore" Version="6.0.11" />
-    <PackageReference Include="Microsoft.AspNetCore.Identity.EntityFrameworkCore" Version="6.0.18" />
-    <PackageReference Include="Microsoft.AspNetCore.Identity.UI" Version="6.0.18" />
+    <PackageReference Include="Microsoft.AspNetCore.Identity.EntityFrameworkCore" Version="6.0.11" />
+    <PackageReference Include="Microsoft.AspNetCore.Identity.UI" Version="6.0.11" />
     <PackageReference Include="Microsoft.EntityFrameworkCore.SqlServer" Version="7.0.8" />
-    <PackageReference Include="Microsoft.EntityFrameworkCore.Tools" Version="7.0.7">
-      <PrivateAssets>all</PrivateAssets>
-      <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
-    </PackageReference>
-    <PackageReference Include="Microsoft.VisualStudio.Web.CodeGeneration.Design" Version="6.0.14" />
+    <PackageReference Include="Microsoft.EntityFrameworkCore.Tools" Version="6.0.11" />
   </ItemGroup>
 
   <ItemGroup>
-    <Folder Include="Areas\Identity\Data\" />
-    <Folder Include="Views\Home\" />
-  </ItemGroup>
-
-  <ItemGroup>
-    <ProjectReference Include="..\RentReview.Data\RentReview.Data.csproj" />
+    <ProjectReference Include="..\RentReview.Models\RentReview.Models.csproj" />
+    <ProjectReference Include="..\RentReview.Services\RentReview.Services.csproj" />
   </ItemGroup>
 
 </Project>

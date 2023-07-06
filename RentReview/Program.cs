@@ -1,6 +1,8 @@
 using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
 using RentReview.Data;
+using RentReview.Services.Property;
+using RentReviewRepository;
 
 namespace RentReview
 {
@@ -10,15 +12,19 @@ namespace RentReview
         {
             var builder = WebApplication.CreateBuilder(args);
 
-            // Add services to the container.
-            var connectionString = builder.Configuration.GetConnectionString("DefaultConnection") ?? throw new InvalidOperationException("Connection string 'DefaultConnection' not found.");
-            builder.Services.AddDbContext<RentDbContext>(options =>
-                options.UseSqlServer(connectionString));
+            var connectionString = builder.Configuration.GetConnectionString("DefaultConnection");
+            builder.Services.AddDbContext<RentDbContext>(options => options.UseSqlServer(connectionString));
             builder.Services.AddDatabaseDeveloperPageExceptionFilter();
 
-            builder.Services.AddDefaultIdentity<IdentityUser>(options => options.SignIn.RequireConfirmedAccount = true)
+            builder.Services.AddDefaultIdentity<IdentityUser>
+                (options => options.SignIn.RequireConfirmedAccount = true)
+                .AddRoles<IdentityRole>()
                 .AddEntityFrameworkStores<RentDbContext>();
-            builder.Services.AddControllersWithViews();
+
+            builder.Services.AddControllersWithViews().AddMvcOptions(options => {});
+
+            builder.Services.AddScoped<IPropertyService, PropertyService>();
+            builder.Services.AddScoped<IRepository, Repository>();
 
             var app = builder.Build();
 

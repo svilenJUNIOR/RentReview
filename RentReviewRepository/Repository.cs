@@ -1,5 +1,4 @@
-﻿using Microsoft.AspNet.Identity;
-using Microsoft.AspNet.Identity.EntityFramework;
+﻿using Microsoft.AspNetCore.Identity;
 using RentReview.Data;
 
 namespace RentReviewRepository
@@ -7,14 +6,14 @@ namespace RentReviewRepository
     public class Repository : IRepository
     {
         private readonly RentDbContext context;
-        private readonly RoleManager<IdentityRole> roleManager;
         private readonly UserManager<IdentityUser> userManager;
+        private readonly RoleManager<IdentityRole> roleManager;
 
-        public Repository(RoleManager<IdentityRole> roleManager, UserManager<IdentityUser> userManager, RentDbContext context)
+        public Repository(RentDbContext context, UserManager<IdentityUser> userManager, RoleManager<IdentityRole> roleManager)
         {
-            this.roleManager = roleManager;
             this.context = context;
             this.userManager = userManager;
+            this.roleManager = roleManager;
         }
 
         public async Task AddAsync<T>(T newItem) where T : class
