@@ -1,4 +1,5 @@
 ﻿using Microsoft.AspNetCore.Mvc;
+using RentReview.Models.DataModels;
 
 namespace RentReview.Controllers
 {
@@ -8,8 +9,11 @@ namespace RentReview.Controllers
         {
             return View();
         }
-
         public IActionResult Add()
+        => View();
+
+        [HttpPost]
+        public IActionResult Add(AddNewReviewDataModel data)
         {
             return View();
         }

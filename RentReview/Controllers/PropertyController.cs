@@ -9,14 +9,10 @@ namespace RentReview.Controllers
         private readonly IPropertyService propertyService;
 
         public PropertyController(IPropertyService propertyService)
-        {
-            this.propertyService = propertyService;
-        }
+         => this.propertyService = propertyService;
 
         public IActionResult All()
-        {
-            return View();
-        }
+         => View();
 
         public IActionResult Add()
           => View();
