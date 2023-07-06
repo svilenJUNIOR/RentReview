@@ -4098,11 +4098,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\svilen\\OneDrive\\Desktop\\RentReview\\RentReview.Data\\RentReview.Data.csproj",
+      "projectUniqueName": "C:\\Users\\svilen\\OneDrive\\Desktop\\programing\\Csharp\\PROJECTS\\RentReview\\RentReview.Data\\RentReview.Data.csproj",
       "projectName": "RentReview.Data",
-      "projectPath": "C:\\Users\\svilen\\OneDrive\\Desktop\\RentReview\\RentReview.Data\\RentReview.Data.csproj",
+      "projectPath": "C:\\Users\\svilen\\OneDrive\\Desktop\\programing\\Csharp\\PROJECTS\\RentReview\\RentReview.Data\\RentReview.Data.csproj",
       "packagesPath": "C:\\Users\\svilen\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\svilen\\OneDrive\\Desktop\\RentReview\\RentReview.Data\\obj\\",
+      "outputPath": "C:\\Users\\svilen\\OneDrive\\Desktop\\programing\\Csharp\\PROJECTS\\RentReview\\RentReview.Data\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"

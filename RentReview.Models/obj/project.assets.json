@@ -14,11 +14,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\svilen\\OneDrive\\Desktop\\RentReview\\RentReview.Models\\RentReview.Models.csproj",
+      "projectUniqueName": "C:\\Users\\svilen\\OneDrive\\Desktop\\programing\\Csharp\\PROJECTS\\RentReview\\RentReview.Models\\RentReview.Models.csproj",
       "projectName": "RentReview.Models",
-      "projectPath": "C:\\Users\\svilen\\OneDrive\\Desktop\\RentReview\\RentReview.Models\\RentReview.Models.csproj",
+      "projectPath": "C:\\Users\\svilen\\OneDrive\\Desktop\\programing\\Csharp\\PROJECTS\\RentReview\\RentReview.Models\\RentReview.Models.csproj",
       "packagesPath": "C:\\Users\\svilen\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\svilen\\OneDrive\\Desktop\\RentReview\\RentReview.Models\\obj\\",
+      "outputPath": "C:\\Users\\svilen\\OneDrive\\Desktop\\programing\\Csharp\\PROJECTS\\RentReview\\RentReview.Models\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"

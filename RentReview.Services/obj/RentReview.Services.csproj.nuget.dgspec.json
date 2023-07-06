@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\svilen\\OneDrive\\Desktop\\RentReview\\RentReview.Services\\RentReview.Services.csproj": {}
+    "C:\\Users\\svilen\\OneDrive\\Desktop\\programing\\Csharp\\PROJECTS\\RentReview\\RentReview.Services\\RentReview.Services.csproj": {}
   },
   "projects": {
-    "C:\\Users\\svilen\\OneDrive\\Desktop\\RentReview\\RentReview.Data\\RentReview.Data.csproj": {
+    "C:\\Users\\svilen\\OneDrive\\Desktop\\programing\\Csharp\\PROJECTS\\RentReview\\RentReview.Data\\RentReview.Data.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\svilen\\OneDrive\\Desktop\\RentReview\\RentReview.Data\\RentReview.Data.csproj",
+        "projectUniqueName": "C:\\Users\\svilen\\OneDrive\\Desktop\\programing\\Csharp\\PROJECTS\\RentReview\\RentReview.Data\\RentReview.Data.csproj",
         "projectName": "RentReview.Data",
-        "projectPath": "C:\\Users\\svilen\\OneDrive\\Desktop\\RentReview\\RentReview.Data\\RentReview.Data.csproj",
+        "projectPath": "C:\\Users\\svilen\\OneDrive\\Desktop\\programing\\Csharp\\PROJECTS\\RentReview\\RentReview.Data\\RentReview.Data.csproj",
         "packagesPath": "C:\\Users\\svilen\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\svilen\\OneDrive\\Desktop\\RentReview\\RentReview.Data\\obj\\",
+        "outputPath": "C:\\Users\\svilen\\OneDrive\\Desktop\\programing\\Csharp\\PROJECTS\\RentReview\\RentReview.Data\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
@@ -94,14 +94,14 @@
         }
       }
     },
-    "C:\\Users\\svilen\\OneDrive\\Desktop\\RentReview\\RentReview.Models\\RentReview.Models.csproj": {
+    "C:\\Users\\svilen\\OneDrive\\Desktop\\programing\\Csharp\\PROJECTS\\RentReview\\RentReview.Models\\RentReview.Models.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\svilen\\OneDrive\\Desktop\\RentReview\\RentReview.Models\\RentReview.Models.csproj",
+        "projectUniqueName": "C:\\Users\\svilen\\OneDrive\\Desktop\\programing\\Csharp\\PROJECTS\\RentReview\\RentReview.Models\\RentReview.Models.csproj",
         "projectName": "RentReview.Models",
-        "projectPath": "C:\\Users\\svilen\\OneDrive\\Desktop\\RentReview\\RentReview.Models\\RentReview.Models.csproj",
+        "projectPath": "C:\\Users\\svilen\\OneDrive\\Desktop\\programing\\Csharp\\PROJECTS\\RentReview\\RentReview.Models\\RentReview.Models.csproj",
         "packagesPath": "C:\\Users\\svilen\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\svilen\\OneDrive\\Desktop\\RentReview\\RentReview.Models\\obj\\",
+        "outputPath": "C:\\Users\\svilen\\OneDrive\\Desktop\\programing\\Csharp\\PROJECTS\\RentReview\\RentReview.Models\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
@@ -154,14 +154,14 @@
         }
       }
     },
-    "C:\\Users\\svilen\\OneDrive\\Desktop\\RentReview\\RentReview.Services\\RentReview.Services.csproj": {
+    "C:\\Users\\svilen\\OneDrive\\Desktop\\programing\\Csharp\\PROJECTS\\RentReview\\RentReview.Services\\RentReview.Services.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\svilen\\OneDrive\\Desktop\\RentReview\\RentReview.Services\\RentReview.Services.csproj",
+        "projectUniqueName": "C:\\Users\\svilen\\OneDrive\\Desktop\\programing\\Csharp\\PROJECTS\\RentReview\\RentReview.Services\\RentReview.Services.csproj",
         "projectName": "RentReview.Services",
-        "projectPath": "C:\\Users\\svilen\\OneDrive\\Desktop\\RentReview\\RentReview.Services\\RentReview.Services.csproj",
+        "projectPath": "C:\\Users\\svilen\\OneDrive\\Desktop\\programing\\Csharp\\PROJECTS\\RentReview\\RentReview.Services\\RentReview.Services.csproj",
         "packagesPath": "C:\\Users\\svilen\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\svilen\\OneDrive\\Desktop\\RentReview\\RentReview.Services\\obj\\",
+        "outputPath": "C:\\Users\\svilen\\OneDrive\\Desktop\\programing\\Csharp\\PROJECTS\\RentReview\\RentReview.Services\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
@@ -183,14 +183,14 @@
           "net6.0": {
             "targetAlias": "net6.0",
             "projectReferences": {
-              "C:\\Users\\svilen\\OneDrive\\Desktop\\RentReview\\RentReview.Data\\RentReview.Data.csproj": {
-                "projectPath": "C:\\Users\\svilen\\OneDrive\\Desktop\\RentReview\\RentReview.Data\\RentReview.Data.csproj"
+              "C:\\Users\\svilen\\OneDrive\\Desktop\\programing\\Csharp\\PROJECTS\\RentReview\\RentReview.Data\\RentReview.Data.csproj": {
+                "projectPath": "C:\\Users\\svilen\\OneDrive\\Desktop\\programing\\Csharp\\PROJECTS\\RentReview\\RentReview.Data\\RentReview.Data.csproj"
               },
-              "C:\\Users\\svilen\\OneDrive\\Desktop\\RentReview\\RentReview.Models\\RentReview.Models.csproj": {
-                "projectPath": "C:\\Users\\svilen\\OneDrive\\Desktop\\RentReview\\RentReview.Models\\RentReview.Models.csproj"
+              "C:\\Users\\svilen\\OneDrive\\Desktop\\programing\\Csharp\\PROJECTS\\RentReview\\RentReview.Models\\RentReview.Models.csproj": {
+                "projectPath": "C:\\Users\\svilen\\OneDrive\\Desktop\\programing\\Csharp\\PROJECTS\\RentReview\\RentReview.Models\\RentReview.Models.csproj"
               },
-              "C:\\Users\\svilen\\OneDrive\\Desktop\\RentReview\\RentReviewRepository\\RentReviewRepository.csproj": {
-                "projectPath": "C:\\Users\\svilen\\OneDrive\\Desktop\\RentReview\\RentReviewRepository\\RentReviewRepository.csproj"
+              "C:\\Users\\svilen\\OneDrive\\Desktop\\programing\\Csharp\\PROJECTS\\RentReview\\RentReviewRepository\\RentReviewRepository.csproj": {
+                "projectPath": "C:\\Users\\svilen\\OneDrive\\Desktop\\programing\\Csharp\\PROJECTS\\RentReview\\RentReviewRepository\\RentReviewRepository.csproj"
               }
             }
           }
@@ -224,14 +224,14 @@
         }
       }
     },
-    "C:\\Users\\svilen\\OneDrive\\Desktop\\RentReview\\RentReviewRepository\\RentReviewRepository.csproj": {
+    "C:\\Users\\svilen\\OneDrive\\Desktop\\programing\\Csharp\\PROJECTS\\RentReview\\RentReviewRepository\\RentReviewRepository.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\svilen\\OneDrive\\Desktop\\RentReview\\RentReviewRepository\\RentReviewRepository.csproj",
+        "projectUniqueName": "C:\\Users\\svilen\\OneDrive\\Desktop\\programing\\Csharp\\PROJECTS\\RentReview\\RentReviewRepository\\RentReviewRepository.csproj",
         "projectName": "RentReviewRepository",
-        "projectPath": "C:\\Users\\svilen\\OneDrive\\Desktop\\RentReview\\RentReviewRepository\\RentReviewRepository.csproj",
+        "projectPath": "C:\\Users\\svilen\\OneDrive\\Desktop\\programing\\Csharp\\PROJECTS\\RentReview\\RentReviewRepository\\RentReviewRepository.csproj",
         "packagesPath": "C:\\Users\\svilen\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\svilen\\OneDrive\\Desktop\\RentReview\\RentReviewRepository\\obj\\",
+        "outputPath": "C:\\Users\\svilen\\OneDrive\\Desktop\\programing\\Csharp\\PROJECTS\\RentReview\\RentReviewRepository\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
@@ -253,8 +253,8 @@
           "net6.0": {
             "targetAlias": "net6.0",
             "projectReferences": {
-              "C:\\Users\\svilen\\OneDrive\\Desktop\\RentReview\\RentReview.Data\\RentReview.Data.csproj": {
-                "projectPath": "C:\\Users\\svilen\\OneDrive\\Desktop\\RentReview\\RentReview.Data\\RentReview.Data.csproj"
+              "C:\\Users\\svilen\\OneDrive\\Desktop\\programing\\Csharp\\PROJECTS\\RentReview\\RentReview.Data\\RentReview.Data.csproj": {
+                "projectPath": "C:\\Users\\svilen\\OneDrive\\Desktop\\programing\\Csharp\\PROJECTS\\RentReview\\RentReview.Data\\RentReview.Data.csproj"
               }
             }
           }

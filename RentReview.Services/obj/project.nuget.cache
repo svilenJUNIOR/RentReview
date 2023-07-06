@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "FfTicOmjrqJMwEVlHkeRsBjMAMFLE0yaDmaUOY1KvEwTFL2N0ZCh43Q76+zHb1uEBlwyZpy2RCa8c9eGfnvr7g==",
+  "dgSpecHash": "gAQ1OFBfaOERn+4IX7ysn0nhoq3LP7UdnF16bz3FwlK7jjAHaEpRG6K3zf4EDcPkJXnCZ8F3fL/HSoyYxvA/dg==",
   "success": true,
-  "projectFilePath": "C:\\Users\\svilen\\OneDrive\\Desktop\\RentReview\\RentReview.Services\\RentReview.Services.csproj",
+  "projectFilePath": "C:\\Users\\svilen\\OneDrive\\Desktop\\programing\\Csharp\\PROJECTS\\RentReview\\RentReview.Services\\RentReview.Services.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\svilen\\.nuget\\packages\\azure.core\\1.24.0\\azure.core.1.24.0.nupkg.sha512",
     "C:\\Users\\svilen\\.nuget\\packages\\azure.identity\\1.6.0\\azure.identity.1.6.0.nupkg.sha512",
