@@ -15,17 +15,26 @@ namespace RentReview.Services.Review
         }
         public async Task Add(AddNewReviewDataModel data)
         {
-            // get id of property
-            // find correct property
-            //var property = await this.repository.FindByIdAsync<Data.Models.Property>(data.PropertyId);
+            var property =  this.repository.FindById<Data.Models.Property>(data.PropertyId);
             //var userId = this.userManager.Users.First().Id;
 
-            //var Review = new Data.Models.Review(
-            //    {
-            //    PropertyId = this.property.Id,
-            //    TenantId = userId,
-            //}
-            //);
+            var Review = new Data.Models.Review
+            {
+                PropertyId = property.Id, 
+                TenantId = "1b379a1d-cce3-4c66-be74-763079abe28e"
+            };
+
+            property.ReviewOfProperty = data.PropertyReview;
+            property.ReviewOfLandlord = data.LandlordReview;
+            property.ReviewOfNeighbour = data.NeighbourReview;
+            property.Rented = data.Rented;
+            property.Vacated= data.Vacated;
+            property.Pros = data.Pros;
+            property.Cons = data.Cons;
+
+            await this.repository.AddAsync<Data.Models.Review>(Review);
+
+            await this.repository.SaveChangesAsync();
         }
     }
 }

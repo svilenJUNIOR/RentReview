@@ -4,7 +4,7 @@ namespace RentReview.Services.Property
 {
     public interface IPropertyService
     {
-        Task AddAsync(AddNewPropertyDataModel model);
+        Task AddAsync(ViewPropertyDataModel model);
         void Edit();
         void Remove();
         void ChangeStatus();

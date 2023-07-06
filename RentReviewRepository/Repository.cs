@@ -19,8 +19,8 @@ namespace RentReviewRepository
         public async Task AddAsync<T>(T newItem) where T : class
          => await this.context.Set<T>().AddAsync(newItem);
 
-        public async Task<T> FindByIdAsync<T>(string Id) where T : class
-         => await this.context.FindAsync<T>(Id);
+        public T FindById<T>(string Id) where T : class
+         =>  this.context.Find<T>(Id);
 
         public async Task<IdentityRole> FindRoleById(string Id)
          => await this.roleManager.FindByIdAsync(Id);

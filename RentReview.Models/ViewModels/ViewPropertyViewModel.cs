@@ -1,7 +1,8 @@
-﻿namespace RentReview.Models.DataModels
+﻿namespace RentReview.Models.ViewModels
 {
-    public class ViewPropertyDataModel
+    public class ViewPropertyViewModel
     {
+        public string Id { get; set; }
         public string Address { get; set; }
         public int Price { get; set; }
         public string Picture { get; set; }

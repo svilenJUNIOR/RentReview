@@ -1,7 +1,9 @@
 using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
 using RentReview.Data;
+using RentReview.Services;
 using RentReview.Services.Property;
+using RentReview.Services.Review;
 using RentReviewRepository;
 
 namespace RentReview
@@ -25,6 +27,8 @@ namespace RentReview
 
             builder.Services.AddScoped<IPropertyService, PropertyService>();
             builder.Services.AddScoped<IRepository, Repository>();
+            builder.Services.AddScoped<IBindService, BindService>();
+            builder.Services.AddScoped<IReviewService, ReviewService>();
 
             var app = builder.Build();
 

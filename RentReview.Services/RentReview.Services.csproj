@@ -7,10 +7,6 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <Folder Include="Review\" />
-  </ItemGroup>
-
-  <ItemGroup>
     <ProjectReference Include="..\RentReview.Data\RentReview.Data.csproj" />
     <ProjectReference Include="..\RentReview.Models\RentReview.Models.csproj" />
     <ProjectReference Include="..\RentReviewRepository\RentReviewRepository.csproj" />
