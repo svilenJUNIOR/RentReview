@@ -1,6 +1,7 @@
 ﻿using Microsoft.AspNetCore.Identity;
 using RentReview.Models.DataModels;
 using RentReviewRepository;
+using System.Text;
 
 namespace RentReview.Services.Review
 {
@@ -24,13 +25,22 @@ namespace RentReview.Services.Review
                 TenantId = "1b379a1d-cce3-4c66-be74-763079abe28e"
             };
 
+            StringBuilder pros = new StringBuilder();
+            StringBuilder cons = new StringBuilder();
+
+            foreach (var pro in data.Pros)
+                pros.Append(pro + "/");
+
+            foreach (var con in data.Cons)
+                cons.Append(con + "/");
+
             property.ReviewOfProperty = data.PropertyReview;
             property.ReviewOfLandlord = data.LandlordReview;
             property.ReviewOfNeighbour = data.NeighbourReview;
             property.Rented = data.Rented;
             property.Vacated= data.Vacated;
-            property.Pros = data.Pros;
-            property.Cons = data.Cons;
+            property.Pros = pros.ToString();
+            property.Cons = cons.ToString();
 
             await this.repository.AddAsync<Data.Models.Review>(Review);
 
