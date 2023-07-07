@@ -1,5 +1,6 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using RentReview.Models.DataModels;
+using RentReview.Services;
 using RentReview.Services.Review;
 
 namespace RentReview.Controllers
@@ -7,14 +8,16 @@ namespace RentReview.Controllers
     public class ReviewController : Controller
     {
         private readonly IReviewService reviewService;
+        private readonly IBindService bindService;
 
-        public ReviewController(IReviewService reviewService)
-          => this.reviewService = reviewService;
+        public ReviewController(IReviewService reviewService, IBindService bindService)
+        {
+            this.reviewService = reviewService;
+            this.bindService = bindService;
+        }
 
         public IActionResult ViewReview()
-        {
-            return View();
-        }
+        => View();
         public IActionResult Add()
         => View();
 
@@ -27,8 +30,6 @@ namespace RentReview.Controllers
         }
 
         public IActionResult All()
-        {
-            return View();
-        }
+        => View(this.bindService.ViewReviews());
     }
 }

@@ -22,5 +22,21 @@ namespace RentReview.Services
 
             return bindedProperties.ToList();
         }
+
+        public ICollection<ViewReviewViewModel> ViewReviews()
+        {
+            var reviews = this.repository.GettAll<Data.Models.Review>();
+
+            var bindedReviews = reviews.Select(x => new ViewReviewViewModel
+            {
+                Address = this.repository.GettAll<Data.Models.Property>().Where(c => c.Id == x.PropertyId).FirstOrDefault().Address,
+                PictureUrl = this.repository.GettAll<Data.Models.Property>().Where(c => c.Id == x.PropertyId).FirstOrDefault().Picture,
+                PropertyReview = this.repository.GettAll<Data.Models.Property>().Where(c => c.Id == x.PropertyId).FirstOrDefault().ReviewOfProperty,
+                PropertyId = this.repository.GettAll<Data.Models.Property>().Where(c => c.Id == x.PropertyId).FirstOrDefault().Id,
+                ReviewId = x.Id
+            });
+
+            return bindedReviews.ToList();
+        }
     }
 }

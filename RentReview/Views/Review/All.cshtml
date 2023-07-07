@@ -1,16 +1,32 @@
-﻿<div class="card mb-3" style="max-width: 700px;">
-    <div class="row g-0">
-        <div class="col-md-4">
-            <img src="https://cdn.shopify.com/s/files/1/0602/2617/5224/files/f68cfa4c-2596-422c-b115-a7f269196c2b_600x600.png?v=1682285988" class="img-fluid rounded-start">
-        </div>
-        <div class="col-md-8">
-            <div class="card-body">
-                <h5 class="card-title">Card title</h5>
-                <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
-                <a href="ViewReview" id="FullReviewButton" class="btn btn-primary">See full review!</a>
+﻿@model List<RentReview.Models.ViewModels.ViewReviewViewModel>
+
+<div class="row">
+    @foreach (var review in Model)
+    {
+        <div class="card mb-3" style="max-width: 700px;">
+            <div class="row g-0">
+                <div class="col-md-4">
+                    <img src="@review.PictureUrl" class="img-fluid rounded-start">
+                </div>
+                <div class="col-md-8">
+                    <div class="card-body">
+                        <h5 class="card-title">@review.Address</h5>
+                        @if (review.PropertyReview != null)
+                        {
+                            //<p class="card-text">@review.PropertyReview.Substring(0, 20)</p>
+                            <p class="card-text">@review.PropertyReview</p>
+                            <a href="ViewReview?Id=@review.ReviewId" id="FullReviewButton" class="btn btn-primary">See full review!</a>
+                        }
+                        else
+                        {
+                            <p class="card-text">Property doesn't have review. Feel free to add one.</p>
+                            <a href="Add?Id=@review.PropertyId" id="FullReviewButton" class="btn btn-primary">Add Review</a>
+                        }
+                    </div>
+                </div>
             </div>
         </div>
-    </div>
+    }
 </div>
 
 <link rel="stylesheet" href="~/css/Review/All.css"></link>
