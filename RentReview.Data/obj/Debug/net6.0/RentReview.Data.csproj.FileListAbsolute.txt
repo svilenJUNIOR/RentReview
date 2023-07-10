@@ -1,17 +1,3 @@
-C:\Users\svilen\OneDrive\Desktop\programing\Csharp\PROJECTS\RentReview\RentReview.Data\bin\Debug\net6.0\RentReview.Data.deps.json
-C:\Users\svilen\OneDrive\Desktop\programing\Csharp\PROJECTS\RentReview\RentReview.Data\bin\Debug\net6.0\RentReview.Data.runtimeconfig.json
-C:\Users\svilen\OneDrive\Desktop\programing\Csharp\PROJECTS\RentReview\RentReview.Data\bin\Debug\net6.0\RentReview.Data.dll
-C:\Users\svilen\OneDrive\Desktop\programing\Csharp\PROJECTS\RentReview\RentReview.Data\bin\Debug\net6.0\RentReview.Data.pdb
-C:\Users\svilen\OneDrive\Desktop\programing\Csharp\PROJECTS\RentReview\RentReview.Data\obj\Debug\net6.0\RentReview.Data.csproj.AssemblyReference.cache
-C:\Users\svilen\OneDrive\Desktop\programing\Csharp\PROJECTS\RentReview\RentReview.Data\obj\Debug\net6.0\RentReview.Data.GeneratedMSBuildEditorConfig.editorconfig
-C:\Users\svilen\OneDrive\Desktop\programing\Csharp\PROJECTS\RentReview\RentReview.Data\obj\Debug\net6.0\RentReview.Data.AssemblyInfoInputs.cache
-C:\Users\svilen\OneDrive\Desktop\programing\Csharp\PROJECTS\RentReview\RentReview.Data\obj\Debug\net6.0\RentReview.Data.AssemblyInfo.cs
-C:\Users\svilen\OneDrive\Desktop\programing\Csharp\PROJECTS\RentReview\RentReview.Data\obj\Debug\net6.0\RentReview.Data.csproj.CoreCompileInputs.cache
-C:\Users\svilen\OneDrive\Desktop\programing\Csharp\PROJECTS\RentReview\RentReview.Data\obj\Debug\net6.0\RentReview.Data.dll
-C:\Users\svilen\OneDrive\Desktop\programing\Csharp\PROJECTS\RentReview\RentReview.Data\obj\Debug\net6.0\refint\RentReview.Data.dll
-C:\Users\svilen\OneDrive\Desktop\programing\Csharp\PROJECTS\RentReview\RentReview.Data\obj\Debug\net6.0\RentReview.Data.pdb
-C:\Users\svilen\OneDrive\Desktop\programing\Csharp\PROJECTS\RentReview\RentReview.Data\obj\Debug\net6.0\RentReview.Data.genruntimeconfig.cache
-C:\Users\svilen\OneDrive\Desktop\programing\Csharp\PROJECTS\RentReview\RentReview.Data\obj\Debug\net6.0\ref\RentReview.Data.dll
 C:\Users\svilen\OneDrive\Desktop\RentReview\RentReview.Data\bin\Debug\net6.0\RentReview.Data.deps.json
 C:\Users\svilen\OneDrive\Desktop\RentReview\RentReview.Data\bin\Debug\net6.0\RentReview.Data.runtimeconfig.json
 C:\Users\svilen\OneDrive\Desktop\RentReview\RentReview.Data\bin\Debug\net6.0\RentReview.Data.dll

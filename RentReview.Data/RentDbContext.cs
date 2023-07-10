@@ -9,7 +9,7 @@ namespace RentReview.Data
     {
         public RentDbContext() { }
 
-        public RentDbContext(DbContextOptions<DbContext> options) : base(options) { }
+        public RentDbContext(DbContextOptions<RentDbContext> options) : base(options) { }
 
         public DbSet<Property> Properties { get; set; }
         public DbSet<Review> Reviews { get; set; }

@@ -1,0 +1,17 @@
+C:\Users\svilen\OneDrive\Desktop\RentReview\RentReview.Repository\bin\Debug\net6.0\RentReview.Repository.deps.json
+C:\Users\svilen\OneDrive\Desktop\RentReview\RentReview.Repository\bin\Debug\net6.0\RentReview.Repository.runtimeconfig.json
+C:\Users\svilen\OneDrive\Desktop\RentReview\RentReview.Repository\bin\Debug\net6.0\RentReview.Repository.dll
+C:\Users\svilen\OneDrive\Desktop\RentReview\RentReview.Repository\bin\Debug\net6.0\RentReview.Repository.pdb
+C:\Users\svilen\OneDrive\Desktop\RentReview\RentReview.Repository\obj\Debug\net6.0\RentReview.Repository.csproj.AssemblyReference.cache
+C:\Users\svilen\OneDrive\Desktop\RentReview\RentReview.Repository\obj\Debug\net6.0\RentReview.Repository.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\svilen\OneDrive\Desktop\RentReview\RentReview.Repository\obj\Debug\net6.0\RentReview.Repository.AssemblyInfoInputs.cache
+C:\Users\svilen\OneDrive\Desktop\RentReview\RentReview.Repository\obj\Debug\net6.0\RentReview.Repository.AssemblyInfo.cs
+C:\Users\svilen\OneDrive\Desktop\RentReview\RentReview.Repository\obj\Debug\net6.0\RentReview.Repository.csproj.CoreCompileInputs.cache
+C:\Users\svilen\OneDrive\Desktop\RentReview\RentReview.Repository\obj\Debug\net6.0\RentReview.Repository.dll
+C:\Users\svilen\OneDrive\Desktop\RentReview\RentReview.Repository\obj\Debug\net6.0\refint\RentReview.Repository.dll
+C:\Users\svilen\OneDrive\Desktop\RentReview\RentReview.Repository\obj\Debug\net6.0\RentReview.Repository.pdb
+C:\Users\svilen\OneDrive\Desktop\RentReview\RentReview.Repository\obj\Debug\net6.0\RentReview.Repository.genruntimeconfig.cache
+C:\Users\svilen\OneDrive\Desktop\RentReview\RentReview.Repository\obj\Debug\net6.0\ref\RentReview.Repository.dll
+C:\Users\svilen\OneDrive\Desktop\RentReview\RentReview.Repository\bin\Debug\net6.0\RentReview.Data.dll
+C:\Users\svilen\OneDrive\Desktop\RentReview\RentReview.Repository\bin\Debug\net6.0\RentReview.Data.pdb
+C:\Users\svilen\OneDrive\Desktop\RentReview\RentReview.Repository\obj\Debug\net6.0\RentReview.Repository.csproj.CopyComplete
