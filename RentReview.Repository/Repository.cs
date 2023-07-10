@@ -17,7 +17,12 @@ namespace RentReviewRepository
             this.roleManager = roleManager;
         }
         public Property FindPropertyByReviewId(string ReviewId)
-         => this.context.Set<Property>().Where(x => x.Id == ReviewId).FirstOrDefault();
+        {
+            var review = this.context.Reviews.Where(x => x.Id == ReviewId).FirstOrDefault();
+            var property = this.context.Properties.Where(x => x.Id == review.PropertyId).FirstOrDefault();
+
+            return property;
+        }
         public async Task AddAsync<T>(T newItem) where T : class
          => await this.context.Set<T>().AddAsync(newItem);
 

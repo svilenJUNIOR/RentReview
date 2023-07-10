@@ -21,7 +21,7 @@ namespace RentReview.Controllers
         }
 
         public IActionResult ViewReview(string Id)
-        => View(this.repository.FindById<Review>(Id));
+        => View(this.repository.FindPropertyByReviewId(Id));
         public IActionResult Add()
         => View();
 
