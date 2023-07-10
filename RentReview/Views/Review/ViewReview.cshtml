@@ -1,47 +1,43 @@
-﻿@model RentReview.Data.Models.Property
+﻿@model RentReview.Models.ViewModels.ViewFullReviewViewModel
 
-    <img src="@Model.Picture" />
+<img src="@Model.Picture" />
 
-    <div class="info">
-        <div class="card">
-            <h5 class="card-header">Property Info</h5>
-            <ul class="list-group">
-                <li class="list-group-item">Price - @Model.Price</li>
+<div class="info">
+    <div class="card">
+        <h5 class="card-header">Property Info</h5>
+        <ul class="list-group">
+            <li class="list-group-item">Price - @Model.Price</li>
             <li class="list-group-item">Rented from @Model.Rented.Value.ToShortDateString() to @Model.Vacated.Value.ToShortDateString()</li>
-                <li class="list-group-item">@Model.Address</li>
+            <li class="list-group-item">@Model.Address</li>
             <li class="list-group-item"> <a href="@Model.Url" class="btn btn-primary"> Go to Add</a></li>
-            </ul>
-        </div>
+        </ul>
     </div>
+</div>
 
-    <div class="pros">
-        <div class="card">
-            <h5 class="card-header">Pros</h5>
-            <ul class="list-group">
-                <li class="list-group-item">Has garage</li>
-                <li class="list-group-item">Has security</li>
-                <li class="list-group-item">Near School / kindergarden</li>
-                <li class="list-group-item">Near a bus stop</li>
-                <li class="list-group-item">Employeed cleaning crew for building</li>
-                <li class="list-group-item">Employeed cleaning crew for building</li>
-                <li class="list-group-item">Employeed cleaning crew for building</li>
-                <li class="list-group-item">Employeed cleaning crew for building</li>
-            </ul>
-        </div>
+<div class="pros">
+    <div class="card">
+        <h5 class="card-header">Pros</h5>
+        <ul class="list-group">
+            @foreach (var pro in Model.Pros)
+            {
+                <li class="list-group-item">@pro</li>
+            }
+        </ul>
     </div>
+</div>
 
-    <div class="cons">
-        <div class="card">
-            <h5 class="card-header">Cons</h5>
-            <ul class="list-group">
-                <li class="list-group-item">Noisy</li>
-                <li class="list-group-item">Dirty</li>
-                <li class="list-group-item">Very nevuzpitani young people</li>
-                <li class="list-group-item">Doesnt allow pets</li>
-                <li class="list-group-item">Bad neighbours</li>
-            </ul>
-        </div>
+<div class="cons">
+    <div class="card">
+        <h5 class="card-header">Cons</h5>
+        <ul class="list-group">
+            <li class="list-group-item">Noisy</li>
+            <li class="list-group-item">Dirty</li>
+            <li class="list-group-item">Very nevuzpitani young people</li>
+            <li class="list-group-item">Doesnt allow pets</li>
+            <li class="list-group-item">Bad neighbours</li>
+        </ul>
     </div>
+</div>
 
 </div>
 

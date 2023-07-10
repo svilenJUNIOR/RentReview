@@ -38,5 +38,25 @@ namespace RentReview.Services
 
             return bindedReviews.ToList();
         }
+
+        public ViewFullReviewViewModel ViewFullReview(Data.Models.Property property)
+        {
+            var review = new ViewFullReviewViewModel
+            {
+                Address = property.Address,
+                Picture = property.Picture,
+                Price = property.Price,
+                Rented = property.Rented,
+                Vacated = property.Vacated,
+                ReviewOfLandlord = property.ReviewOfLandlord,
+                ReviewOfNeighbour = property.ReviewOfNeighbour,
+                ReviewOfProperty = property.ReviewOfProperty,
+                Url = property.Url,
+                Cons = property.Cons.Split("/").ToList(),
+                Pros = property.Pros.Split("/").ToList(),
+            };
+
+            return review;
+        }
     }
 }
