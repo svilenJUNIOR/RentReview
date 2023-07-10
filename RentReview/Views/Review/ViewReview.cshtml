@@ -30,11 +30,10 @@
     <div class="card">
         <h5 class="card-header">Cons</h5>
         <ul class="list-group">
-            <li class="list-group-item">Noisy</li>
-            <li class="list-group-item">Dirty</li>
-            <li class="list-group-item">Very nevuzpitani young people</li>
-            <li class="list-group-item">Doesnt allow pets</li>
-            <li class="list-group-item">Bad neighbours</li>
+            @foreach (var con in Model.Cons)
+            {
+                    <li class="list-group-item">@con</li>
+            }
         </ul>
     </div>
 </div>
