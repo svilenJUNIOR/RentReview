@@ -1,5 +1,6 @@
 ﻿using Microsoft.AspNetCore.Identity;
 using RentReview.Data;
+using RentReview.Data.Models;
 
 namespace RentReviewRepository
 {
@@ -15,12 +16,13 @@ namespace RentReviewRepository
             this.userManager = userManager;
             this.roleManager = roleManager;
         }
-
+        public Property FindPropertyByReviewId(string ReviewId)
+         => this.context.Set<Property>().Where(x => x.Id == ReviewId).FirstOrDefault();
         public async Task AddAsync<T>(T newItem) where T : class
          => await this.context.Set<T>().AddAsync(newItem);
 
         public T FindById<T>(string Id) where T : class
-         =>  this.context.Find<T>(Id);
+         => this.context.Find<T>(Id);
 
         public async Task<IdentityRole> FindRoleById(string Id)
          => await this.roleManager.FindByIdAsync(Id);
