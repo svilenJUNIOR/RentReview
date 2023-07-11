@@ -52,8 +52,8 @@ namespace RentReview.Services
                 ReviewOfNeighbour = property.ReviewOfNeighbour,
                 ReviewOfProperty = property.ReviewOfProperty,
                 Url = property.Url,
-                Cons = property.Cons.Split("/").ToList(),
-                Pros = property.Pros.Split("/").ToList(),
+                Cons = property.Cons.Split("*").ToList(),
+                Pros = property.Pros.Split("*").ToList(),
             };
 
             return review;

@@ -29,10 +29,10 @@ namespace RentReview.Services.Review
             StringBuilder cons = new StringBuilder();
 
             foreach (var pro in data.Pros)
-                pros.Append(pro + "/");
+                pros.Append(pro + "*");
 
             foreach (var con in data.Cons)
-                cons.Append(con + "/");
+                cons.Append(con + "*");
 
             property.ReviewOfProperty = data.PropertyReview;
             property.ReviewOfLandlord = data.LandlordReview;
