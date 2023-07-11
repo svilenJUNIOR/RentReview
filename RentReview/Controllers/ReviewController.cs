@@ -30,7 +30,7 @@ namespace RentReview.Controllers
         {
             data.PropertyId = Id;
             this.reviewService.Add(data);
-            return View();
+            return Redirect("All");
         }
 
         public IActionResult All()
