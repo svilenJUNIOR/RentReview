@@ -23,6 +23,9 @@ namespace RentReviewRepository
 
             return property;
         }
+
+        public Review FindReviewByPropertyId(string PropertyId)
+        => this.context.Reviews.Where(x => x.PropertyId == PropertyId).FirstOrDefault();
         public async Task AddAsync<T>(T newItem) where T : class
          => await this.context.Set<T>().AddAsync(newItem);
 

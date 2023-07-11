@@ -9,11 +9,11 @@ namespace RentReview.Services.Property
         public PropertyService(IRepository repository) { this.repository = repository; }
         public async Task AddAsync(ViewPropertyDataModel model)
         {
-            var prop = new Data.Models.Property 
-            { 
-                Address = model.Address, 
-                Url= model.Url,
-                Price= model.Price,
+            var prop = new Data.Models.Property
+            {
+                Address = model.Address,
+                Url = model.Url,
+                Price = model.Price,
                 Picture = model.Picture
             };
 
@@ -21,6 +21,15 @@ namespace RentReview.Services.Property
             await this.repository.SaveChangesAsync();
         }
 
+        public string ReturnReviewId(string propertyId)
+        {
+            var review = this.repository.FindReviewByPropertyId(propertyId);
+
+            if (review == null)
+                return "null";
+
+            return review.Id;
+        }
         public void Edit()
         {
             throw new NotImplementedException();
