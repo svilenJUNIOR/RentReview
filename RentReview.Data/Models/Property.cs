@@ -7,7 +7,12 @@ namespace RentReview.Data.Models
     {
         [Key]
         public string Id { get; set; } = Guid.NewGuid().ToString();
+
+        [Required]
+        [MinLength(10)]
         public string Address { get; set; }
+        [Required]
+        [Range(0, int.MaxValue)]
         public int Price { get; set; }
         public string? ReviewOfLandlord { get; set; }
         public string? ReviewOfProperty { get; set; }
@@ -20,7 +25,9 @@ namespace RentReview.Data.Models
 
         [Column("Vacated", TypeName = "Date")]
         public DateTime? Vacated { get; set; }
+        [Required]
         public string Picture { get; set; }
+        [Required]
         public string Url { get; set; }
     }
 }
