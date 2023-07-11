@@ -7,5 +7,7 @@
         public int Price { get; set; }
         public string Picture { get; set; }
         public string Url { get; set; }
+        public bool HasReview { get; set; }
+        public string? ReviewId { get; set; }
     }
 }

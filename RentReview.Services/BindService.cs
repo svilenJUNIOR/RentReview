@@ -1,4 +1,5 @@
-﻿using RentReview.Models.ViewModels;
+﻿using RentReview.Data.Models;
+using RentReview.Models.ViewModels;
 using RentReviewRepository;
 
 namespace RentReview.Services
@@ -18,6 +19,8 @@ namespace RentReview.Services
                 Picture = x.Picture,
                 Price = x.Price,
                 Url = x.Url,
+                HasReview = this.repository.GettAll<Data.Models.Review>().Any(c => c.PropertyId == x.Id),
+                ReviewId = this.repository.GettAll<Data.Models.Review>().Where(c => c.PropertyId == x.Id).FirstOrDefault().Id
             });
 
             return bindedProperties.ToList();
