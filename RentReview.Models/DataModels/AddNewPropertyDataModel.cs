@@ -1,6 +1,6 @@
 ﻿namespace RentReview.Models.DataModels
 {
-    public class ViewPropertyDataModel
+    public class AddNewPropertyDataModel
     {
         public string Address { get; set; }
         public int Price { get; set; }

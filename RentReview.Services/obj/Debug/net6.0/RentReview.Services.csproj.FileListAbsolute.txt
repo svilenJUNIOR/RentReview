@@ -40,3 +40,5 @@ C:\Users\svilen\OneDrive\Desktop\programing\Csharp\PROJECTS\RentReview\RentRevie
 C:\Users\svilen\OneDrive\Desktop\programing\Csharp\PROJECTS\RentReview\RentReview.Services\obj\Debug\net6.0\RentReview.Services.pdb
 C:\Users\svilen\OneDrive\Desktop\programing\Csharp\PROJECTS\RentReview\RentReview.Services\obj\Debug\net6.0\RentReview.Services.genruntimeconfig.cache
 C:\Users\svilen\OneDrive\Desktop\programing\Csharp\PROJECTS\RentReview\RentReview.Services\obj\Debug\net6.0\ref\RentReview.Services.dll
+C:\Users\svilen\OneDrive\Desktop\programing\Csharp\PROJECTS\RentReview\RentReview.Services\bin\Debug\net6.0\RentReview.Common.dll
+C:\Users\svilen\OneDrive\Desktop\programing\Csharp\PROJECTS\RentReview\RentReview.Services\bin\Debug\net6.0\RentReview.Common.pdb

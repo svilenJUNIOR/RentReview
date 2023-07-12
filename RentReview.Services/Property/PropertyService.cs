@@ -7,7 +7,7 @@ namespace RentReview.Services.Property
     {
         private readonly IRepository repository;
         public PropertyService(IRepository repository) { this.repository = repository; }
-        public async Task AddAsync(ViewPropertyDataModel model)
+        public async Task AddAsync(AddNewPropertyDataModel model)
         {
             var prop = new Data.Models.Property
             {

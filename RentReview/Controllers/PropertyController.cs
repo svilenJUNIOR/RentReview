@@ -2,6 +2,8 @@
 using RentReview.Models.DataModels;
 using RentReview.Services;
 using RentReview.Services.Property;
+using System;
+using System.ComponentModel;
 
 namespace RentReview.Controllers
 {
@@ -22,10 +24,15 @@ namespace RentReview.Controllers
           => View();
 
         [HttpPost]
-        public async Task<IActionResult> Add(ViewPropertyDataModel data)
+        public async Task<IActionResult> Add(AddNewPropertyDataModel data)
         {
-            await this.propertyService.AddAsync(data);
-            return Redirect("All");
+            var validator = new Validator(null, null);
+
+            var errors = validator.ValidateAddProperty(data);
+
+            if (!errors.Any()) return Redirect("All");
+
+            return View("./Error", errors);
         }
     }
 }

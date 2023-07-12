@@ -29,6 +29,7 @@ namespace RentReview
             builder.Services.AddScoped<IRepository, Repository>();
             builder.Services.AddScoped<IBindService, BindService>();
             builder.Services.AddScoped<IReviewService, ReviewService>();
+            builder.Services.AddScoped<IHasher, Hasher>();
 
             var app = builder.Build();
 

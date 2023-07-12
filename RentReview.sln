@@ -3,15 +3,17 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.4.33205.214
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RentReview", "RentReview\RentReview.csproj", "{65553C2C-8B50-4D5E-9166-664E6366C798}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "RentReview", "RentReview\RentReview.csproj", "{65553C2C-8B50-4D5E-9166-664E6366C798}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RentReview.Data", "RentReview.Data\RentReview.Data.csproj", "{C44B6F55-8C68-470E-94AD-FE1807DE5F57}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "RentReview.Data", "RentReview.Data\RentReview.Data.csproj", "{C44B6F55-8C68-470E-94AD-FE1807DE5F57}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RentReview.Services", "RentReview.Services\RentReview.Services.csproj", "{A7568C35-4C0B-4DE1-9BC9-2692AE755AD7}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "RentReview.Services", "RentReview.Services\RentReview.Services.csproj", "{A7568C35-4C0B-4DE1-9BC9-2692AE755AD7}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RentReview.Models", "RentReview.Models\RentReview.Models.csproj", "{E7F43B40-BAFF-4A27-ADE7-192C30AF06C1}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "RentReview.Models", "RentReview.Models\RentReview.Models.csproj", "{E7F43B40-BAFF-4A27-ADE7-192C30AF06C1}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RentReview.Repository", "RentReview.Repository\RentReview.Repository.csproj", "{A95F93A8-F57D-43A8-8093-DEE3D9D953B7}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "RentReview.Repository", "RentReview.Repository\RentReview.Repository.csproj", "{A95F93A8-F57D-43A8-8093-DEE3D9D953B7}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RentReview.Common", "RentReview.Common\RentReview.Common.csproj", "{CC743899-C480-41B9-9F48-1146841ED423}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -39,6 +41,10 @@ Global
 		{A95F93A8-F57D-43A8-8093-DEE3D9D953B7}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{A95F93A8-F57D-43A8-8093-DEE3D9D953B7}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{A95F93A8-F57D-43A8-8093-DEE3D9D953B7}.Release|Any CPU.Build.0 = Release|Any CPU
+		{CC743899-C480-41B9-9F48-1146841ED423}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{CC743899-C480-41B9-9F48-1146841ED423}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{CC743899-C480-41B9-9F48-1146841ED423}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{CC743899-C480-41B9-9F48-1146841ED423}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
