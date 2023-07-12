@@ -33,7 +33,23 @@ namespace RentReview.Services
         }
         public ICollection<Exception> ValidateAddReview(AddNewReviewDataModel data)
         {
-            throw new NotImplementedException();
+            var errors = new List<Exception>();
+            bool hasNulls = this.HasNulls(data.Cons.ToString(), data.Rented.ToString(), data.Vacated.ToString(), data.LandlordReview, data.PropertyReview, data.NeighbourReview, data.Pros.ToString());
+
+            if (hasNulls)
+            {
+                errors.Add(new Exception(Messages.EmptyFields));
+                return errors;
+            }
+
+            if (data.Vacated < data.Rented) errors.Add(new Exception(Messages.VacatedBeforeRented));
+            if (data.Cons.Count() <= 0) errors.Add(new Exception(Messages.EmptyCons));
+            if (data.Pros.Count() <= 0) errors.Add(new Exception(Messages.EmptyPros));
+            if (data.LandlordReview.Length < 10) errors.Add(new Exception(Messages.EmptyLandlordReview));
+            if (data.NeighbourReview.Length < 10) errors.Add(new Exception(Messages.EmptyNeighbourReview));
+            if (data.PropertyReview.Length < 10) errors.Add(new Exception(Messages.EmptyPropertyReview));
+
+            return errors;
         }
 
         //public IEnumerable<Exception> ValidateUserRegister(RegisterUserFormModel model, ModelStateDictionary modelState)

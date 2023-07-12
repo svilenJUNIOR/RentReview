@@ -1,6 +1,7 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using RentReview.Models.DataModels;
 using RentReview.Services;
+using RentReview.Services.Property;
 
 namespace RentReview.Controllers
 {
@@ -8,10 +9,12 @@ namespace RentReview.Controllers
     {
         private readonly IBindService bindService;
         private readonly IValidator validator;
-        public PropertyController(IValidator validator, IBindService bindService)
+        private readonly IPropertyService propertyService;
+        public PropertyController(IValidator validator, IBindService bindService, IPropertyService propertyService)
         {
             this.bindService = bindService;
             this.validator = validator;
+            this.propertyService = propertyService;
         }
 
         public IActionResult All()
@@ -25,7 +28,11 @@ namespace RentReview.Controllers
         {
             var errors = validator.ValidateAddProperty(data);
 
-            if (!errors.Any()) return Redirect("All");
+            if (!errors.Any())
+            {
+                await this.propertyService.AddAsync(data);
+                return Redirect("All");
+            }
 
             return View("./Error", errors);
         }
