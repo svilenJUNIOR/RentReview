@@ -30,6 +30,7 @@ namespace RentReview
             builder.Services.AddScoped<IBindService, BindService>();
             builder.Services.AddScoped<IReviewService, ReviewService>();
             builder.Services.AddScoped<IHasher, Hasher>();
+            builder.Services.AddScoped<IValidator, Validator>();
 
             var app = builder.Build();
 

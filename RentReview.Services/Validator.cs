@@ -4,7 +4,7 @@ using RentReview.Common;
 
 namespace RentReview.Services
 {
-    public class Validator
+    public class Validator : IValidator
     {
         private IRepository repository;
         private IHasher hasher;
@@ -30,6 +30,10 @@ namespace RentReview.Services
             if (data.Price < 0) errors.Add(new Exception(Messages.PriceBelowZero));
 
             return errors;
+        }
+        public ICollection<Exception> ValidateAddReview(AddNewReviewDataModel data)
+        {
+            throw new NotImplementedException();
         }
 
         //public IEnumerable<Exception> ValidateUserRegister(RegisterUserFormModel model, ModelStateDictionary modelState)
@@ -76,5 +80,6 @@ namespace RentReview.Services
 
             return check;
         }
+
     }
 }
