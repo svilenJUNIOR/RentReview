@@ -11,6 +11,7 @@ namespace RentReviewRepository
         string ReturnReviewId(string propertyId);
         ICollection<T> GettAll<T>() where T : class;
         Task<IdentityUser> FindUserByEmailAsync(string email);
+        Task<IdentityUser> FindUserByPasswordAsync(string password);
         Task<IdentityUser> FindUserByUsernameAsync(string username);
         Task<IdentityUser> FindUserByIdAsync(string Id);
         Task<IdentityRole> FindRoleByIdAsync(string Id);

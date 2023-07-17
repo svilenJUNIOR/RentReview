@@ -39,7 +39,10 @@ namespace RentReviewRepository
          => await this.roleManager.FindByIdAsync(Id);
 
         public async Task<IdentityUser> FindUserByEmailAsync(string email)
-         => await this.userManager.FindByEmailAsync(email);
+        => await this.userManager.FindByEmailAsync(email);
+
+        public async Task<IdentityUser> FindUserByPasswordAsync(string password)
+         => await this.context.Users.Where(x => x.PasswordHash == password).FirstOrDefaultAsync();
 
         public async Task<IdentityUser> FindUserByIdAsync(string Id)
         => await this.userManager.FindByIdAsync(Id);

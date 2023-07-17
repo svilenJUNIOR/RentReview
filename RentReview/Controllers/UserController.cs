@@ -8,7 +8,6 @@ namespace RentReview.Controllers
     public class UserController : Controller
     {
         private readonly IUserService userService;
-
         public UserController(IUserService userService)
          => this.userService = userService;
 
@@ -25,6 +24,20 @@ namespace RentReview.Controllers
             {
                 await this.userService.UserRegisterAsync(data);
                 return Redirect("Login");
+            }
+            catch (AggregateException exception)
+            {
+                return this.CatchErrors(exception);
+            }
+        }
+
+        [HttpPost]
+        public async Task<IActionResult> Login(LoginUserDataModel data)
+        {
+            try
+            {
+                await this.userService.UserLoginAsync(data);
+                return Redirect("/Property/All");
             }
             catch (AggregateException exception)
             {

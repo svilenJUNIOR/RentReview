@@ -24,5 +24,9 @@
         public static readonly string UsernameExists = "Someone is using that username! Sorry!";
         public static readonly string UsernameTooShort = "Username must be at least 6 symbols long!";
         public static readonly string WrongUsernameFormat = "Username must contain only symbols from a-z/A-Z!";
+
+        // User login errors
+        public static readonly string UnExistingEmail = "User with that email does not exist!";
+        public static readonly string UnExistingPassword = "User with that password does not exist!";
     }
 }

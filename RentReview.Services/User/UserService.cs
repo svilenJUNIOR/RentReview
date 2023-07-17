@@ -9,12 +9,15 @@ namespace RentReview.Services.User
         private readonly IRepository repository;
         private readonly IHasher hasher;
         private readonly IValidator validator;
-
-        public UserService(IRepository repository, IHasher hasher, IValidator validator)
+        private readonly SignInManager<IdentityUser> signInManager;
+        private readonly UserManager<IdentityUser> userManager;
+        public UserService(IRepository repository, IHasher hasher, IValidator validator, SignInManager<IdentityUser> signInManager, UserManager<IdentityUser> userManager)
         {
             this.repository = repository;
             this.hasher = hasher;
             this.validator = validator;
+            this.signInManager = signInManager;
+            this.userManager = userManager;
         }
 
         public async Task UserRegisterAsync(RegisterUserDataModel data)
@@ -28,16 +31,21 @@ namespace RentReview.Services.User
             {
                 Email = data.Email,
                 UserName = data.Username,
-                PasswordHash = hashedPassword
+                PasswordHash = hashedPassword,
+                NormalizedEmail = data.Email.ToUpper(),
+                NormalizedUserName = data.Username.ToUpper()
             };
 
-            await this.repository.AddAsync<IdentityUser>(user);
+            await this.userManager.CreateAsync(user);
             await this.repository.SaveChangesAsync();
         }
-
         public async Task UserLoginAsync(LoginUserDataModel data)
         {
-            throw new NotImplementedException();
+            var errors = await this.validator.ValidateUserLoginAsync(data);
+            if (errors.Any()) await this.validator.ThrowErrorsAsync(errors);
+
+            var user = await this.repository.FindUserByEmailAsync(data.Email);
+            await this.signInManager.SignInAsync(user, true);
         }
     }
 }

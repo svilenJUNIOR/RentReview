@@ -71,6 +71,24 @@ namespace RentReview.Services
             if (!data.Username.All(char.IsLetter)) errors.Add(new Exception(Messages.WrongUsernameFormat));
             return errors;
         }
+        public async Task<IEnumerable<Exception>> ValidateUserLoginAsync(LoginUserDataModel data)
+        {
+            var errors = new List<Exception>();
+            bool hasNulls = this.HasNulls(data.Email, data.Password);
+
+            if (hasNulls)
+            {
+                errors.Add(new Exception(Messages.EmptyFields));
+                return errors;
+            }
+
+            var hashedPassword = this.hasher.Hash(data.Password);
+
+            if (await this.repository.FindUserByEmailAsync(data.Email) == null) errors.Add(new Exception(Messages.UnExistingEmail));
+            if (await this.repository.FindUserByPasswordAsync(hashedPassword) == null) errors.Add(new Exception(Messages.UnExistingPassword));
+            
+            return errors;
+        }
         public bool HasNulls(params string[] args)
         {
             bool check = false;
