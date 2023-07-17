@@ -1,4 +1,5 @@
 ﻿using Microsoft.AspNetCore.Identity;
+using Microsoft.EntityFrameworkCore;
 using RentReview.Data;
 using RentReview.Data.Models;
 
@@ -32,13 +33,13 @@ namespace RentReviewRepository
         public T FindById<T>(string Id) where T : class
          => this.context.Find<T>(Id);
 
-        public async Task<IdentityRole> FindRoleById(string Id)
+        public async Task<IdentityRole> FindRoleByIdAsync(string Id)
          => await this.roleManager.FindByIdAsync(Id);
 
-        public async Task<IdentityUser> FindUserByEmail(string email)
+        public async Task<IdentityUser> FindUserByEmailAsync(string email)
          => await this.userManager.FindByEmailAsync(email);
 
-        public async Task<IdentityUser> FindUserById(string Id)
+        public async Task<IdentityUser> FindUserByIdAsync(string Id)
         => await this.userManager.FindByIdAsync(Id);
 
         public ICollection<T> GettAll<T>() where T : class
@@ -50,7 +51,7 @@ namespace RentReviewRepository
         public async Task SaveChangesAsync()
         => await this.context.SaveChangesAsync();
 
-        public IdentityUser FindUserByUsername(string username)
-         => this.context.Users.Where(x => x.UserName == username).FirstOrDefault();
+        public async Task<IdentityUser> FindUserByUsernameAsync(string username)
+         => await this.context.Users.Where(x => x.UserName == username).FirstOrDefaultAsync();
     }
 }

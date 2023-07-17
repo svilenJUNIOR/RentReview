@@ -22,6 +22,7 @@
         public static readonly string ShortPassword = "Password must be at least 8 symbols long!";
         public static readonly string WeakPassword = "Password must contain number and an uppercase letter!";
         public static readonly string UsernameExists = "Someone is using that username! Sorry!";
-        public static readonly string UsernameTooShort = "Username must be at least 6 symbols long! And must contain only symbols from a-z/A-Z!";
+        public static readonly string UsernameTooShort = "Username must be at least 6 symbols long!";
+        public static readonly string WrongUsernameFormat = "Username must contain only symbols from a-z/A-Z!";
     }
 }

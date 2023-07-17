@@ -1,4 +1,5 @@
-﻿using RentReview.Models.DataModels;
+﻿using Microsoft.AspNetCore.Identity;
+using RentReview.Models.DataModels;
 using RentReviewRepository;
 
 namespace RentReview.Services.User
@@ -16,15 +17,21 @@ namespace RentReview.Services.User
             this.validator = validator;
         }
 
-        public void UserRegister(RegisterUserDataModel data)
+        public async Task UserRegister(RegisterUserDataModel data)
         {
-            this.validator.ValidateUserRegister(data);
             var hashedPassword = this.hasher.Hash(data.Password);
 
-            this.repository.
+            var user = new IdentityUser
+            {
+                Email = data.Email,
+                UserName = data.Username,
+                PasswordHash = hashedPassword
+            };
+
+            await this.repository.AddAsync<IdentityUser>(user);
         }
 
-        public void UserLogin(RegisterUserDataModel data)
+        public async Task UserLogin(LoginUserDataModel data)
         {
             throw new NotImplementedException();
         }

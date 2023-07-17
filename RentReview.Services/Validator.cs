@@ -51,7 +51,7 @@ namespace RentReview.Services
 
             return errors;
         }
-        public IEnumerable<Exception> ValidateUserRegister(RegisterUserDataModel data)
+        public async Task<IEnumerable<Exception>> ValidateUserRegister(RegisterUserDataModel data)
         {
             var errors = new List<Exception>();
             bool hasNulls = this.HasNulls(data.Email, data.Username, data.Password);
@@ -63,12 +63,12 @@ namespace RentReview.Services
             }
 
             if (!data.Email.EndsWith("@email.com")) errors.Add(new Exception(Messages.WrongEmailFormat));
-            if (repository.FindUserByEmail(data.Email) != null) errors.Add(new Exception(Messages.EmailExists));
+            if (await repository.FindUserByEmailAsync(data.Email) != null) errors.Add(new Exception(Messages.EmailExists));
             if (data.Password.Length < 8) errors.Add(new Exception(Messages.ShortPassword));
             if (!data.Password.Any(char.IsUpper) || !data.Password.Any(char.IsDigit)) errors.Add(new Exception(Messages.WeakPassword));
-            if (repository.FindUserByUsername(data.Username) != null) errors.Add(new Exception(Messages.UsernameExists));
+            if (await repository.FindUserByUsernameAsync(data.Username) != null) errors.Add(new Exception(Messages.UsernameExists));
             if (data.Username.Length < 6) errors.Add(new Exception(Messages.UsernameTooShort));
-
+            if (!data.Username.All(char.IsLetter)) errors.Add(new Exception(Messages.WrongUsernameFormat));
             return errors;
         }
         public bool HasNulls(params string[] args)

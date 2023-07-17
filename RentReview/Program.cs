@@ -4,6 +4,7 @@ using RentReview.Data;
 using RentReview.Services;
 using RentReview.Services.Property;
 using RentReview.Services.Review;
+using RentReview.Services.User;
 using RentReviewRepository;
 
 namespace RentReview
@@ -31,6 +32,7 @@ namespace RentReview
             builder.Services.AddScoped<IReviewService, ReviewService>();
             builder.Services.AddScoped<IHasher, Hasher>();
             builder.Services.AddScoped<IValidator, Validator>();
+            builder.Services.AddScoped<IUserService, UserService>();
 
             var app = builder.Build();
 

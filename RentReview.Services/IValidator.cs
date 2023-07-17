@@ -6,7 +6,7 @@ namespace RentReview.Services
     {
         ICollection<Exception> ValidateAddProperty(AddNewPropertyDataModel data);
         ICollection<Exception> ValidateAddReview(AddNewReviewDataModel data);
-        IEnumerable<Exception> ValidateUserRegister(RegisterUserDataModel data);
+        Task<IEnumerable<Exception>> ValidateUserRegister(RegisterUserDataModel data);
         bool HasNulls(params string[] args);
     }
 }
