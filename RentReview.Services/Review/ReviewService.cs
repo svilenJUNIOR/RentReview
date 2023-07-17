@@ -10,16 +10,21 @@ namespace RentReview.Services.Review
     {
         private readonly IRepository repository;
         private readonly IBindService bindService;
+        private readonly IValidator validator;
 
         private readonly UserManager<IdentityUser> userManager;
-        public ReviewService(IRepository repository, IBindService bindService, UserManager<IdentityUser> userManager)
+        public ReviewService(IRepository repository, IBindService bindService, IValidator validator,UserManager<IdentityUser> userManager)
         {
             this.repository = repository;
             this.bindService = bindService;
             this.userManager = userManager;
+            this.validator = validator;
         }
-        public async Task Add(AddNewReviewDataModel data)
+        public async Task AddAsync(AddNewReviewDataModel data)
         {
+            var errors = this.validator.ValidateAddReview(data);
+            if (errors.Any()) await this.validator.ThrowErrorsAsync(errors);
+
             var property = this.repository.FindById<Data.Models.Property>(data.PropertyId);
             //var userId = this.userManager.Users.First().Id;
 
@@ -47,7 +52,6 @@ namespace RentReview.Services.Review
             property.Cons = cons.ToString();
 
             await this.repository.AddAsync<Data.Models.Review>(Review);
-
             await this.repository.SaveChangesAsync();
         }
 

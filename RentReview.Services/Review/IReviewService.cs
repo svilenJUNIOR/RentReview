@@ -5,7 +5,7 @@ namespace RentReview.Services.Review
 {
     public interface IReviewService
     {
-        Task Add(AddNewReviewDataModel data);
+        Task AddAsync(AddNewReviewDataModel data);
         ViewFullReviewViewModel ViewFullReview(string reviewId);
         ICollection<ViewReviewViewModel> ViewReviews();
     }

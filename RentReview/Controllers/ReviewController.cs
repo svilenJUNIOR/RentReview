@@ -1,4 +1,5 @@
 ﻿using Microsoft.AspNetCore.Mvc;
+using RentReview.Extensions;
 using RentReview.Models.DataModels;
 using RentReview.Services;
 using RentReview.Services.Review;
@@ -21,18 +22,19 @@ namespace RentReview.Controllers
         => View();
 
         [HttpPost]
-        public IActionResult Add(AddNewReviewDataModel data, string Id)
+        public async Task<IActionResult> Add(AddNewReviewDataModel data, string Id)
         {
             data.PropertyId = Id;
-            var errors = this.validator.ValidateAddReview(data);
 
-            if (!errors.Any())
+            try
             {
-                this.reviewService.Add(data);
+                await this.reviewService.AddAsync(data);
                 return Redirect("All");
             }
-
-            return View("./Error", errors);
+            catch (AggregateException exception)
+            {
+                return this.CatchErrors(exception);
+            }
         }
 
         public IActionResult All()
