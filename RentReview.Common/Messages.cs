@@ -15,5 +15,13 @@
         public static readonly string EmptyLandlordReview = "Landlord review must be at least 10 symbols long!";
         public static readonly string EmptyNeighbourReview = "Neighbour review must be at least 10 symbols long!";
         public static readonly string EmptyPropertyReview = "Property review must be at least 10 symbols long!";
+
+        // User register errors
+        public static readonly string WrongEmailFormat = "Email must end with @email.com!";
+        public static readonly string EmailExists = "There is an account corresponding to that email!";
+        public static readonly string ShortPassword = "Password must be at least 8 symbols long!";
+        public static readonly string WeakPassword = "Password must contain number and an uppercase letter!";
+        public static readonly string UsernameExists = "Someone is using that username! Sorry!";
+        public static readonly string UsernameTooShort = "Username must be at least 6 symbols long! And must contain only symbols from a-z/A-Z!";
     }
 }

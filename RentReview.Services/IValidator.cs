@@ -1,5 +1,4 @@
-﻿using RentReview.Common;
-using RentReview.Models.DataModels;
+﻿using RentReview.Models.DataModels;
 
 namespace RentReview.Services
 {
@@ -7,7 +6,7 @@ namespace RentReview.Services
     {
         ICollection<Exception> ValidateAddProperty(AddNewPropertyDataModel data);
         ICollection<Exception> ValidateAddReview(AddNewReviewDataModel data);
-        //IEnumerable<Exception> ValidateUserRegister(RegisterUserFormModel model);
+        IEnumerable<Exception> ValidateUserRegister(RegisterUserDataModel data);
         bool HasNulls(params string[] args);
     }
 }

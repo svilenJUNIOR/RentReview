@@ -49,5 +49,8 @@ namespace RentReviewRepository
 
         public async Task SaveChangesAsync()
         => await this.context.SaveChangesAsync();
+
+        public IdentityUser FindUserByUsername(string username)
+         => this.context.Users.Where(x => x.UserName == username).FirstOrDefault();
     }
 }

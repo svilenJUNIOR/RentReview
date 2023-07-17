@@ -51,41 +51,26 @@ namespace RentReview.Services
 
             return errors;
         }
+        public IEnumerable<Exception> ValidateUserRegister(RegisterUserDataModel data)
+        {
+            var errors = new List<Exception>();
+            bool hasNulls = this.HasNulls(data.Email, data.Username, data.Password);
 
-        //public IEnumerable<Exception> ValidateUserRegister(RegisterUserFormModel model, ModelStateDictionary modelState)
-        //{
-        //    var nullErrors = this.AgainstNull(model.Username, model.Password, model.Email, model.ConfirmPassword);
-        //    if (nullErrors.Count() > 0) return nullErrors;
+            if (hasNulls)
+            {
+                errors.Add(new Exception(Messages.EmptyFields));
+                return errors;
+            }
 
-        //    var errors = new List<Exception>();
-        //    var users = sqlRepository.GettAll<IdentityUser>();
+            if (!data.Email.EndsWith("@email.com")) errors.Add(new Exception(Messages.WrongEmailFormat));
+            if (repository.FindUserByEmail(data.Email) != null) errors.Add(new Exception(Messages.EmailExists));
+            if (data.Password.Length < 8) errors.Add(new Exception(Messages.ShortPassword));
+            if (!data.Password.Any(char.IsUpper) || !data.Password.Any(char.IsDigit)) errors.Add(new Exception(Messages.WeakPassword));
+            if (repository.FindUserByUsername(data.Username) != null) errors.Add(new Exception(Messages.UsernameExists));
+            if (data.Username.Length < 6) errors.Add(new Exception(Messages.UsernameTooShort));
 
-        //    if (users.Any(x => x.Email == model.Email)) errors.Add(new ArgumentException(Messages.ExistingEmail));
-        //    if (users.Any(x => x.UserName == model.Username)) errors.Add(new ArgumentException(Messages.ExistingUsername));
-        //    if (!model.Email.EndsWith("@email.com")) errors.Add(new ArgumentException(string.Format(Messages.WrongEmailFormat, Values.EndOfAnEmail)));
-        //    if (model.Username.Length < Values.MinUsernameLength && model.Username.Length > Values.MaxUsernameLength)
-        //        errors.Add(new ArgumentException(string.Format(Messages.WrongUsernameFormat, Values.MinUsernameLength, Values.MaxUsernameLength)));
-
-        //    var modelStateErrors = this.CheckModelState(modelState);
-
-        //    if (modelStateErrors.Count() > 0) errors.AddRange(modelStateErrors);
-
-        //    return this.ThrowErrors(errors);
-        //}
-        //public IEnumerable<Exception> ValidateUserLogin(LoginUserFormModel model)
-        //{
-        //    var nullErrors = this.AgainstNull(model.Password, model.Email);
-        //    if (nullErrors.Count() > 0) return nullErrors;
-
-        //    var errors = new List<Exception>();
-        //    var users = sqlRepository.GettAll<IdentityUser>();
-
-        //    if (!users.Any(x => x.Email == model.Email)) errors.Add(new ArgumentException(Messages.UnExistingEmail));
-        //    if (!users.Any(x => x.PasswordHash == hasher.Hash(model.Password))) errors.Add(new ArgumentException(Messages.UnExistingPassword));
-
-        //    return this.ThrowErrors(errors);
-        //}
-
+            return errors;
+        }
         public bool HasNulls(params string[] args)
         {
             bool check = false;
@@ -97,5 +82,6 @@ namespace RentReview.Services
             return check;
         }
 
+       
     }
 }
