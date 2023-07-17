@@ -53,5 +53,11 @@ namespace RentReview.Services.Review
 
         public ViewFullReviewViewModel ViewFullReview(string reviewId)
         => this.bindService.ViewFullReview(this.repository.FindPropertyByReviewId(reviewId));
+
+        public ICollection<ViewReviewViewModel> ViewReviews()
+        {
+            var reviews = this.repository.GettAll<Data.Models.Review>();
+            return this.bindService.BindReviews(reviews).ToList();
+        }
     }
 }

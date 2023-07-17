@@ -24,10 +24,8 @@ namespace RentReview.Services
 
             return bindedProperties.ToList();
         }
-        public ICollection<ViewReviewViewModel> ViewReviews()
+        public ICollection<ViewReviewViewModel> BindReviews(ICollection<Data.Models.Review> reviews)
         {
-            var reviews = this.repository.GettAll<Data.Models.Review>();
-
             var bindedReviews = reviews.Select(x => new ViewReviewViewModel
             {
                 Address = this.repository.GettAll<Data.Models.Property>().Where(c => c.Id == x.PropertyId).FirstOrDefault().Address,

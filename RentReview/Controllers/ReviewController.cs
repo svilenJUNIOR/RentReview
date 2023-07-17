@@ -1,23 +1,17 @@
 ﻿using Microsoft.AspNetCore.Mvc;
-using RentReview.Data.Models;
 using RentReview.Models.DataModels;
 using RentReview.Services;
 using RentReview.Services.Review;
-using RentReviewRepository;
 
 namespace RentReview.Controllers
 {
     public class ReviewController : Controller
     {
         private readonly IReviewService reviewService;
-        private readonly IBindService bindService;
-        private readonly IRepository repository;
         private readonly IValidator validator;
-        public ReviewController(IReviewService reviewService, IBindService bindService, IRepository repository, IValidator validator)
+        public ReviewController(IReviewService reviewService, IValidator validator)
         {
             this.reviewService = reviewService;
-            this.bindService = bindService;
-            this.repository = repository;
             this.validator = validator;
         }
 
@@ -42,6 +36,6 @@ namespace RentReview.Controllers
         }
 
         public IActionResult All()
-        => View(this.bindService.ViewReviews());
+        => View(this.reviewService.ViewReviews());
     }
 }

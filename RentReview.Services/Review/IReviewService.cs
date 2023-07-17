@@ -7,5 +7,6 @@ namespace RentReview.Services.Review
     {
         Task Add(AddNewReviewDataModel data);
         ViewFullReviewViewModel ViewFullReview(string reviewId);
+        ICollection<ViewReviewViewModel> ViewReviews();
     }
 }
