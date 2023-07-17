@@ -1,4 +1,5 @@
 ﻿using Microsoft.AspNetCore.Mvc;
+using RentReview.Models.DataModels;
 
 namespace RentReview.Controllers
 {
@@ -9,5 +10,11 @@ namespace RentReview.Controllers
 
         public IActionResult Login()
         => View();
+
+        [HttpPost]
+        public IActionResult Register(RegisterUserDataModel data)
+        {
+            return Redirect("Login");
+        }
     }
 }
