@@ -22,7 +22,7 @@ namespace RentReview.Controllers
         }
 
         public IActionResult ViewReview(string Id)
-        => View(this.bindService.ViewFullReview(this.repository.FindPropertyByReviewId(Id)));
+        => View(this.reviewService.ViewFullReview(Id));
         public IActionResult Add()
         => View();
 

@@ -24,7 +24,6 @@ namespace RentReview.Services
 
             return bindedProperties.ToList();
         }
-
         public ICollection<ViewReviewViewModel> ViewReviews()
         {
             var reviews = this.repository.GettAll<Data.Models.Review>();
