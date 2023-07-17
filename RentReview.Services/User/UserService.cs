@@ -29,6 +29,7 @@ namespace RentReview.Services.User
             };
 
             await this.repository.AddAsync<IdentityUser>(user);
+            await this.repository.SaveChangesAsync();
         }
 
         public async Task UserLogin(LoginUserDataModel data)
