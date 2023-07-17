@@ -1,4 +1,5 @@
 ﻿using RentReview.Models.DataModels;
+using RentReview.Models.ViewModels;
 using RentReviewRepository;
 
 namespace RentReview.Services.Property
@@ -7,11 +8,13 @@ namespace RentReview.Services.Property
     {
         private readonly IRepository repository;
         private readonly IValidator validator;
+        private readonly IBindService bindService;
 
-        public PropertyService(IRepository repository, IValidator validator)
+        public PropertyService(IRepository repository, IValidator validator, IBindService bindService)
         {
             this.repository = repository;
             this.validator = validator;
+            this.bindService = bindService;
         }
 
         public async Task AddAsync(AddNewPropertyDataModel data)
@@ -30,22 +33,16 @@ namespace RentReview.Services.Property
             await this.repository.AddAsync<Data.Models.Property>(prop);
             await this.repository.SaveChangesAsync();
         }
-
-        public string ReturnReviewId(string propertyId)
+        public ICollection<ViewPropertyViewModel> ViewProperties()
         {
-            var review = this.repository.FindReviewByPropertyId(propertyId);
-
-            if (review == null)
-                return "null";
-
-            return review.Id;
+            var properties = this.repository.GettAll<Data.Models.Property>();
+          
+            return bindService.BindProperties(properties).ToList();
         }
-
         public void Edit()
         {
             throw new NotImplementedException();
         }
-
         public void Remove()
         {
             throw new NotImplementedException();

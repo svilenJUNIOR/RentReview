@@ -17,6 +17,7 @@ namespace RentReviewRepository
             this.userManager = userManager;
             this.roleManager = roleManager;
         }
+
         public Property FindPropertyByReviewId(string ReviewId)
         {
             var review = this.context.Reviews.Where(x => x.Id == ReviewId).FirstOrDefault();
@@ -27,6 +28,7 @@ namespace RentReviewRepository
 
         public Review FindReviewByPropertyId(string PropertyId)
         => this.context.Reviews.Where(x => x.PropertyId == PropertyId).FirstOrDefault();
+
         public async Task AddAsync<T>(T newItem) where T : class
          => await this.context.Set<T>().AddAsync(newItem);
 
@@ -53,5 +55,15 @@ namespace RentReviewRepository
 
         public async Task<IdentityUser> FindUserByUsernameAsync(string username)
          => await this.context.Users.Where(x => x.UserName == username).FirstOrDefaultAsync();
+
+        public string ReturnReviewId(string propertyId)
+        {
+            var review = this.FindReviewByPropertyId(propertyId);
+
+            if (review == null)
+                return "null";
+
+            return review.Id;
+        }
     }
 }

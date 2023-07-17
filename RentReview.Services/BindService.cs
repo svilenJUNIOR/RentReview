@@ -1,6 +1,4 @@
-﻿using RentReview.Data.Models;
-using RentReview.Models.ViewModels;
-using RentReview.Services.Property;
+﻿using RentReview.Models.ViewModels;
 using RentReviewRepository;
 
 namespace RentReview.Services
@@ -8,16 +6,11 @@ namespace RentReview.Services
     public class BindService : IBindService
     {
         private readonly IRepository repository;
-        private readonly IPropertyService propertyService;
-        public BindService(IRepository repository, IPropertyService propertyService)
-        {
-            this.repository = repository;
-            this.propertyService = propertyService;
-        } 
-        public ICollection<ViewPropertyViewModel> ViewProperties()
-        {
-            var properties = this.repository.GettAll<Data.Models.Property>();
+        public BindService(IRepository repository)
+         =>  this.repository = repository;
 
+        public ICollection<ViewPropertyViewModel> BindProperties(ICollection<Data.Models.Property> properties)
+        {
             var bindedProperties = properties.Select(x => new ViewPropertyViewModel
             {
                 Address = x.Address,
@@ -26,7 +19,7 @@ namespace RentReview.Services
                 Price = x.Price,
                 Url = x.Url,
                 HasReview = this.repository.GettAll<Data.Models.Review>().Any(c => c.PropertyId == x.Id),
-                ReviewId = this.propertyService.ReturnReviewId(x.Id)
+                ReviewId = this.repository.ReturnReviewId(x.Id)
             });
 
             return bindedProperties.ToList();
@@ -47,7 +40,6 @@ namespace RentReview.Services
 
             return bindedReviews.ToList();
         }
-
         public ViewFullReviewViewModel ViewFullReview(Data.Models.Property property)
         {
             var review = new ViewFullReviewViewModel

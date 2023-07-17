@@ -1,23 +1,18 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using RentReview.Extensions;
 using RentReview.Models.DataModels;
-using RentReview.Services;
 using RentReview.Services.Property;
 
 namespace RentReview.Controllers
 {
     public class PropertyController : Controller
     {
-        private readonly IBindService bindService;
         private readonly IPropertyService propertyService;
-        public PropertyController(IBindService bindService, IPropertyService propertyService)
-        {
-            this.bindService = bindService;
-            this.propertyService = propertyService;
-        }
+        public PropertyController(IPropertyService propertyService)
+        => this.propertyService = propertyService;
 
         public IActionResult All()
-         => View(bindService.ViewProperties());
+         => View(propertyService.ViewProperties());
 
         public IActionResult Add()
           => View();
@@ -28,7 +23,7 @@ namespace RentReview.Controllers
             try
             {
                 await this.propertyService.AddAsync(data);
-                return Redirect("Login");
+                return Redirect("All");
             }
             catch (AggregateException exception)
             {
