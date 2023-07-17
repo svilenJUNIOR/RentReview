@@ -81,7 +81,10 @@ namespace RentReview.Services
 
             return check;
         }
-
-       
+        public async Task<IEnumerable<Exception>> ThrowErrors(IEnumerable<Exception> errors)
+        {
+            if (errors.Count() == 0) return new List<Exception>();
+            throw new AggregateException(errors);
+        }
     }
 }

@@ -1,18 +1,16 @@
 ﻿using Microsoft.AspNetCore.Mvc;
+using RentReview.Extensions;
 using RentReview.Models.DataModels;
-using RentReview.Services;
 using RentReview.Services.User;
 
 namespace RentReview.Controllers
 {
     public class UserController : Controller
     {
-        private readonly IValidator validator;
         private readonly IUserService userService;
 
-        public UserController(IValidator validator, IUserService userService)
+        public UserController(IUserService userService)
         {
-            this.validator = validator;
             this.userService = userService;
         }
 
@@ -25,15 +23,15 @@ namespace RentReview.Controllers
         [HttpPost]
         public async Task<IActionResult> Register(RegisterUserDataModel data)
         {
-            var errors = await validator.ValidateUserRegister(data);
-
-            if (!errors.Any())
+            try
             {
                 await this.userService.UserRegister(data);
-                return Redirect("Login");
+                return Redirect("/");
             }
-
-            return View("./Error", errors);
+            catch (AggregateException exception)
+            {
+                return this.CatchErrors(exception);
+            }
         }
     }
 }

@@ -19,6 +19,9 @@ namespace RentReview.Services.User
 
         public async Task UserRegister(RegisterUserDataModel data)
         {
+            var errors = await this.validator.ValidateUserRegister(data);
+            if (errors.Any()) await this.validator.ThrowErrors(errors);
+
             var hashedPassword = this.hasher.Hash(data.Password);
 
             var user = new IdentityUser

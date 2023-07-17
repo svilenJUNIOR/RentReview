@@ -1,11 +1,11 @@
-﻿@model List<Exception>
+﻿@model HashSet<string>
 
 <section>
     <div>
         <ul>
             @foreach (var error in Model)
             {
-                <li>@error.Message</li>
+                <li>@error</li>
             }
         </ul>
     </div>
