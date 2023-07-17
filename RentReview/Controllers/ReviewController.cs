@@ -9,12 +9,8 @@ namespace RentReview.Controllers
     public class ReviewController : Controller
     {
         private readonly IReviewService reviewService;
-        private readonly IValidator validator;
-        public ReviewController(IReviewService reviewService, IValidator validator)
-        {
-            this.reviewService = reviewService;
-            this.validator = validator;
-        }
+        public ReviewController(IReviewService reviewService)
+           => this.reviewService = reviewService;
 
         public IActionResult ViewReview(string Id)
         => View(this.reviewService.ViewFullReview(Id));

@@ -23,7 +23,7 @@ namespace RentReview.Controllers
         {
             try
             {
-                await this.userService.UserRegister(data);
+                await this.userService.UserRegisterAsync(data);
                 return Redirect("Login");
             }
             catch (AggregateException exception)

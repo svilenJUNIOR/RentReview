@@ -4,7 +4,7 @@ namespace RentReview.Services.User
 {
     public interface IUserService
     {
-        Task UserRegister(RegisterUserDataModel data);
-        Task UserLogin(LoginUserDataModel data);
+        Task UserRegisterAsync(RegisterUserDataModel data);
+        Task UserLoginAsync(LoginUserDataModel data);
     }
 }

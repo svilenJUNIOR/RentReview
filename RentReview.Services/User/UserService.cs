@@ -17,7 +17,7 @@ namespace RentReview.Services.User
             this.validator = validator;
         }
 
-        public async Task UserRegister(RegisterUserDataModel data)
+        public async Task UserRegisterAsync(RegisterUserDataModel data)
         {
             var errors = await this.validator.ValidateUserRegisterAsync(data);
             if (errors.Any()) await this.validator.ThrowErrorsAsync(errors);
@@ -35,7 +35,7 @@ namespace RentReview.Services.User
             await this.repository.SaveChangesAsync();
         }
 
-        public async Task UserLogin(LoginUserDataModel data)
+        public async Task UserLoginAsync(LoginUserDataModel data)
         {
             throw new NotImplementedException();
         }
