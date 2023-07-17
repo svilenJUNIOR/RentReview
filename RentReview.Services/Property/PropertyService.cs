@@ -6,15 +6,25 @@ namespace RentReview.Services.Property
     public class PropertyService : IPropertyService
     {
         private readonly IRepository repository;
-        public PropertyService(IRepository repository) { this.repository = repository; }
-        public async Task AddAsync(AddNewPropertyDataModel model)
+        private readonly IValidator validator;
+
+        public PropertyService(IRepository repository, IValidator validator)
         {
+            this.repository = repository;
+            this.validator = validator;
+        }
+
+        public async Task AddAsync(AddNewPropertyDataModel data)
+        {
+            var errors = this.validator.ValidateAddProperty(data);
+            if (errors.Any()) await this.validator.ThrowErrorsAsync(errors);
+
             var prop = new Data.Models.Property
             {
-                Address = model.Address,
-                Url = model.Url,
-                Price = model.Price,
-                Picture = model.Picture
+                Address = data.Address,
+                Url = data.Url,
+                Price = data.Price,
+                Picture = data.Picture
             };
 
             await this.repository.AddAsync<Data.Models.Property>(prop);
@@ -30,6 +40,7 @@ namespace RentReview.Services.Property
 
             return review.Id;
         }
+
         public void Edit()
         {
             throw new NotImplementedException();

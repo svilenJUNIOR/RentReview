@@ -10,9 +10,7 @@ namespace RentReview.Controllers
         private readonly IUserService userService;
 
         public UserController(IUserService userService)
-        {
-            this.userService = userService;
-        }
+         => this.userService = userService;
 
         public IActionResult Register()
         => View();
@@ -26,7 +24,7 @@ namespace RentReview.Controllers
             try
             {
                 await this.userService.UserRegister(data);
-                return Redirect("/");
+                return Redirect("Login");
             }
             catch (AggregateException exception)
             {

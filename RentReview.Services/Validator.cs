@@ -51,7 +51,7 @@ namespace RentReview.Services
 
             return errors;
         }
-        public async Task<IEnumerable<Exception>> ValidateUserRegister(RegisterUserDataModel data)
+        public async Task<IEnumerable<Exception>> ValidateUserRegisterAsync(RegisterUserDataModel data)
         {
             var errors = new List<Exception>();
             bool hasNulls = this.HasNulls(data.Email, data.Username, data.Password);
@@ -81,7 +81,7 @@ namespace RentReview.Services
 
             return check;
         }
-        public async Task<IEnumerable<Exception>> ThrowErrors(IEnumerable<Exception> errors)
+        public async Task<IEnumerable<Exception>> ThrowErrorsAsync(IEnumerable<Exception> errors)
         {
             if (errors.Count() == 0) return new List<Exception>();
             throw new AggregateException(errors);
