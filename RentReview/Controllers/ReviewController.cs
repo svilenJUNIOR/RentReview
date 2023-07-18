@@ -1,4 +1,5 @@
-﻿using Microsoft.AspNetCore.Mvc;
+﻿using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Mvc;
 using RentReview.Extensions;
 using RentReview.Models.DataModels;
 using RentReview.Services;
@@ -14,10 +15,13 @@ namespace RentReview.Controllers
 
         public IActionResult ViewReview(string Id)
         => View(this.reviewService.ViewFullReview(Id));
+
+        [Authorize]
         public IActionResult Add()
         => View();
 
         [HttpPost]
+        [Authorize]
         public async Task<IActionResult> Add(AddNewReviewDataModel data, string Id)
         {
             data.PropertyId = Id;
