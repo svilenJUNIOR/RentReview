@@ -54,13 +54,7 @@ namespace RentReview.Controllers
 
         public async Task<IActionResult> Logout()
         {
-            CookieOptions cookieOptions = new CookieOptions();
-
-            cookieOptions.Secure = true;
-            cookieOptions.Expires = DateTime.Now.AddDays(-3);
-
-            Response.Cookies.Delete("MyInfo", cookieOptions);
-
+            this.DeleteCookie();
             await this.signInManager.SignOutAsync();
             return Redirect("/");
         }

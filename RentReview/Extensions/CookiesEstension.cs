@@ -1,4 +1,5 @@
 ﻿using Microsoft.AspNetCore.Mvc;
+using System.Runtime.CompilerServices;
 
 namespace RentReview.Extensions
 {
@@ -6,12 +7,24 @@ namespace RentReview.Extensions
     {
         public static void SetCookie(this Controller controller, string email)
         {
+            var cookieOptions = CookieOptions(3);
+            controller.Response.Cookies.Append("MyInfo", email, cookieOptions);
+        }
+
+        public static void DeleteCookie(this Controller controller)
+        {
+            var cookieOptions = CookieOptions(-3);
+            controller.Response.Cookies.Delete("MyInfo", cookieOptions);
+        }
+
+        private static CookieOptions CookieOptions(int days)
+        {
             CookieOptions cookieOptions = new CookieOptions();
 
             cookieOptions.Secure = true;
-            cookieOptions.Expires = DateTime.Now.AddDays(3);
+            cookieOptions.Expires = DateTime.Now.AddDays(days);
 
-            controller.Response.Cookies.Append("MyInfo", email, cookieOptions);
+            return cookieOptions;
         }
     }
 }
