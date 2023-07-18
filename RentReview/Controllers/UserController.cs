@@ -43,6 +43,7 @@ namespace RentReview.Controllers
             try
             {
                 await this.userService.UserLoginAsync(data);
+                this.SetCookie(data.Email);
                 return Redirect("/Property/All");
             }
             catch (AggregateException exception)
@@ -53,6 +54,13 @@ namespace RentReview.Controllers
 
         public async Task<IActionResult> Logout()
         {
+            CookieOptions cookieOptions = new CookieOptions();
+
+            cookieOptions.Secure = true;
+            cookieOptions.Expires = DateTime.Now.AddDays(-3);
+
+            Response.Cookies.Delete("MyInfo", cookieOptions);
+
             await this.signInManager.SignOutAsync();
             return Redirect("/");
         }
