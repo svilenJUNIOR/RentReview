@@ -1,1 +1,17 @@
-﻿<p>edit</p>
+﻿@model RentReview.Models.ViewModels.ViewPropertyViewModel
+
+<img src="@Model.Picture" />
+
+<div class="info">
+    <div class="card">
+        <h5 class="card-header">Property Info</h5>
+        <ul class="list-group">
+            <li class="list-group-item">Price - @Model.Price</li>
+            <li class="list-group-item">@Model.Address</li>
+            <li class="list-group-item"> <a href="@Model.Url" class="btn btn-primary"> Go to Add</a></li>
+        </ul>
+    </div>
+</div>
+
+
+<link rel="stylesheet" href="~/css/Property/Edit.css"></link>

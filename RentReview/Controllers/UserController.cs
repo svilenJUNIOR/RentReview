@@ -26,6 +26,7 @@ namespace RentReview.Controllers
         [Authorize]
         public async Task<IActionResult> Profile()
         => View(this.userService.LoadMyData(await this.user()));
+
         public IActionResult Login()
         => View();
 

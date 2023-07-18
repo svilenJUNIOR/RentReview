@@ -9,6 +9,10 @@
       "PackagePath": "staticwebassets\\css\\Property\\All.css"
     },
     {
+      "Id": "C:\\Users\\svilen\\OneDrive\\Desktop\\programing\\Csharp\\PROJECTS\\RentReview\\RentReview\\wwwroot\\css\\Property\\Edit.css",
+      "PackagePath": "staticwebassets\\css\\Property\\Edit.css"
+    },
+    {
       "Id": "C:\\Users\\svilen\\OneDrive\\Desktop\\programing\\Csharp\\PROJECTS\\RentReview\\RentReview\\wwwroot\\css\\Review\\Add.css",
       "PackagePath": "staticwebassets\\css\\Review\\Add.css"
     },

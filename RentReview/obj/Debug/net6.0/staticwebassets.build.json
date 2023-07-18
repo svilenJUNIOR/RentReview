@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "6XALGMRzzJ0xzw1BiYMz1fvxesofGw677otTeITVEOc=",
+  "Hash": "4fWw1YONoamEWxFbuIJSxG1hLV8OPOki7QFtGeX8fAM=",
   "Source": "RentReview",
   "BasePath": "_content/RentReview",
   "Mode": "Default",
@@ -1086,6 +1086,23 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\css\\Property\\All.css"
+    },
+    {
+      "Identity": "C:\\Users\\svilen\\OneDrive\\Desktop\\programing\\Csharp\\PROJECTS\\RentReview\\RentReview\\wwwroot\\css\\Property\\Edit.css",
+      "SourceId": "RentReview",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\svilen\\OneDrive\\Desktop\\programing\\Csharp\\PROJECTS\\RentReview\\RentReview\\wwwroot\\",
+      "BasePath": "_content/RentReview",
+      "RelativePath": "css/Property/Edit.css",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\css\\Property\\Edit.css"
     },
     {
       "Identity": "C:\\Users\\svilen\\OneDrive\\Desktop\\programing\\Csharp\\PROJECTS\\RentReview\\RentReview\\wwwroot\\css\\Review\\Add.css",

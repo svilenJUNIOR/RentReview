@@ -28,8 +28,8 @@ namespace RentReview.Controllers
           => View();
 
         [Authorize]
-        public IActionResult Edit()
-        => View();
+        public IActionResult Edit(string Id)
+        => View(this.propertyService.Edit(Id));
 
         [Authorize]
         public IActionResult Delete()

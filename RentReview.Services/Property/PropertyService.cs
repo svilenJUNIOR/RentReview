@@ -38,14 +38,19 @@ namespace RentReview.Services.Property
         public ICollection<ViewPropertyViewModel> ViewProperties()
         {
             var properties = this.repository.GettAll<Data.Models.Property>();
-          
+
             return bindService.BindProperties(properties).ToList();
         }
-        public void Edit()
+        public ViewPropertyViewModel Edit(string Id)
         {
-            throw new NotImplementedException();
+            var property = this.repository.FindById<Data.Models.Property>(Id);
+            var temp = this.bindService.BindProperties(new List<Data.Models.Property> { property });
+
+            var bindedProperty = temp.FirstOrDefault();
+
+            return bindedProperty;
         }
-        public void Remove()
+        public void Remove(string Id)
         {
             throw new NotImplementedException();
         }
