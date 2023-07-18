@@ -1,4 +1,5 @@
-﻿using Microsoft.AspNetCore.Mvc;
+﻿using Microsoft.AspNetCore.Identity;
+using Microsoft.AspNetCore.Mvc;
 using RentReview.Extensions;
 using RentReview.Models.DataModels;
 using RentReview.Services.User;
@@ -8,8 +9,13 @@ namespace RentReview.Controllers
     public class UserController : Controller
     {
         private readonly IUserService userService;
-        public UserController(IUserService userService)
-         => this.userService = userService;
+        private readonly SignInManager<IdentityUser> signInManager;
+
+        public UserController(IUserService userService, SignInManager<IdentityUser> signInManager)
+        {
+            this.userService = userService;
+            this.signInManager = signInManager;
+        }
 
         public IActionResult Register()
         => View();
@@ -43,6 +49,12 @@ namespace RentReview.Controllers
             {
                 return this.CatchErrors(exception);
             }
+        }
+
+        public async Task<IActionResult> Logout()
+        {
+            await this.signInManager.SignOutAsync();
+            return Redirect("/");
         }
     }
 }
