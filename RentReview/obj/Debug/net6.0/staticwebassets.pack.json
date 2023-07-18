@@ -21,6 +21,10 @@
       "PackagePath": "staticwebassets\\css\\Review\\View.css"
     },
     {
+      "Id": "C:\\Users\\svilen\\OneDrive\\Desktop\\programing\\Csharp\\PROJECTS\\RentReview\\RentReview\\wwwroot\\css\\User\\Profile.css",
+      "PackagePath": "staticwebassets\\css\\User\\Profile.css"
+    },
+    {
       "Id": "C:\\Users\\svilen\\OneDrive\\Desktop\\programing\\Csharp\\PROJECTS\\RentReview\\RentReview\\wwwroot\\css\\site.css",
       "PackagePath": "staticwebassets\\css\\site.css"
     },

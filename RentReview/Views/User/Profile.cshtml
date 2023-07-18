@@ -1,1 +1,31 @@
-﻿<p>hi</p>
+﻿@model List<RentReview.Models.ViewModels.ViewPropertyViewModel>
+
+<h1>My Properties</h1>
+
+<div class="row">
+    @foreach (var property in Model)
+    {
+        <div class="card mb-3" style="max-width: 700px;">
+            <div class="row g-0">
+                <div class="col-md-4">
+                    <img src="@property.Picture" class="img-fluid rounded-start">
+                </div>
+                <div class="col-md-8">
+                    <div class="card-body">
+                        <h5 class="card-title">@property.Address - @property.Price</h5>
+                        @if (!property.HasReview)
+                        {
+                            <a href="/Review/Add?Id=@property.Id" id="AddReviewButton" class="btn btn-primary">Add Review</a>
+                        }
+                        else
+                        {
+                            <a href="/Review/ViewReview?Id=@property.ReviewId" id="AddReviewButton" class="btn btn-primary">See Review</a>
+                        }
+                        <a href="/Property/Edit?Id=@property.Id" id="EditButton" class="btn btn-primary">Edit</a>
+                        <a href="/Property/Delete?Id=@property.Id" id="DeleteButton" class="btn btn-primary">Delete</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    }
+</div>

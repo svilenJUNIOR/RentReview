@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "mc16SfCyOTb4GrAbyfn1H8aNHwV+pUclB6PzdVWKGXk=",
+  "Hash": "6XALGMRzzJ0xzw1BiYMz1fvxesofGw677otTeITVEOc=",
   "Source": "RentReview",
   "BasePath": "_content/RentReview",
   "Mode": "Default",
@@ -1154,6 +1154,23 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\css\\site.css"
+    },
+    {
+      "Identity": "C:\\Users\\svilen\\OneDrive\\Desktop\\programing\\Csharp\\PROJECTS\\RentReview\\RentReview\\wwwroot\\css\\User\\Profile.css",
+      "SourceId": "RentReview",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\svilen\\OneDrive\\Desktop\\programing\\Csharp\\PROJECTS\\RentReview\\RentReview\\wwwroot\\",
+      "BasePath": "_content/RentReview",
+      "RelativePath": "css/User/Profile.css",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\css\\User\\Profile.css"
     },
     {
       "Identity": "C:\\Users\\svilen\\OneDrive\\Desktop\\programing\\Csharp\\PROJECTS\\RentReview\\RentReview\\wwwroot\\favicon.ico",

@@ -27,6 +27,14 @@ namespace RentReview.Controllers
         public IActionResult Add()
           => View();
 
+        [Authorize]
+        public IActionResult Edit()
+        => View();
+
+        [Authorize]
+        public IActionResult Delete()
+        => View();
+
         [HttpPost]
         [Authorize]
         public async Task<IActionResult> Add(AddNewPropertyDataModel data)
