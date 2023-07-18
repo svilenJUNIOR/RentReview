@@ -67,6 +67,25 @@ namespace RentReview.Services.Review
         public void Edit(AddNewReviewDataModel data, string reviewId)
         {
             var property = this.repository.FindPropertyByReviewId(reviewId);
+
+            StringBuilder pros = new StringBuilder();
+            StringBuilder cons = new StringBuilder();
+
+            foreach (var pro in data.Pros)
+                pros.Append(pro + "*");
+
+            foreach (var con in data.Cons)
+                cons.Append(con + "*");
+
+            property.Pros = pros.ToString();
+            property.Cons = cons.ToString();
+            property.ReviewOfProperty = data.PropertyReview;
+            property.ReviewOfLandlord = data.LandlordReview;
+            property.ReviewOfNeighbour= data.NeighbourReview;
+            property.Rented = data.Rented;
+            property.Vacated= data.Vacated;
+
+            this.repository.SaveChangesAsync();
         }
     }
 }

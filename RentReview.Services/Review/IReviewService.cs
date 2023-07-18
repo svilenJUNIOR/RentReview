@@ -9,5 +9,6 @@ namespace RentReview.Services.Review
         Task AddAsync(AddNewReviewDataModel data, IdentityUser user);
         ViewFullReviewViewModel ViewFullReview(string reviewId);
         ICollection<ViewReviewViewModel> ViewReviews();
+        void Edit(AddNewReviewDataModel data, string reviewId);
     }
 }

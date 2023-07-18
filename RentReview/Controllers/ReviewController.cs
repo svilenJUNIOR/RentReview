@@ -54,7 +54,8 @@ namespace RentReview.Controllers
         [Authorize]
         public async Task<IActionResult> Edit(AddNewReviewDataModel data, string Id)
         {
-            return null;
+            this.reviewService.Edit(data, Id);
+            return Redirect("/User/Profile");
         }
 
         public IActionResult All()

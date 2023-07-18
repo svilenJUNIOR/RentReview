@@ -41,3 +41,8 @@
     overflow: hidden;
     overflow-y: scroll;
 }
+
+button{
+    text-align:center;
+    margin-left:500px;
+}
