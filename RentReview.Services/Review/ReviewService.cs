@@ -20,18 +20,18 @@ namespace RentReview.Services.Review
             this.userManager = userManager;
             this.validator = validator;
         }
-        public async Task AddAsync(AddNewReviewDataModel data)
+        public async Task AddAsync(AddNewReviewDataModel data, IdentityUser user)
         {
             var errors = this.validator.ValidateAddReview(data);
             if (errors.Any()) await this.validator.ThrowErrorsAsync(errors);
 
             var property = this.repository.FindById<Data.Models.Property>(data.PropertyId);
-            //var userId = this.userManager.Users.First().Id;
+            var userId = await this.userManager.GetUserIdAsync(user);
 
             var Review = new Data.Models.Review
             {
                 PropertyId = property.Id,
-                TenantId = "1b379a1d-cce3-4c66-be74-763079abe28e"
+                TenantId = userId
             };
 
             StringBuilder pros = new StringBuilder();
