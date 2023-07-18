@@ -6,7 +6,7 @@ namespace RentReview.Data.Models
     {
         [Key]
         public string Id { get; set; } = Guid.NewGuid().ToString();
-        public string TenantId { get; set; }
+        public string UserId { get; set; }
         public string PropertyId { get; set; }
     }
 }

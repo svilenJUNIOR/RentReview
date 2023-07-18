@@ -31,7 +31,7 @@ namespace RentReview.Services.Review
             var Review = new Data.Models.Review
             {
                 PropertyId = property.Id,
-                TenantId = userId
+                UserId = userId
             };
 
             StringBuilder pros = new StringBuilder();

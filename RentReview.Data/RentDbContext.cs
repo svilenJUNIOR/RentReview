@@ -13,7 +13,6 @@ namespace RentReview.Data
 
         public DbSet<Property> Properties { get; set; }
         public DbSet<Review> Reviews { get; set; }
-        public DbSet<Tenant> Tenants { get; set; }
 
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
