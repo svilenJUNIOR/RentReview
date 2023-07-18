@@ -1,0 +1,215 @@
+﻿@model RentReview.Models.ViewModels.ViewFullReviewViewModel
+
+<img src="@Model.Picture" />
+
+<form method="post">
+    <div class="info">
+        <div class="card">
+            <h5 class="card-header">Property Info</h5>
+
+            <p>Price - @Model.Price</p>
+
+            <label class="form-label" for="Rented">Rented</label>
+            <input type="date" class="form-control" id="Rented" name="Rented" value="@Model.Rented.Value.ToShortDateString()">
+
+            <label class="form-label" for="Vacated">Vacated</label>
+            <input type="date" class="form-control" id="Vacated" name="Vacated" value="@Model.Vacated.Value.ToShortDateString()">
+
+            <p>Address - @Model.Address</p>
+        </div>
+    </div>
+
+    <div class="pros">
+        <div class="card">
+            <h5 class="card-header">Pros</h5>
+            <ul class="list-group">
+                <ul class="list-group">
+
+                    <li class="list-group-item">
+                        <input type="checkbox" id="Pros" name="Pros" value="Near School / kindergarden">
+                        <label for="Pros">Near School / kindergarden</label><br>
+                    </li>
+
+                    <li class="list-group-item">
+                        <input type="checkbox" id="Pros" name="Pros" value="Near 24/7 pharmacy">
+                        <label for="Pros">Near 24/7 pharmacy</label><br>
+                    </li>
+                    <li class="list-group-item">
+                        <input type="checkbox" id="Pros" name="Pros" value="Near hospital / clinic">
+                        <label for="Pros">Near hospital / clinic</label><br>
+                    </li>
+                    <li class="list-group-item">
+                        <input type="checkbox" id="Pros" name="Pros" value="Near 24/7 supermarket">
+                        <label for="Pros">Near 24/7 supermarket</label><br>
+                    </li>
+                    <li class="list-group-item">
+                        <input type="checkbox" id="Pros" name="Pros" value="Near a bus stop">
+                        <label for="Pros">Near a bus stope</label><br>
+                    </li>
+                    <li class="list-group-item">
+                        <input type="checkbox" id="Pros" name="Pros" value="Quiet street">
+                        <label for="Pros">Quiet street</label><br>
+                    </li>
+                    <li class="list-group-item">
+                        <input type="checkbox" id="Pros" name="Pros" value="Clean street">
+                        <label for="Pros">Clean street</label><br>
+                    </li>
+                    <li class="list-group-item">
+                        <input type="checkbox" id="Pros" name="Pros" value="Has garage">
+                        <label for="Pros">Has garage</label><br>
+                    </li>
+                    <li class="list-group-item">
+                        <input type="checkbox" id="Pros" name="Pros" value="Has elevetor">
+                        <label for="Pros">Has elevetore</label><br>
+                    </li>
+                    <li class="list-group-item">
+                        <input type="checkbox" id="Pros" name="Pros" value="Easy to warm up">
+                        <label for="Pros">Easy to warm up</label><br>
+                    </li>
+                    <li class="list-group-item">
+                        <input type="checkbox" id="Pros" name="Pros" value="Easy to cool down">
+                        <label for="Pros">Easy to cool down</label><br>
+                    </li>
+                    <li class="list-group-item">
+                        <input type="checkbox" id="Pros" name="Pros" value="Has a private pool for tenants">
+                        <label for="Pros">Has a private pool for tenants</label><br>
+                    </li>
+                    <li class="list-group-item">
+                        <input type="checkbox" id="Pros" name="Pros" value="Has a private gym for tenants">
+                        <label for="Pros">Has a private gym for tenants</label><br>
+                    </li>
+                    <li class="list-group-item">
+                        <input type="checkbox" id="Pros" name="Pros" value="Has a private park for tenants>
+                        <label for="Pros">Has a private park for tenants</label><br>
+                    </li>
+                    <li class="list-group-item">
+                        <input type="checkbox" id="Pros" name="Pros" value="Employeed cleaning crew for building">
+                        <label for="Pros">Employeed cleaning crew for building</label><br>
+                    </li>
+                    <li class="list-group-item">
+                        <input type="checkbox" id="Pros" name="Pros" value="Has security">
+                        <label for="Pros">Has security</label><br>
+                    </li>
+                    <li class="list-group-item">
+                        <input type="checkbox" id="Pros" name="Pros" value="Low crime">
+                        <label for="Pros">Low crime</label><br>
+                    </li>
+                    <li class="list-group-item">
+                        <input type="checkbox" id="Pros" name="Pros" value="Allows pets">
+                        <label for="Pros">Allows pets</label><br>
+                    </li>
+                    <li class="list-group-item">
+                        <input type="checkbox" id="Pros" name="Pros" value="Good neighbours">
+                        <label for="Pros">Good neighbours</label><br>
+                    </li>
+                    <li class="list-group-item">
+                        <input type="checkbox" id="Pros" name="Pros" value="Good landlord">
+                        <label for="Pros">Good landlord</label><br>
+                    </li>
+                </ul>
+            </ul>
+        </div>
+    </div>
+
+    <div class="cons">
+        <div class="card">
+            <h5 class="card-header">Cons</h5>
+            <ul class="list-group">
+
+                <li class="list-group-item">
+                    <input type="checkbox" id="Cons" name="Cons" value="Noisy">
+                    <label for="Cons">Noisy</label><br>
+                </li>
+                <li class="list-group-item">
+                    <input type="checkbox" id="Cons" name="Cons" value="Dirty">
+                    <label for="Cons">Dirty</label><br>
+                </li>
+                <li class="list-group-item">
+                    <input type="checkbox" id="Cons" name="Cons" value="Poor district">
+                    <label for="Cons">Poor district</label><br>
+                </li>
+                <li class="list-group-item">
+                    <input type="checkbox" id="Cons" name="Cons" value="Crime">
+                    <label for="Cons">Crime</label><br>
+                </li>
+                <li class="list-group-item">
+                    <input type="checkbox" id="Cons" name="Cons" value="No elevator">
+                    <label for="Cons">No elevator</label><br>
+                </li>
+                <li class="list-group-item">
+                    <input type="checkbox" id="Cons" name="Cons" value="No way near a bus stop">
+                    <label for="Cons">No way near a bus stop</label><br>
+                </li>
+                <li class="list-group-item">
+                    <input type="checkbox" id="Cons" name="Cons" value="No way near a hospital / clinic">
+                    <label for="Cons">No way near a hospital / clinic</label><br>
+                </li>
+                <li class="list-group-item">
+                    <input type="checkbox" id="Cons" name="Cons" value="No way near a pharmacy">
+                    <label for="Cons">No way near a pharmacy</label><br>
+                </li>
+                <li class="list-group-item">
+                    <input type="checkbox" id="Cons" name="Cons" value="No way near a school / kindergarden">
+                    <label for="Cons">No way near a school / kindergarden</label><br>
+                </li>
+                <li class="list-group-item">
+                    <input type="checkbox" id="Cons" name="Cons" value="Doesnt allow pets">
+                    <label for="Cons">Doesnt allow pets</label><br>
+                </li>
+                <li class="list-group-item">
+                    <input type="checkbox" id="Cons" name="Cons" value="Hard to find a parking spot">
+                    <label for="Cons">Hard to find a parking spot</label><br>
+                </li>
+                <li class="list-group-item">
+                    <input type="checkbox" id="Cons" name="Cons" value="Bad neighbours">
+                    <label for="Cons">Bad neighbours</label><br>
+                </li>
+                <li class="list-group-item">
+                    <input type="checkbox" id="Cons" name="Cons" value="Bad landlord">
+                    <label for="Cons">Bad landlord</label><br>
+                </li>
+            </ul>
+        </div>
+    </div>
+
+    </div>
+
+    <div class="reviews" style="margin-left:70px;">
+
+        <div class="neighbour" id="reviewBox">
+            <div class="card">
+                <h5 class="card-header">Review of neighbour</h5>
+                <div class="card-body">
+                    <label class="form-label" for="NeighbourReview"></label>
+                    <input type="text" class="form-control" id="NeighbourReview" name="NeighbourReview" value="@Model.ReviewOfNeighbour">
+                </div>
+            </div>
+        </div>
+
+        <div class="property" id="reviewBox">
+            <div class="card">
+                <h5 class="card-header">Review of property</h5>
+                <div class="card-body">
+                    <label class="form-label" for="PropertyReview"></label>
+                    <input type="text" class="form-control" id="PropertyReview" name="PropertyReview" value="@Model.ReviewOfProperty">
+                </div>
+            </div>
+        </div>
+
+        <div class="landlord" id="reviewBox">
+            <div class="card">
+                <h5 class="card-header">Review of landlord</h5>
+                <div class="card-body">
+                    <label class="form-label" for="LandlordReview"></label>
+                    <input type="text" class="form-control" id="LandlordReview" name="LandlordReview" value="@Model.ReviewOfLandlord">
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+    <button type="submit">Submit</button>
+
+</form>
+
+<link rel="stylesheet" href="~/css/Review/Edit.css">

@@ -68,5 +68,8 @@ namespace RentReviewRepository
 
             return review.Id;
         }
+
+        public void Update<T> (T item) where T : class
+        => this.context.Set<T>().Update(item);
     }
 }

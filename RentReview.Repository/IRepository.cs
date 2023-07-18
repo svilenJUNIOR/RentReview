@@ -18,5 +18,6 @@ namespace RentReviewRepository
        T FindById<T>(string Id) where T : class;
         Property FindPropertyByReviewId(string ReviewId);
         Review FindReviewByPropertyId(string PropertyId);
+        void Update<T>(T item) where T : class;
     }
 }

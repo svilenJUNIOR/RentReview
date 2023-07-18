@@ -28,6 +28,11 @@ namespace RentReview.Controllers
         public IActionResult Add()
         => View();
 
+
+        [Authorize]
+        public IActionResult Edit(string Id)
+        => View(this.reviewService.ViewFullReview(Id));
+
         [HttpPost]
         [Authorize]
         public async Task<IActionResult> Add(AddNewReviewDataModel data, string Id)
@@ -43,6 +48,13 @@ namespace RentReview.Controllers
             {
                 return this.CatchErrors(exception);
             }
+        }
+
+        [HttpPost]
+        [Authorize]
+        public async Task<IActionResult> Edit(AddNewReviewDataModel data, string Id)
+        {
+            return null;
         }
 
         public IActionResult All()

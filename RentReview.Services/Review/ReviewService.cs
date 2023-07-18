@@ -63,5 +63,10 @@ namespace RentReview.Services.Review
             var reviews = this.repository.GettAll<Data.Models.Review>();
             return this.bindService.BindReviews(reviews).ToList();
         }
+
+        public void Edit(AddNewReviewDataModel data, string reviewId)
+        {
+            var property = this.repository.FindPropertyByReviewId(reviewId);
+        }
     }
 }

@@ -21,12 +21,12 @@
       "PackagePath": "staticwebassets\\css\\Review\\All.css"
     },
     {
-      "Id": "C:\\Users\\svilen\\OneDrive\\Desktop\\programing\\Csharp\\PROJECTS\\RentReview\\RentReview\\wwwroot\\css\\Review\\View.css",
-      "PackagePath": "staticwebassets\\css\\Review\\View.css"
+      "Id": "C:\\Users\\svilen\\OneDrive\\Desktop\\programing\\Csharp\\PROJECTS\\RentReview\\RentReview\\wwwroot\\css\\Review\\Edit.css",
+      "PackagePath": "staticwebassets\\css\\Review\\Edit.css"
     },
     {
-      "Id": "C:\\Users\\svilen\\OneDrive\\Desktop\\programing\\Csharp\\PROJECTS\\RentReview\\RentReview\\wwwroot\\css\\User\\Profile.css",
-      "PackagePath": "staticwebassets\\css\\User\\Profile.css"
+      "Id": "C:\\Users\\svilen\\OneDrive\\Desktop\\programing\\Csharp\\PROJECTS\\RentReview\\RentReview\\wwwroot\\css\\Review\\View.css",
+      "PackagePath": "staticwebassets\\css\\Review\\View.css"
     },
     {
       "Id": "C:\\Users\\svilen\\OneDrive\\Desktop\\programing\\Csharp\\PROJECTS\\RentReview\\RentReview\\wwwroot\\css\\site.css",
