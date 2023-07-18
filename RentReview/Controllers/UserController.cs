@@ -1,4 +1,5 @@
-﻿using Microsoft.AspNetCore.Identity;
+﻿using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
 using RentReview.Extensions;
 using RentReview.Models.DataModels;
@@ -20,6 +21,9 @@ namespace RentReview.Controllers
         public IActionResult Register()
         => View();
 
+        [Authorize]
+        public IActionResult Profile()
+        => View();
         public IActionResult Login()
         => View();
 
