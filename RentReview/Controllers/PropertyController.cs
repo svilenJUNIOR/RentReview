@@ -29,7 +29,7 @@ namespace RentReview.Controllers
 
         [Authorize]
         public IActionResult Edit(string Id)
-        => View(this.propertyService.Edit(Id));
+        => View(this.propertyService.ViewPropertyForEdit(Id));
 
         [Authorize]
         public IActionResult Delete()
@@ -48,6 +48,15 @@ namespace RentReview.Controllers
             {
                 return this.CatchErrors(exception);
             }
+        }
+
+        [HttpPost]
+        [Authorize]
+        public async Task<IActionResult> Edit(EditPropertyDataModel data, string Id)
+        {
+            data.Id = Id;
+            this.propertyService.Edit(data);
+            return Redirect("/User/Profile");
         }
     }
 }

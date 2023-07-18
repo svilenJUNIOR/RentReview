@@ -41,7 +41,7 @@ namespace RentReview.Services.Property
 
             return bindService.BindProperties(properties).ToList();
         }
-        public ViewPropertyViewModel Edit(string Id)
+        public ViewPropertyViewModel ViewPropertyForEdit(string Id)
         {
             var property = this.repository.FindById<Data.Models.Property>(Id);
             var temp = this.bindService.BindProperties(new List<Data.Models.Property> { property });
@@ -49,6 +49,15 @@ namespace RentReview.Services.Property
             var bindedProperty = temp.FirstOrDefault();
 
             return bindedProperty;
+        }
+        public void Edit(EditPropertyDataModel data)
+        {
+            var property = this.repository.FindById<Data.Models.Property>(data.Id);
+
+            property.Address = data.Address;
+            property.Price = data.Price;
+
+            this.repository.SaveChangesAsync();
         }
         public void Remove(string Id)
         {

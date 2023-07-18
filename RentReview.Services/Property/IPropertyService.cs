@@ -8,7 +8,8 @@ namespace RentReview.Services.Property
     {
         Task AddAsync(AddNewPropertyDataModel model, IdentityUser user);
         ICollection<ViewPropertyViewModel> ViewProperties();
-        ViewPropertyViewModel Edit(string Id);
+        ViewPropertyViewModel ViewPropertyForEdit(string Id);
+        void Edit(EditPropertyDataModel data);
         void Remove(string Id);
         void ChangeStatus();
     }
