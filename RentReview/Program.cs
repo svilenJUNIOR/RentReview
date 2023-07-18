@@ -1,3 +1,4 @@
+using Microsoft.AspNetCore.Authentication.Cookies;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
 using RentReview.Data;
@@ -33,6 +34,14 @@ namespace RentReview
             builder.Services.AddScoped<IHasher, Hasher>();
             builder.Services.AddScoped<IValidator, Validator>();
             builder.Services.AddScoped<IUserService, UserService>();
+
+            builder.Services.ConfigureApplicationCookie(options =>
+            {
+                options.Cookie.HttpOnly = true;
+
+                options.LoginPath = "/User/Login";
+                options.AccessDeniedPath = "/User/Login";
+            });
 
             var app = builder.Build();
 

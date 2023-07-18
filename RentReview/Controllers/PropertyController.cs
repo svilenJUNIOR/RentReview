@@ -1,4 +1,5 @@
-﻿using Microsoft.AspNetCore.Mvc;
+﻿using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Mvc;
 using RentReview.Extensions;
 using RentReview.Models.DataModels;
 using RentReview.Services.Property;
@@ -14,10 +15,12 @@ namespace RentReview.Controllers
         public IActionResult All()
          => View(propertyService.ViewProperties());
 
+        [Authorize]
         public IActionResult Add()
           => View();
 
         [HttpPost]
+        [Authorize]
         public async Task<IActionResult> Add(AddNewPropertyDataModel data)
         {
             try
