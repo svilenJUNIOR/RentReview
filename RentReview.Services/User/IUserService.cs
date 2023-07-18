@@ -1,4 +1,6 @@
-﻿using RentReview.Models.DataModels;
+﻿using Microsoft.AspNetCore.Identity;
+using RentReview.Models.DataModels;
+using RentReview.Models.ViewModels;
 
 namespace RentReview.Services.User
 {
@@ -6,5 +8,6 @@ namespace RentReview.Services.User
     {
         Task UserRegisterAsync(RegisterUserDataModel data);
         Task UserLoginAsync(LoginUserDataModel data);
+        ICollection<ViewPropertyViewModel> LoadMyData(IdentityUser user);
     }
 }

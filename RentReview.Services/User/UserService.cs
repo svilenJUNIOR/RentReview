@@ -1,6 +1,8 @@
 ﻿using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Identity;
+using RentReview.Data.Models;
 using RentReview.Models.DataModels;
+using RentReview.Models.ViewModels;
 using RentReviewRepository;
 
 namespace RentReview.Services.User
@@ -12,13 +14,15 @@ namespace RentReview.Services.User
         private readonly IValidator validator;
         private readonly SignInManager<IdentityUser> signInManager;
         private readonly UserManager<IdentityUser> userManager;
-        public UserService(IRepository repository, IHasher hasher, IValidator validator, SignInManager<IdentityUser> signInManager, UserManager<IdentityUser> userManager)
+        private readonly IBindService bindService;
+        public UserService(IRepository repository, IHasher hasher, IValidator validator, SignInManager<IdentityUser> signInManager, UserManager<IdentityUser> userManager, IBindService bindService)
         {
             this.repository = repository;
             this.hasher = hasher;
             this.validator = validator;
             this.signInManager = signInManager;
             this.userManager = userManager;
+            this.bindService = bindService;
         }
 
         public async Task UserRegisterAsync(RegisterUserDataModel data)
@@ -47,6 +51,15 @@ namespace RentReview.Services.User
 
             var user = await this.repository.FindUserByEmailAsync(data.Email);
             await this.signInManager.SignInAsync(user, true);
+        }
+        public ICollection<ViewPropertyViewModel> LoadMyData(IdentityUser user)
+        {
+            var myProperties = this.repository.GettAll<Data.Models.Property>().Where
+                (x => x.UserId == user.Id).ToList();
+
+            var bindedProperties = this.bindService.BindProperties(myProperties);
+
+            return bindedProperties;
         }
     }
 }

@@ -11,19 +11,21 @@ namespace RentReview.Controllers
     {
         private readonly IUserService userService;
         private readonly SignInManager<IdentityUser> signInManager;
-
-        public UserController(IUserService userService, SignInManager<IdentityUser> signInManager)
+        private readonly UserManager<IdentityUser> userManager;
+        public UserController(IUserService userService, SignInManager<IdentityUser> signInManager, UserManager<IdentityUser> userManager)
         {
             this.userService = userService;
             this.signInManager = signInManager;
+            this.userManager = userManager;
         }
+        private async Task<IdentityUser> user() => await this.userManager.FindByNameAsync(this.User.Identity.Name);
 
         public IActionResult Register()
         => View();
 
         [Authorize]
-        public IActionResult Profile()
-        => View();
+        public async Task<IActionResult> Profile()
+        => View(this.userService.LoadMyData(await this.user()));
         public IActionResult Login()
         => View();
 
