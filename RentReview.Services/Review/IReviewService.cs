@@ -10,5 +10,6 @@ namespace RentReview.Services.Review
         ViewFullReviewViewModel ViewFullReview(string reviewId);
         ICollection<ViewReviewViewModel> ViewReviews();
         void Edit(AddNewReviewDataModel data, string reviewId);
+        Task Remove(string reviewId);
     }
 }

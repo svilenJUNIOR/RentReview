@@ -87,5 +87,13 @@ namespace RentReview.Services.Review
 
             this.repository.SaveChangesAsync();
         }
+
+        public async Task Remove(string reviewId)
+        {
+            var review = this.repository.FindById<Data.Models.Review>(reviewId);
+            this.repository.Remove(review);
+
+            await this.repository.SaveChangesAsync();
+        }
     }
 }

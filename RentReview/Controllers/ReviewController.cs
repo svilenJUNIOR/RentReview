@@ -28,7 +28,6 @@ namespace RentReview.Controllers
         public IActionResult Add()
         => View();
 
-
         [Authorize]
         public IActionResult Edit(string Id)
         => View(this.reviewService.ViewFullReview(Id));
@@ -58,6 +57,12 @@ namespace RentReview.Controllers
             return Redirect("/User/Profile");
         }
 
+        [Authorize]
+        public async Task<IActionResult> Delete(string Id)
+        {
+            await this.reviewService.Remove(Id);
+            return Redirect("/User/Profile");
+        }
         public IActionResult All()
         => View(this.reviewService.ViewReviews());
     }
