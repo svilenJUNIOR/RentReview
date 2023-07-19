@@ -51,7 +51,7 @@ namespace RentReview.Controllers
             {
                 await this.userService.UserLoginAsync(data);
                 this.SetCookie(data.Email);
-                return Redirect("/Property/All");
+                return Redirect("/");
             }
             catch (AggregateException exception)
             {

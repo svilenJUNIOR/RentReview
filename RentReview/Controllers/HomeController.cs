@@ -24,7 +24,10 @@ namespace RentReview.Controllers
         //}
 
         public IActionResult Index()
-        => RedirectToAction("All", "Review");
+        {
+            if (this.User.IsInRole("admin")) return Redirect("Admin/Home");
+            return RedirectToAction("All", "Review");
+        }
 
         [ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]
         public IActionResult Error()
