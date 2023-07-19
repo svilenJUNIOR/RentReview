@@ -12,6 +12,11 @@ namespace RentReview.Areas.Admin.Controllers
         public UserController(IAdminService adminService)
         => this.adminService = adminService;
 
+        public IActionResult Delete()
+        => View(this.adminService.GetAllUsers());
+        public IActionResult Promote()
+       => View(this.adminService.GetAllUsers());
+
         public async Task<IActionResult> DeleteUser(string Id)
         {
             await this.adminService.DeleteUser(Id);

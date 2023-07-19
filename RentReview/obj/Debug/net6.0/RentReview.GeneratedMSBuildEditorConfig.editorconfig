@@ -20,6 +20,14 @@ build_property._RazorSourceGeneratorDebug =
 build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQWRtaW5cVmlld3NcSG9tZVxJbmRleC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
+[C:/Users/svilen/OneDrive/Desktop/programing/Csharp/PROJECTS/RentReview/RentReview/Areas/Admin/Views/User/Delete.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQWRtaW5cVmlld3NcVXNlclxEZWxldGUuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/svilen/OneDrive/Desktop/programing/Csharp/PROJECTS/RentReview/RentReview/Areas/Admin/Views/User/Promote.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQWRtaW5cVmlld3NcVXNlclxQcm9tb3RlLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
 [C:/Users/svilen/OneDrive/Desktop/programing/Csharp/PROJECTS/RentReview/RentReview/Areas/Identity/Pages/_ViewStart.cshtml]
 build_metadata.AdditionalFiles.TargetPath = QXJlYXNcSWRlbnRpdHlcUGFnZXNcX1ZpZXdTdGFydC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
@@ -38,10 +46,6 @@ build_metadata.AdditionalFiles.CssScope =
 
 [C:/Users/svilen/OneDrive/Desktop/programing/Csharp/PROJECTS/RentReview/RentReview/Views/Property/All.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUHJvcGVydHlcQWxsLmNzaHRtbA==
-build_metadata.AdditionalFiles.CssScope = 
-
-[C:/Users/svilen/OneDrive/Desktop/programing/Csharp/PROJECTS/RentReview/RentReview/Views/Property/Delete.cshtml]
-build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUHJvcGVydHlcRGVsZXRlLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
 [C:/Users/svilen/OneDrive/Desktop/programing/Csharp/PROJECTS/RentReview/RentReview/Views/Property/Edit.cshtml]

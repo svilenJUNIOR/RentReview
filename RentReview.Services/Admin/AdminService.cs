@@ -1,4 +1,5 @@
 ﻿using Microsoft.AspNetCore.Identity;
+using RentReview.Models.DataModels;
 
 namespace RentReview.Services.Admin
 {
@@ -21,6 +22,16 @@ namespace RentReview.Services.Admin
         {
             var user = await this.userManager.FindByIdAsync(Id);
             await this.userManager.AddToRoleAsync(user, "admin");
+        }
+        public ICollection<ViewUsersDataModel> GetAllUsers()
+        {
+            var users = this.userManager.Users.Select(x => new ViewUsersDataModel
+            {
+                Id = x.Id,
+                Name = x.UserName
+            });
+
+            return users.ToList();
         }
     }
 }
