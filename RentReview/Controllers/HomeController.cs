@@ -12,19 +12,19 @@ namespace RentReview.Controllers
         public HomeController(RoleManager<IdentityRole> roleManager)
         => this.roleManager = roleManager;
 
-        public async Task<IActionResult> Index()
-        {
-            var adminRole = new IdentityRole { Name= "admin" };
-            var userRole = new IdentityRole { Name= "user" };
+        //public async Task<IActionResult> Index()
+        //{
+        //    var adminRole = new IdentityRole { Name= "admin" };
+        //    var userRole = new IdentityRole { Name= "user" };
 
-            await this.roleManager.CreateAsync(adminRole);
-            await this.roleManager.CreateAsync(userRole);
+        //    await this.roleManager.CreateAsync(adminRole);
+        //    await this.roleManager.CreateAsync(userRole);
 
-            return RedirectToAction("All", "Review");
-        }
+        //    return RedirectToAction("All", "Review");
+        //}
 
-        //public IActionResult Index()
-        //=> RedirectToAction("All", "Review");
+        public IActionResult Index()
+        => RedirectToAction("All", "Review");
 
         [ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]
         public IActionResult Error()
