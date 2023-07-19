@@ -62,7 +62,13 @@ namespace RentReview.Services.Property
         public async Task Remove(string Id)
         {
             var property = this.repository.FindById<Data.Models.Property>(Id);
+            var review = this.repository.FindReviewByPropertyId(property.Id);
+
             this.repository.Remove<Data.Models.Property>(property);
+
+            if (review != null)
+                this.repository.Remove<Data.Models.Review>(review);
+
             await this.repository.SaveChangesAsync();
         }
 
