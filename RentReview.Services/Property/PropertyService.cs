@@ -59,9 +59,11 @@ namespace RentReview.Services.Property
 
             this.repository.SaveChangesAsync();
         }
-        public void Remove(string Id)
+        public async Task Remove(string Id)
         {
-            throw new NotImplementedException();
+            var property = this.repository.FindById<Data.Models.Property>(Id);
+            this.repository.Remove<Data.Models.Property>(property);
+            await this.repository.SaveChangesAsync();
         }
 
         // when the time comes

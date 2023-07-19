@@ -10,7 +10,7 @@ namespace RentReview.Services.Property
         ICollection<ViewPropertyViewModel> ViewProperties();
         ViewPropertyViewModel ViewPropertyForEdit(string Id);
         void Edit(EditPropertyDataModel data);
-        void Remove(string Id);
+        Task Remove(string Id);
         void ChangeStatus();
     }
 }

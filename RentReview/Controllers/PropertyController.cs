@@ -4,7 +4,6 @@ using Microsoft.AspNetCore.Mvc;
 using RentReview.Extensions;
 using RentReview.Models.DataModels;
 using RentReview.Services.Property;
-using RentReview.Services.Review;
 
 namespace RentReview.Controllers
 {
@@ -32,8 +31,11 @@ namespace RentReview.Controllers
         => View(this.propertyService.ViewPropertyForEdit(Id));
 
         [Authorize]
-        public IActionResult Delete()
-        => View();
+        public async Task<IActionResult> Delete(string Id)
+        {
+            await this.propertyService.Remove(Id);
+            return Redirect("/User/Profile");
+        }
 
         [HttpPost]
         [Authorize]
