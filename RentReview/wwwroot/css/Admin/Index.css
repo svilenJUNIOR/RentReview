@@ -1,0 +1,21 @@
+﻿body {
+    background-image: url('https://wallpapers.com/images/hd/the-boss-baby-colour-pencil-illustration-i6kjcgl96eju8hs1.jpg');
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-size: cover;
+}
+
+nav {
+    background-color:lightblue;
+    width:350px;
+    height:150px;
+}
+
+a {
+    color:white;
+    font-size: 25px;
+}
+
+li {
+    margin-top:10px;
+}

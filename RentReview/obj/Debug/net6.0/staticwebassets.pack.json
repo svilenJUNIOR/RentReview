@@ -5,6 +5,10 @@
       "PackagePath": "staticwebassets\\RentReview.bundle.scp.css"
     },
     {
+      "Id": "C:\\Users\\svilen\\OneDrive\\Desktop\\programing\\Csharp\\PROJECTS\\RentReview\\RentReview\\wwwroot\\css\\Admin\\Index.css",
+      "PackagePath": "staticwebassets\\css\\Admin\\Index.css"
+    },
+    {
       "Id": "C:\\Users\\svilen\\OneDrive\\Desktop\\programing\\Csharp\\PROJECTS\\RentReview\\RentReview\\wwwroot\\css\\Property\\All.css",
       "PackagePath": "staticwebassets\\css\\Property\\All.css"
     },
