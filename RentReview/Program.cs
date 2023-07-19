@@ -3,6 +3,7 @@ using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
 using RentReview.Data;
 using RentReview.Services;
+using RentReview.Services.Admin;
 using RentReview.Services.Property;
 using RentReview.Services.Review;
 using RentReview.Services.User;
@@ -34,6 +35,7 @@ namespace RentReview
             builder.Services.AddScoped<IHasher, Hasher>();
             builder.Services.AddScoped<IValidator, Validator>();
             builder.Services.AddScoped<IUserService, UserService>();
+            builder.Services.AddScoped<IAdminService, AdminService>();
 
             builder.Services.ConfigureApplicationCookie(options =>
             {
