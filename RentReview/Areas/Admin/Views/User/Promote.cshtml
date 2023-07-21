@@ -3,6 +3,13 @@
 <ul>
     @foreach (var user in @Model)
     {
-        <li>@user.Name - <a href="DeleteUser?Id=@user.Id" class="btn btn-primary">Delete</a> </li>
+        @if(user.IsAdmin == null)
+        {
+            <li>@user.Name - <a href="PromoteUser?Id=@user.Id" class="btn btn-primary">Promote</a> </li>
+        }
+        else
+        {
+            <li>@user.Name - <a href="DemoteUser?Id=@user.Id" class="btn btn-primary">Demote</a> </li>
+        }
     }
 </ul>

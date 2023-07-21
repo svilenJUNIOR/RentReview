@@ -13,9 +13,9 @@ namespace RentReview.Areas.Admin.Controllers
         => this.adminService = adminService;
 
         public IActionResult Delete()
-        => View(this.adminService.GetAllUsers());
+        => View(this.adminService.GetAllUsers(this.User.IsInRole("admin")));
         public IActionResult Promote()
-       => View(this.adminService.GetAllUsers());
+       => View(this.adminService.GetAllUsers(this.User.IsInRole("admin")));
 
         public async Task<IActionResult> DeleteUser(string Id)
         {

@@ -1,5 +1,7 @@
 ﻿using Microsoft.AspNetCore.Identity;
+using RentReview.Data;
 using RentReview.Models.DataModels;
+using RentReviewRepository;
 
 namespace RentReview.Services.Admin
 {
@@ -7,10 +9,12 @@ namespace RentReview.Services.Admin
     {
         private readonly UserManager<IdentityUser> userManager;
         private readonly RoleManager<IdentityRole> roleManager;
-        public AdminService(UserManager<IdentityUser> userManager, RoleManager<IdentityRole> roleManager)
+        private readonly IRepository repository;
+        public AdminService(UserManager<IdentityUser> userManager, RoleManager<IdentityRole> roleManager, IRepository repository)
         {
             this.userManager = userManager;
             this.roleManager = roleManager;
+            this.repository = repository;
         }
 
         public async Task DeleteUser(string Id)
@@ -23,12 +27,13 @@ namespace RentReview.Services.Admin
             var user = await this.userManager.FindByIdAsync(Id);
             await this.userManager.AddToRoleAsync(user, "admin");
         }
-        public ICollection<ViewUsersDataModel> GetAllUsers()
+        public ICollection<ViewUsersDataModel> GetAllUsers(bool isAdmin)
         {
-            var users = this.userManager.Users.Select(x => new ViewUsersDataModel
+            var users = this.userManager.Users.Select(u => new ViewUsersDataModel
             {
-                Id = x.Id,
-                Name = x.UserName
+                Id = u.Id,
+                Name = u.UserName,
+                IsAdmin = isAdmin
             });
 
             return users.ToList();

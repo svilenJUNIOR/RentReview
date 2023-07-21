@@ -15,9 +15,10 @@ namespace RentReviewRepository
         Task<IdentityUser> FindUserByUsernameAsync(string username);
         Task<IdentityUser> FindUserByIdAsync(string Id);
         Task<IdentityRole> FindRoleByIdAsync(string Id);
-       T FindById<T>(string Id) where T : class;
+        T FindById<T>(string Id) where T : class;
         Property FindPropertyByReviewId(string ReviewId);
         Review FindReviewByPropertyId(string PropertyId);
         void Update<T>(T item) where T : class;
+        ICollection<IdentityUserRole<string>> GetUserRole();
     }
 }
