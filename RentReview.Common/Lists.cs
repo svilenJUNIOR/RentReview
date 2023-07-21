@@ -2,7 +2,7 @@
 {
     public static class Lists
     {
-        private static List<string> Pros  = new List<string>
+        private static List<string> Pros = new List<string>
         {
             {"Near School / kindergarden"},
             {"Near 24/7 pharmacy"},
@@ -26,6 +26,23 @@
             {"Good landlord "}
         };
 
-        public static List<string>  GetPros() => Pros;
+        private static List<string> Cons = new List<string>
+        {
+            {"Noisy"},
+            {"Dirty"},
+            {"Poor district"},
+            {"Crime"},
+            {"No elevator"},
+            {"It's not close by bus stop"},
+            {"It's not close by hospital / clinic"},
+            {"It's not close by pharmacy"},
+            {"It's not close by school / kindergarden"},
+            {"Doesnt allow pets"},
+            {"Hard to find a parking space"},
+            {"Bad neighbours"},
+            {"Bad landlord"}
+        };
+        public static List<string> GetPros() => Pros;
+        public static List<string> GetCons() => Cons;
     }
 }
