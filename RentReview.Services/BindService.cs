@@ -1,6 +1,4 @@
-﻿using Microsoft.AspNetCore.Identity;
-using RentReview.Models.DataModels;
-using RentReview.Models.ViewModels;
+﻿using RentReview.Models.ViewModels;
 using RentReviewRepository;
 
 namespace RentReview.Services

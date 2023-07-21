@@ -42,7 +42,7 @@ namespace RentReview.Services
                 return errors;
             }
 
-            //if (data.Vacated < data.Rented) errors.Add(new Exception(Messages.VacatedBeforeRented));
+            if (DateTime.Parse(data.Vacated) < DateTime.Parse(data.Rented)) errors.Add(new Exception(Messages.VacatedBeforeRented));
             if (data.Cons.Count() <= 0) errors.Add(new Exception(Messages.EmptyCons));
             if (data.Pros.Count() <= 0) errors.Add(new Exception(Messages.EmptyPros));
             if (data.LandlordReview.Length < 10) errors.Add(new Exception(Messages.EmptyLandlordReview));

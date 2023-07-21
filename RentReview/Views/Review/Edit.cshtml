@@ -22,7 +22,25 @@
             <ul class="list-group">
                 <ul class="list-group">
 
-                    <li class="list-group-item">
+                    @for (int i = 0; i < RentReview.Common.Lists.GetPros().Count(); i++)
+                    {
+                        if (Model.Pros.ToList().Contains(RentReview.Common.Lists.GetPros()[i]))
+                        {
+                            <li class="list-group-item">
+                                <input type="checkbox" id="Pros" name="Pros" value="@RentReview.Common.Lists.GetPros()[i]" checked>
+                                <label for="Pros">@RentReview.Common.Lists.GetPros()[i]</label><br>
+                            </li>
+                        }
+
+                        else
+                        {
+                              <li class="list-group-item">
+                                <input type="checkbox" id="Pros" name="Pros" value="@RentReview.Common.Lists.GetPros()[i]">
+                                <label for="Pros">@RentReview.Common.Lists.GetPros()[i]</label><br>
+                            </li>
+                        }
+                    }
+                  @*  <li class="list-group-item">
                         <input type="checkbox" id="Pros" name="Pros" value="Near School / kindergarden">
                         <label for="Pros">Near School / kindergarden</label><br>
                     </li>
@@ -102,7 +120,7 @@
                     <li class="list-group-item">
                         <input type="checkbox" id="Pros" name="Pros" value="Good landlord">
                         <label for="Pros">Good landlord</label><br>
-                    </li>
+                    </li>*@
                 </ul>
             </ul>
         </div>
