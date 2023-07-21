@@ -1,5 +1,4 @@
-﻿using Microsoft.AspNetCore.Identity;
-using RentReview.Models.DataModels;
+﻿using RentReview.Models.DataModels;
 
 namespace RentReview.Services.Admin
 {
@@ -7,6 +6,7 @@ namespace RentReview.Services.Admin
     {
         Task DeleteUser(string Id);
         Task PromoteUser(string Id);
-        ICollection<ViewUsersDataModel> GetAllUsers(bool isInRole);
+        Task DemoteUser(string Id);
+        Task<ICollection<ViewUsersDataModel>> GetAllUsers();
     }
 }

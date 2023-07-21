@@ -1,21 +1,14 @@
 ﻿using Microsoft.AspNetCore.Identity;
-using RentReview.Data;
 using RentReview.Models.DataModels;
-using RentReviewRepository;
 
 namespace RentReview.Services.Admin
 {
     public class AdminService : IAdminService
     {
         private readonly UserManager<IdentityUser> userManager;
-        private readonly RoleManager<IdentityRole> roleManager;
-        private readonly IRepository repository;
-        public AdminService(UserManager<IdentityUser> userManager, RoleManager<IdentityRole> roleManager, IRepository repository)
-        {
-            this.userManager = userManager;
-            this.roleManager = roleManager;
-            this.repository = repository;
-        }
+
+        public AdminService(UserManager<IdentityUser> userManager)
+        => this.userManager = userManager;
 
         public async Task DeleteUser(string Id)
         {
@@ -27,14 +20,28 @@ namespace RentReview.Services.Admin
             var user = await this.userManager.FindByIdAsync(Id);
             await this.userManager.AddToRoleAsync(user, "admin");
         }
-        public ICollection<ViewUsersDataModel> GetAllUsers(bool isAdmin)
+        public async Task DemoteUser(string Id)
         {
-            var users = this.userManager.Users.Select(u => new ViewUsersDataModel
+            var user = await this.userManager.FindByIdAsync(Id);
+            await this.userManager.RemoveFromRoleAsync(user, "admin");
+            await this.userManager.AddToRoleAsync(user, "user");
+        }
+        public async Task<ICollection<ViewUsersDataModel>> GetAllUsers()
+        {
+            var users = new List<ViewUsersDataModel>();
+            var temp = this.userManager.Users.ToList();
+
+            foreach (var tempUser in temp)
             {
-                Id = u.Id,
-                Name = u.UserName,
-                IsAdmin = isAdmin
-            });
+                var user = new ViewUsersDataModel
+                {
+                    Id = tempUser.Id,
+                    Name = tempUser.UserName,
+                    IsAdmin = await this.userManager.IsInRoleAsync(tempUser, "admin")
+                };
+
+                users.Add(user);
+            }
 
             return users.ToList();
         }

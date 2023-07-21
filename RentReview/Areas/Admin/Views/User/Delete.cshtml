@@ -1,8 +1,0 @@
-﻿@model List<RentReview.Models.DataModels.ViewUsersDataModel>
-
-<ul>
-    @foreach (var user in @Model)
-    {
-        <li>@user.Name - <a href="DeleteUser?Id=@user.Id" class="btn btn-primary">Delete</a> </li>
-    }
-</ul>

@@ -12,20 +12,23 @@ namespace RentReview.Areas.Admin.Controllers
         public UserController(IAdminService adminService)
         => this.adminService = adminService;
 
-        public IActionResult Delete()
-        => View(this.adminService.GetAllUsers(this.User.IsInRole("admin")));
-        public IActionResult Promote()
-       => View(this.adminService.GetAllUsers(this.User.IsInRole("admin")));
+        public async Task<IActionResult> Manage()
+        => View(await this.adminService.GetAllUsers());
 
         public async Task<IActionResult> DeleteUser(string Id)
         {
             await this.adminService.DeleteUser(Id);
-            return Redirect("/Admin/Home");
+            return Redirect("Manage");
         }
         public async Task<IActionResult> PromoteUser(string Id)
         {
             await this.adminService.PromoteUser(Id);
-            return Redirect("/Admin/Home");
+            return Redirect("Manage");
+        }
+        public async Task<IActionResult> DemoteUser(string Id)
+        {
+            await this.adminService.DemoteUser(Id);
+            return Redirect("Manage");
         }
     }
 }

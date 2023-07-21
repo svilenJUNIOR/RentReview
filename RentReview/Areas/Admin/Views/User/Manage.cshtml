@@ -1,0 +1,22 @@
+﻿@model List<RentReview.Models.DataModels.ViewUsersDataModel>
+
+<ul>
+    @foreach (var user in @Model)
+    {
+
+        @if (!user.IsAdmin)
+        {
+            <li>
+                @user.Name - <a href="PromoteUser?Id=@user.Id" class="btn btn-primary">Promote</a>
+                <a href="DeleteUser?Id=@user.Id" class="btn btn-primary" style="margin-left:10px;">Delete</a>
+            </li>
+        }
+        else
+        {
+            <li style="margin-top:10px;">
+                @user.Name - <a href="DemoteUser?Id=@user.Id" class="btn btn-primary">Demote</a>
+                <a href="DeleteUser?Id=@user.Id" class="btn btn-primary" style="margin-left:10px;">Delete</a>
+            </li>
+        }
+    }
+</ul>
