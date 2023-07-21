@@ -18,12 +18,8 @@ namespace RentReview.Data.Models
         public string? ReviewOfNeighbour { get; set; }
         public string? Pros { get; set; }
         public string? Cons { get; set; }
-
-        [Column("Rented", TypeName = "Date")]
-        public DateTime? Rented { get; set; }
-
-        [Column("Vacated", TypeName = "Date")]
-        public DateTime? Vacated { get; set; }
+        public string? Rented { get; set; }
+        public string? Vacated { get; set; }
         [Required]
         public string Picture { get; set; }
         [Required]

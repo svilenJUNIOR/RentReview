@@ -63,6 +63,7 @@ namespace RentReview.Controllers
             await this.reviewService.Remove(Id);
             return Redirect("/User/Profile");
         }
+
         public IActionResult All()
         => View(this.reviewService.ViewReviews());
     }

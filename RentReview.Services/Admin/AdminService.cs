@@ -19,6 +19,9 @@ namespace RentReview.Services.Admin
         {
             var user = await this.userManager.FindByIdAsync(Id);
             await this.userManager.AddToRoleAsync(user, "admin");
+
+            if (await this.userManager.IsInRoleAsync(user, "user"))
+                await this.userManager.RemoveFromRoleAsync(user, "user");
         }
         public async Task DemoteUser(string Id)
         {

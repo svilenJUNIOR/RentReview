@@ -9,8 +9,8 @@
         public string ReviewOfNeighbour { get; set; }
         public ICollection<string> Pros { get; set; } = new List<string>();
         public ICollection<string> Cons { get; set; } = new List<string>();
-        public DateTime? Rented { get; set; }
-        public DateTime? Vacated { get; set; }
+        public string? Rented { get; set; }
+        public string? Vacated { get; set; }
         public string Picture { get; set; }
         public string Url { get; set; }
     }

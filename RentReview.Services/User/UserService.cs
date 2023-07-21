@@ -1,6 +1,4 @@
-﻿using Microsoft.AspNetCore.Http;
-using Microsoft.AspNetCore.Identity;
-using RentReview.Data.Models;
+﻿using Microsoft.AspNetCore.Identity;
 using RentReview.Models.DataModels;
 using RentReview.Models.ViewModels;
 using RentReviewRepository;
@@ -42,6 +40,7 @@ namespace RentReview.Services.User
             };
 
             await this.userManager.CreateAsync(user);
+            await this.userManager.AddToRoleAsync(user, "user");
             await this.repository.SaveChangesAsync();
         }
         public async Task UserLoginAsync(LoginUserDataModel data)

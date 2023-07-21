@@ -6,7 +6,7 @@
 
         @if (!user.IsAdmin)
         {
-            <li>
+            <li style="margin-top:10px;">
                 @user.Name - <a href="PromoteUser?Id=@user.Id" class="btn btn-primary">Promote</a>
                 <a href="DeleteUser?Id=@user.Id" class="btn btn-primary" style="margin-left:10px;">Delete</a>
             </li>
