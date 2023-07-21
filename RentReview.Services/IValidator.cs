@@ -5,7 +5,7 @@ namespace RentReview.Services
     public interface IValidator
     {
         ICollection<Exception> ValidateAddProperty(AddNewPropertyDataModel data);
-        ICollection<Exception> ValidateAddReview(AddNewReviewDataModel data);
+        ICollection<Exception> ValidateAddReview(AddNewReviewDataModel data, bool hasNulls);
         Task<IEnumerable<Exception>> ValidateUserRegisterAsync(RegisterUserDataModel data);
         Task<IEnumerable<Exception>> ValidateUserLoginAsync(LoginUserDataModel data);
         bool HasNulls(params string[] args);

@@ -40,7 +40,8 @@ namespace RentReview.Controllers
 
             try
             {
-                await this.reviewService.AddAsync(data, await this.user());
+                var check = this.ModelState.IsValid;
+                await this.reviewService.AddAsync(data, await this.user(), check);
                 return Redirect("All");
             }
             catch (AggregateException exception)
@@ -53,8 +54,16 @@ namespace RentReview.Controllers
         [Authorize]
         public async Task<IActionResult> Edit(AddNewReviewDataModel data, string Id)
         {
-            this.reviewService.Edit(data, Id);
-            return Redirect("/User/Profile");
+            try
+            {
+                var check = this.ModelState.IsValid;
+                await this.reviewService.EditAsync(data, Id, check);
+                return Redirect("/User/Profile");
+            }
+            catch (AggregateException exception)
+            {
+                return this.CatchErrors(exception);
+            }
         }
 
         [Authorize]

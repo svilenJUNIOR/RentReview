@@ -20,9 +20,9 @@ namespace RentReview.Services.Review
             this.userManager = userManager;
             this.validator = validator;
         }
-        public async Task AddAsync(AddNewReviewDataModel data, IdentityUser user)
+        public async Task AddAsync(AddNewReviewDataModel data, IdentityUser user, bool hasNulls)
         {
-            var errors = this.validator.ValidateAddReview(data);
+            var errors = this.validator.ValidateAddReview(data, hasNulls);
             if (errors.Any()) await this.validator.ThrowErrorsAsync(errors);
 
             var property = this.repository.FindById<Data.Models.Property>(data.PropertyId);
@@ -64,8 +64,11 @@ namespace RentReview.Services.Review
             return this.bindService.BindReviews(reviews).ToList();
         }
 
-        public void Edit(AddNewReviewDataModel data, string reviewId)
+        public async Task EditAsync(AddNewReviewDataModel data, string reviewId, bool hasNulls)
         {
+            var errors = this.validator.ValidateAddReview(data, hasNulls);
+            if (errors.Any()) await this.validator.ThrowErrorsAsync(errors);
+
             var property = this.repository.FindPropertyByReviewId(reviewId);
 
             StringBuilder pros = new StringBuilder();
@@ -85,7 +88,7 @@ namespace RentReview.Services.Review
             property.Rented = data.Rented;
             property.Vacated= data.Vacated;
 
-            this.repository.SaveChangesAsync();
+            await this.repository.SaveChangesAsync();
         }
 
         public async Task Remove(string reviewId)

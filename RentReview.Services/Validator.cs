@@ -31,12 +31,11 @@ namespace RentReview.Services
 
             return errors;
         }
-        public ICollection<Exception> ValidateAddReview(AddNewReviewDataModel data)
+        public ICollection<Exception> ValidateAddReview(AddNewReviewDataModel data, bool isValid)
         {
             var errors = new List<Exception>();
-            bool hasNulls = this.HasNulls(data.Cons.ToString(), data.Rented.ToString(), data.Vacated.ToString(), data.LandlordReview, data.PropertyReview, data.NeighbourReview, data.Pros.ToString());
 
-            if (hasNulls)
+            if (!isValid)
             {
                 errors.Add(new Exception(Messages.EmptyFields));
                 return errors;

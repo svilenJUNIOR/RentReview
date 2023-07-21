@@ -6,10 +6,10 @@ namespace RentReview.Services.Review
 {
     public interface IReviewService
     {
-        Task AddAsync(AddNewReviewDataModel data, IdentityUser user);
+        Task AddAsync(AddNewReviewDataModel data, IdentityUser user, bool check);
         ViewFullReviewViewModel ViewFullReview(string reviewId);
         ICollection<ViewReviewViewModel> ViewReviews();
-        void Edit(AddNewReviewDataModel data, string reviewId);
+        Task EditAsync(AddNewReviewDataModel data, string reviewId, bool check);
         Task Remove(string reviewId);
     }
 }
