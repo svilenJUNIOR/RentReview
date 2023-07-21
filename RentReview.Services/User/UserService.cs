@@ -23,10 +23,10 @@ namespace RentReview.Services.User
             this.bindService = bindService;
         }
 
-        public async Task UserRegisterAsync(RegisterUserDataModel data)
+        public async Task UserRegisterAsync(RegisterUserDataModel data, bool check)
         {
-            var errors = await this.validator.ValidateUserRegisterAsync(data);
-            if (errors.Any()) await this.validator.ThrowErrorsAsync(errors);
+            var errors = await this.validator.ValidateUserRegisterAsync(data, check);
+            if (errors.Any()) this.validator.ThrowErrors(errors);
 
             var hashedPassword = this.hasher.Hash(data.Password);
 
@@ -43,10 +43,10 @@ namespace RentReview.Services.User
             await this.userManager.AddToRoleAsync(user, "user");
             await this.repository.SaveChangesAsync();
         }
-        public async Task UserLoginAsync(LoginUserDataModel data)
+        public async Task UserLoginAsync(LoginUserDataModel data, bool check)
         {
-            var errors = await this.validator.ValidateUserLoginAsync(data);
-            if (errors.Any()) await this.validator.ThrowErrorsAsync(errors);
+            var errors = await this.validator.ValidateUserLoginAsync(data, check);
+            if (errors.Any()) this.validator.ThrowErrors(errors);
 
             var user = await this.repository.FindUserByEmailAsync(data.Email);
             await this.signInManager.SignInAsync(user, true);

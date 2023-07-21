@@ -35,7 +35,8 @@ namespace RentReview.Controllers
         {
             try
             {
-                await this.userService.UserRegisterAsync(data);
+                var check = this.ModelState.IsValid;
+                await this.userService.UserRegisterAsync(data, check);
                 return Redirect("Login");
             }
             catch (AggregateException exception)
@@ -49,7 +50,8 @@ namespace RentReview.Controllers
         {
             try
             {
-                await this.userService.UserLoginAsync(data);
+                var check = this.ModelState.IsValid;
+                await this.userService.UserLoginAsync(data, check);
                 this.SetCookie(data.Email);
                 return Redirect("/");
             }

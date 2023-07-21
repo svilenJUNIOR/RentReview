@@ -6,8 +6,8 @@ namespace RentReview.Services.User
 {
     public interface IUserService
     {
-        Task UserRegisterAsync(RegisterUserDataModel data);
-        Task UserLoginAsync(LoginUserDataModel data);
+        Task UserRegisterAsync(RegisterUserDataModel data, bool check);
+        Task UserLoginAsync(LoginUserDataModel data, bool check);
         ICollection<ViewPropertyViewModel> LoadMyData(IdentityUser user);
     }
 }

@@ -4,6 +4,7 @@ using Microsoft.AspNetCore.Mvc;
 using RentReview.Extensions;
 using RentReview.Models.DataModels;
 using RentReview.Services.Property;
+using System;
 
 namespace RentReview.Controllers
 {
@@ -43,7 +44,8 @@ namespace RentReview.Controllers
         {
             try
             {
-                await this.propertyService.AddAsync(data, await this.user());
+                bool check = this.ModelState.IsValid;
+                await this.propertyService.AddAsync(data, await this.user(), check);
                 return Redirect("All");
             }
             catch (AggregateException exception)
@@ -57,8 +59,18 @@ namespace RentReview.Controllers
         public async Task<IActionResult> Edit(EditPropertyDataModel data, string Id)
         {
             data.Id = Id;
-            this.propertyService.Edit(data);
-            return Redirect("/User/Profile");
+
+            try
+            {
+                var check = this.ModelState.IsValid;
+                this.propertyService.Edit(data, check);
+                return Redirect("/User/Profile");
+            }
+            catch (AggregateException exception)
+            {
+                return this.CatchErrors(exception);
+            }
+            
         }
     }
 }

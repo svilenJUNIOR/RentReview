@@ -15,12 +15,27 @@ namespace RentReview.Services
             this.hasher = hasher;
         }
 
-        public ICollection<Exception> ValidateAddProperty(AddNewPropertyDataModel data)
+        public ICollection<Exception> ValidateAddProperty(AddNewPropertyDataModel data, bool isValid)
         {
             var errors = new List<Exception>();
-            bool hasNulls = this.HasNulls(data.Url, data.Address, data.Price.ToString(), data.Picture);
 
-            if (hasNulls)
+            if (!isValid)
+            {
+                errors.Add(new Exception(Messages.EmptyFields));
+                return errors;
+            }
+
+            if (data.Address.Length < 10) errors.Add(new Exception(Messages.AddressTooShort));
+            if (data.Price < 0) errors.Add(new Exception(Messages.PriceBelowZero));
+
+            return errors;
+        
+        }
+        public ICollection<Exception> ValidateEditProperty(EditPropertyDataModel data, bool isValid)
+        {
+            var errors = new List<Exception>();
+
+            if (!isValid)
             {
                 errors.Add(new Exception(Messages.EmptyFields));
                 return errors;
@@ -50,12 +65,11 @@ namespace RentReview.Services
 
             return errors;
         }
-        public async Task<IEnumerable<Exception>> ValidateUserRegisterAsync(RegisterUserDataModel data)
+        public async Task<IEnumerable<Exception>> ValidateUserRegisterAsync(RegisterUserDataModel data, bool isValid)
         {
             var errors = new List<Exception>();
-            bool hasNulls = this.HasNulls(data.Email, data.Username, data.Password);
-
-            if (hasNulls)
+                
+            if (!isValid)
             {
                 errors.Add(new Exception(Messages.EmptyFields));
                 return errors;
@@ -70,12 +84,11 @@ namespace RentReview.Services
             if (!data.Username.All(char.IsLetter)) errors.Add(new Exception(Messages.WrongUsernameFormat));
             return errors;
         }
-        public async Task<IEnumerable<Exception>> ValidateUserLoginAsync(LoginUserDataModel data)
+        public async Task<IEnumerable<Exception>> ValidateUserLoginAsync(LoginUserDataModel data, bool isValid)
         {
             var errors = new List<Exception>();
-            bool hasNulls = this.HasNulls(data.Email, data.Password);
 
-            if (hasNulls)
+            if (!isValid)
             {
                 errors.Add(new Exception(Messages.EmptyFields));
                 return errors;
@@ -88,17 +101,7 @@ namespace RentReview.Services
             
             return errors;
         }
-        public bool HasNulls(params string[] args)
-        {
-            bool check = false;
-
-            foreach (var arg in args)
-                if (string.IsNullOrEmpty(arg) || string.IsNullOrWhiteSpace(arg))
-                    check = true;
-
-            return check;
-        }
-        public async Task<IEnumerable<Exception>> ThrowErrorsAsync(IEnumerable<Exception> errors)
+        public  IEnumerable<Exception> ThrowErrors(IEnumerable<Exception> errors)
         {
             if (errors.Count() == 0) return new List<Exception>();
             throw new AggregateException(errors);

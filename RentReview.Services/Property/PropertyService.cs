@@ -18,10 +18,10 @@ namespace RentReview.Services.Property
             this.bindService = bindService;
         }
 
-        public async Task AddAsync(AddNewPropertyDataModel data, IdentityUser user)
+        public async Task AddAsync(AddNewPropertyDataModel data, IdentityUser user, bool check)
         {
-            var errors = this.validator.ValidateAddProperty(data);
-            if (errors.Any()) await this.validator.ThrowErrorsAsync(errors);
+            var errors = this.validator.ValidateAddProperty(data, check);
+            if (errors.Any()) this.validator.ThrowErrors(errors);
 
             var prop = new Data.Models.Property
             {
@@ -50,8 +50,11 @@ namespace RentReview.Services.Property
 
             return bindedProperty;
         }
-        public void Edit(EditPropertyDataModel data)
+        public void Edit(EditPropertyDataModel data, bool check)
         {
+            var errors = this.validator.ValidateEditProperty(data, check);
+            if (errors.Any()) this.validator.ThrowErrors(errors);
+
             var property = this.repository.FindById<Data.Models.Property>(data.Id);
 
             property.Address = data.Address;

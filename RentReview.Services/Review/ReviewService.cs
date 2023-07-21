@@ -23,7 +23,7 @@ namespace RentReview.Services.Review
         public async Task AddAsync(AddNewReviewDataModel data, IdentityUser user, bool hasNulls)
         {
             var errors = this.validator.ValidateAddReview(data, hasNulls);
-            if (errors.Any()) await this.validator.ThrowErrorsAsync(errors);
+            if (errors.Any()) this.validator.ThrowErrors(errors);
 
             var property = this.repository.FindById<Data.Models.Property>(data.PropertyId);
             var userId = await this.userManager.GetUserIdAsync(user);
@@ -67,7 +67,7 @@ namespace RentReview.Services.Review
         public async Task EditAsync(AddNewReviewDataModel data, string reviewId, bool hasNulls)
         {
             var errors = this.validator.ValidateAddReview(data, hasNulls);
-            if (errors.Any()) await this.validator.ThrowErrorsAsync(errors);
+            if (errors.Any()) this.validator.ThrowErrors(errors);
 
             var property = this.repository.FindPropertyByReviewId(reviewId);
 
