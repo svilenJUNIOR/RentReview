@@ -15,7 +15,7 @@ namespace RentReview.Services
             this.hasher = hasher;
         }
 
-        public ICollection<Exception> ValidateAddProperty(AddNewPropertyDataModel data, bool isValid)
+        public ICollection<Exception> ValidateProperty(PropertyDataModel data, bool isValid)
         {
             var errors = new List<Exception>();
 
@@ -30,21 +30,6 @@ namespace RentReview.Services
 
             return errors;
         
-        }
-        public ICollection<Exception> ValidateEditProperty(EditPropertyDataModel data, bool isValid)
-        {
-            var errors = new List<Exception>();
-
-            if (!isValid)
-            {
-                errors.Add(new Exception(Messages.EmptyFields));
-                return errors;
-            }
-
-            if (data.Address.Length < 10) errors.Add(new Exception(Messages.AddressTooShort));
-            if (data.Price < 0) errors.Add(new Exception(Messages.PriceBelowZero));
-
-            return errors;
         }
         public ICollection<Exception> ValidateAddReview(AddNewReviewDataModel data, bool isValid)
         {

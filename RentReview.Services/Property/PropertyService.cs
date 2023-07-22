@@ -20,7 +20,7 @@ namespace RentReview.Services.Property
 
         public async Task AddAsync(AddNewPropertyDataModel data, IdentityUser user, bool check)
         {
-            var errors = this.validator.ValidateAddProperty(data, check);
+            var errors = this.validator.ValidateProperty(data, check);
             if (errors.Any()) this.validator.ThrowErrors(errors);
 
             var prop = new Data.Models.Property
@@ -52,7 +52,7 @@ namespace RentReview.Services.Property
         }
         public void Edit(EditPropertyDataModel data, bool check)
         {
-            var errors = this.validator.ValidateEditProperty(data, check);
+            var errors = this.validator.ValidateProperty(data, check);
             if (errors.Any()) this.validator.ThrowErrors(errors);
 
             var property = this.repository.FindById<Data.Models.Property>(data.Id);
