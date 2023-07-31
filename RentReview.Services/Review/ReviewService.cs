@@ -1,6 +1,6 @@
 ﻿using Microsoft.AspNetCore.Identity;
-using RentReview.Models.DataModels;
-using RentReview.Models.ViewModels;
+using RentReview.Models.DataModels.Review;
+using RentReview.Models.ViewModels.Review;
 using RentReviewRepository;
 using System.Text;
 
@@ -20,7 +20,7 @@ namespace RentReview.Services.Review
             this.userManager = userManager;
             this.validator = validator;
         }
-        public async Task AddAsync(AddNewReviewDataModel data, IdentityUser user, bool hasNulls)
+        public async Task AddAsync(ReviewDataModel data, IdentityUser user, bool hasNulls)
         {
             var errors = this.validator.ValidateReview(data, hasNulls);
             if (errors.Any()) this.validator.ThrowErrors(errors);
@@ -49,7 +49,7 @@ namespace RentReview.Services.Review
             return this.bindService.BindReviews(reviews).ToList();
         }
 
-        public async Task EditAsync(AddNewReviewDataModel data, string reviewId, bool hasNulls)
+        public async Task EditAsync(ReviewDataModel data, string reviewId, bool hasNulls)
         {
             var errors = this.validator.ValidateReview(data, hasNulls);
             if (errors.Any()) this.validator.ThrowErrors(errors);
@@ -84,7 +84,7 @@ namespace RentReview.Services.Review
             await this.repository.SaveChangesAsync();
         }
 
-        private Data.Models.Property BindReview(AddNewReviewDataModel data, Data.Models.Property property)
+        private Data.Models.Property BindReview(ReviewDataModel data, Data.Models.Property property)
         {
             StringBuilder pros = new StringBuilder();
             StringBuilder cons = new StringBuilder();

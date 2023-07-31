@@ -1,4 +1,4 @@
-﻿using RentReview.Models.DataModels;
+﻿using RentReview.Models.DataModels.User;
 
 namespace RentReview.Services.Admin
 {

@@ -2,7 +2,7 @@
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
 using RentReview.Extensions;
-using RentReview.Models.DataModels;
+using RentReview.Models.DataModels.User;
 using RentReview.Services.User;
 
 namespace RentReview.Controllers

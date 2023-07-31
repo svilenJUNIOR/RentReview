@@ -1,4 +1,5 @@
-﻿using RentReview.Models.ViewModels;
+﻿using RentReview.Models.ViewModels.Property;
+using RentReview.Models.ViewModels.Review;
 using RentReviewRepository;
 
 namespace RentReview.Services

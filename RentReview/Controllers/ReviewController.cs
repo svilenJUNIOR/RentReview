@@ -2,7 +2,7 @@
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
 using RentReview.Extensions;
-using RentReview.Models.DataModels;
+using RentReview.Models.DataModels.Review;
 using RentReview.Services.Review;
 
 namespace RentReview.Controllers
@@ -34,7 +34,7 @@ namespace RentReview.Controllers
 
         [HttpPost]
         [Authorize]
-        public async Task<IActionResult> Add(AddNewReviewDataModel data, string Id)
+        public async Task<IActionResult> Add(ReviewDataModel data, string Id)
         {
             data.PropertyId = Id;
 
@@ -52,7 +52,7 @@ namespace RentReview.Controllers
 
         [HttpPost]
         [Authorize]
-        public async Task<IActionResult> Edit(AddNewReviewDataModel data, string Id)
+        public async Task<IActionResult> Edit(ReviewDataModel data, string Id)
         {
             try
             {

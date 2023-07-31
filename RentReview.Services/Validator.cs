@@ -1,6 +1,8 @@
-﻿using RentReview.Models.DataModels;
-using RentReviewRepository;
+﻿using RentReviewRepository;
 using RentReview.Common;
+using RentReview.Models.DataModels.User;
+using RentReview.Models.DataModels.Property;
+using RentReview.Models.DataModels.Review;
 
 namespace RentReview.Services
 {
@@ -31,7 +33,7 @@ namespace RentReview.Services
             return errors;
         
         }
-        public ICollection<Exception> ValidateReview(AddNewReviewDataModel data, bool isValid)
+        public ICollection<Exception> ValidateReview(ReviewDataModel data, bool isValid)
         {
             var errors = new List<Exception>();
 
