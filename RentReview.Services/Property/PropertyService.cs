@@ -59,6 +59,7 @@ namespace RentReview.Services.Property
 
             property.Address = data.Address;
             property.Price = data.Price;
+            property.Picture = data.PictureUrl;
 
             this.repository.SaveChangesAsync();
         }
