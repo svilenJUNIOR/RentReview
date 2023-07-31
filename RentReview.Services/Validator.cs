@@ -31,7 +31,7 @@ namespace RentReview.Services
             return errors;
         
         }
-        public ICollection<Exception> ValidateAddReview(AddNewReviewDataModel data, bool isValid)
+        public ICollection<Exception> ValidateReview(AddNewReviewDataModel data, bool isValid)
         {
             var errors = new List<Exception>();
 

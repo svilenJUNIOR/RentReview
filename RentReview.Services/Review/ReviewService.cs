@@ -22,7 +22,7 @@ namespace RentReview.Services.Review
         }
         public async Task AddAsync(AddNewReviewDataModel data, IdentityUser user, bool hasNulls)
         {
-            var errors = this.validator.ValidateAddReview(data, hasNulls);
+            var errors = this.validator.ValidateReview(data, hasNulls);
             if (errors.Any()) this.validator.ThrowErrors(errors);
 
             var property = this.repository.FindById<Data.Models.Property>(data.PropertyId);
@@ -34,23 +34,8 @@ namespace RentReview.Services.Review
                 UserId = userId
             };
 
-            StringBuilder pros = new StringBuilder();
-            StringBuilder cons = new StringBuilder();
-
-            foreach (var pro in data.Pros)
-                pros.Append(pro + "*");
-
-            foreach (var con in data.Cons)
-                cons.Append(con + "*");
-
-            property.ReviewOfProperty = data.PropertyReview;
-            property.ReviewOfLandlord = data.LandlordReview;
-            property.ReviewOfNeighbour = data.NeighbourReview;
-            property.Rented = data.Rented;
-            property.Vacated = data.Vacated;
-            property.Pros = pros.ToString();
-            property.Cons = cons.ToString();
-
+            this.BindReview(data, property);
+           
             await this.repository.AddAsync<Data.Models.Review>(Review);
             await this.repository.SaveChangesAsync();
         }
@@ -66,7 +51,7 @@ namespace RentReview.Services.Review
 
         public async Task EditAsync(AddNewReviewDataModel data, string reviewId, bool hasNulls)
         {
-            var errors = this.validator.ValidateAddReview(data, hasNulls);
+            var errors = this.validator.ValidateReview(data, hasNulls);
             if (errors.Any()) this.validator.ThrowErrors(errors);
 
             var property = this.repository.FindPropertyByReviewId(reviewId);
@@ -97,6 +82,28 @@ namespace RentReview.Services.Review
             this.repository.Remove(review);
 
             await this.repository.SaveChangesAsync();
+        }
+
+        private Data.Models.Property BindReview(AddNewReviewDataModel data, Data.Models.Property property)
+        {
+            StringBuilder pros = new StringBuilder();
+            StringBuilder cons = new StringBuilder();
+
+            foreach (var pro in data.Pros)
+                pros.Append(pro + "*");
+
+            foreach (var con in data.Cons)
+                cons.Append(con + "*");
+
+            property.ReviewOfProperty = data.PropertyReview;
+            property.ReviewOfLandlord = data.LandlordReview;
+            property.ReviewOfNeighbour = data.NeighbourReview;
+            property.Rented = data.Rented;
+            property.Vacated = data.Vacated;
+            property.Pros = pros.ToString();
+            property.Cons = cons.ToString();
+
+            return property;
         }
     }
 }
