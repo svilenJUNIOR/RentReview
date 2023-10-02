@@ -41,7 +41,7 @@ namespace RentReviewRepository
         public async Task<IdentityUser> FindUserByEmailAsync(string email)
         => await this.userManager.FindByEmailAsync(email);
 
-        public async Task<IdentityUser> FindUserByPasswordAsync(string password)
+        public async Task<IdentityUser> FindUserByPasswordAsync(string password) // password is hashed
          => await this.context.Users.Where(x => x.PasswordHash == password).FirstOrDefaultAsync();
 
         public async Task<IdentityUser> FindUserByIdAsync(string Id)

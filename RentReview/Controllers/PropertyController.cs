@@ -4,7 +4,6 @@ using Microsoft.AspNetCore.Mvc;
 using RentReview.Extensions;
 using RentReview.Models.DataModels.Property;
 using RentReview.Services.Property;
-using System;
 
 namespace RentReview.Controllers
 {
@@ -20,6 +19,7 @@ namespace RentReview.Controllers
         }
 
         private async Task<IdentityUser> user() => await this.userManager.FindByNameAsync(this.User.Identity.Name);
+       
         public IActionResult All()
          => View(propertyService.ViewProperties());
 

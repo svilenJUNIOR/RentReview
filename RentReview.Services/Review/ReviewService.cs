@@ -13,7 +13,7 @@ namespace RentReview.Services.Review
         private readonly IValidator validator;
 
         private readonly UserManager<IdentityUser> userManager;
-        public ReviewService(IRepository repository, IBindService bindService, IValidator validator,UserManager<IdentityUser> userManager)
+        public ReviewService(IRepository repository, IBindService bindService, IValidator validator, UserManager<IdentityUser> userManager)
         {
             this.repository = repository;
             this.bindService = bindService;
@@ -35,7 +35,7 @@ namespace RentReview.Services.Review
             };
 
             this.BindReview(data, property);
-           
+
             await this.repository.AddAsync<Data.Models.Review>(Review);
             await this.repository.SaveChangesAsync();
         }
@@ -69,9 +69,9 @@ namespace RentReview.Services.Review
             property.Cons = cons.ToString();
             property.ReviewOfProperty = data.PropertyReview;
             property.ReviewOfLandlord = data.LandlordReview;
-            property.ReviewOfNeighbour= data.NeighbourReview;
+            property.ReviewOfNeighbour = data.NeighbourReview;
             property.Rented = data.Rented;
-            property.Vacated= data.Vacated;
+            property.Vacated = data.Vacated;
 
             await this.repository.SaveChangesAsync();
         }
@@ -85,25 +85,6 @@ namespace RentReview.Services.Review
         }
 
         private Data.Models.Property BindReview(ReviewDataModel data, Data.Models.Property property)
-        {
-            StringBuilder pros = new StringBuilder();
-            StringBuilder cons = new StringBuilder();
-
-            foreach (var pro in data.Pros)
-                pros.Append(pro + "*");
-
-            foreach (var con in data.Cons)
-                cons.Append(con + "*");
-
-            property.ReviewOfProperty = data.PropertyReview;
-            property.ReviewOfLandlord = data.LandlordReview;
-            property.ReviewOfNeighbour = data.NeighbourReview;
-            property.Rented = data.Rented;
-            property.Vacated = data.Vacated;
-            property.Pros = pros.ToString();
-            property.Cons = cons.ToString();
-
-            return property;
-        }
+        => this.bindService.BindReviewToProperty(property, data);
     }
 }

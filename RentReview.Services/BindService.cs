@@ -1,6 +1,8 @@
-﻿using RentReview.Models.ViewModels.Property;
+﻿using RentReview.Models.DataModels.Review;
+using RentReview.Models.ViewModels.Property;
 using RentReview.Models.ViewModels.Review;
 using RentReviewRepository;
+using System.Text;
 
 namespace RentReview.Services
 {
@@ -56,6 +58,27 @@ namespace RentReview.Services
             };
 
             return review;
+        }
+        public Data.Models.Property BindReviewToProperty(Data.Models.Property property, ReviewDataModel data)
+        {
+            StringBuilder pros = new StringBuilder();
+            StringBuilder cons = new StringBuilder();
+
+            foreach (var pro in data.Pros)
+                pros.Append(pro + "*");
+
+            foreach (var con in data.Cons)
+                cons.Append(con + "*");
+
+            property.ReviewOfProperty = data.PropertyReview;
+            property.ReviewOfLandlord = data.LandlordReview;
+            property.ReviewOfNeighbour = data.NeighbourReview;
+            property.Rented = data.Rented;
+            property.Vacated = data.Vacated;
+            property.Pros = pros.ToString();
+            property.Cons = cons.ToString();
+
+            return property;
         }
     }
 }
