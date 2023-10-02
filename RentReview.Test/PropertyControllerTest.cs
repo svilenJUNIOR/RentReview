@@ -49,7 +49,7 @@ namespace RentReview.Test
                 Address = "Varna Asparuhovo",
                 Picture = "ngfx",
                 Price = 400,
-                Url = null
+                Url = "herhe"
             };
 
             var testUser = new Microsoft.AspNetCore.Identity.IdentityUser
@@ -77,7 +77,7 @@ namespace RentReview.Test
             var result = propertyController.Add(dataToAdd);
             Assert.IsType<RedirectResult>(result.Result);
         }
-        
+
         [Fact]
         public void EditShouldReturnViewWithModel()
         {
@@ -93,5 +93,20 @@ namespace RentReview.Test
 
             var model = Assert.IsAssignableFrom<ViewPropertyViewModel>(viewResult.ViewData.Model);
         }
-    }
+
+        [Fact]
+        public async void DeleteShouldDelete()
+        {
+            var fakePropertyService = A.Fake<IPropertyService>();
+            A.CallTo(() => fakePropertyService.Remove("13ab86b4-09b5-48de-b7cb-4ea50d68e990"))
+                .Returns(Task.FromResult("Remove"));
+
+            var propertyController = new PropertyController(fakePropertyService, null);
+
+            var result = propertyController.Delete("13ab86b4-09b5-48de-b7cb-4ea50d68e990");
+            var actionResult = Assert.IsType<RedirectResult>(result.Result);
+
+            Assert.Equal("/User/Profile", actionResult.Url);
+        }
+}
 }
