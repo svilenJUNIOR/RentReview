@@ -50,7 +50,7 @@ namespace RentReview.Services.Property
 
             return bindedProperty;
         }
-        public void Edit(EditPropertyDataModel data, bool check)
+        public async Task Edit(EditPropertyDataModel data, bool check)
         {
             var errors = this.validator.ValidateProperty(data, check);
             if (errors.Any()) this.validator.ThrowErrors(errors);
@@ -61,7 +61,7 @@ namespace RentReview.Services.Property
             property.Price = data.Price;
             property.Picture = data.PictureUrl;
 
-            this.repository.SaveChangesAsync();
+            await this.repository.SaveChangesAsync();
         }
         public async Task Remove(string Id)
         {
