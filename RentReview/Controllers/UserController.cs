@@ -22,13 +22,12 @@ namespace RentReview.Controllers
 
         public IActionResult Register()
         => View();
+        public IActionResult Login()
+        => View();
 
         [Authorize]
         public async Task<IActionResult> Profile()
         => View(this.userService.LoadMyData(await this.user()));
-
-        public IActionResult Login()
-        => View();
 
         [HttpPost]
         public async Task<IActionResult> Register(RegisterUserDataModel data)
