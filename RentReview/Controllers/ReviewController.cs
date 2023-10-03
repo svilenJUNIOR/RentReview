@@ -42,7 +42,7 @@ namespace RentReview.Controllers
             {
                 var check = this.ModelState.IsValid;
                 await this.reviewService.AddAsync(data, await this.user(), check);
-                return Redirect("All");
+                return Redirect("/Review/All");
             }
             catch (AggregateException exception)
             {
