@@ -123,5 +123,21 @@ namespace RentReview.Test
             var actionResult = Assert.IsType<RedirectResult>(result.Result);
             Assert.Equal("/User/Profile", actionResult.Url);
         }
+
+        [Theory]
+        [InlineData("07c6134c-1a84-4b89-b6bf-60ce04de0ecd")]
+        public void DeleteMEthodShouldDelete(string reviewId)
+        {
+            var fakeReviewService = A.Fake<IReviewService>();
+            var reviewController = new ReviewController(fakeReviewService, null);
+
+            A.CallTo(() => fakeReviewService.Remove(reviewId))
+                .Returns(Task.FromResult("Remove"));
+
+            var result = reviewController.Delete(reviewId);
+
+            var actionResult = Assert.IsType<RedirectResult>(result.Result);
+            Assert.Equal("/User/Profile", actionResult.Url);
+        }
     }
 }
