@@ -15,5 +15,14 @@ namespace RentReview.Test
             var result = userController.Register();
             Assert.IsType<ViewResult>(result);
         }
+
+        [Fact]
+        public void LoginMethodReturnCorrectView()
+        {
+            var userController = new UserController(null, null, null);
+
+            var result = userController.Login();
+            Assert.IsType<ViewResult>(result);
+        }
     }
 }
