@@ -24,5 +24,17 @@ namespace RentReview.Test
 
             var model = Assert.IsAssignableFrom<ViewFullReviewViewModel>(viewResult.ViewData.Model);
         }
+
+        [Fact]
+        public void AddViewShouldReturnView()
+        {
+            var fakeReviewService = A.Fake<IReviewService>();
+
+            var reviewController = new ReviewController(fakeReviewService, null);
+
+            var result = reviewController.Add();
+
+            Assert.IsType<ViewResult>(result);
+        }
     }
 }
