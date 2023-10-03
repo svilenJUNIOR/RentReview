@@ -12,18 +12,18 @@ namespace RentReview.Test
 {
     public class ReviewControllerTest
     {
-        [Fact]
-        public void ViewReviewReturnViewWithCorrectReview()
+        [Theory]
+        [InlineData("07c6134c-1a84-4b89-b6bf-60ce04de0ecd")]
+        public void ViewReviewReturnViewWithCorrectReview(string reviewId)
         {
-            var Id = "07c6134c-1a84-4b89-b6bf-60ce04de0ecd";
             var fakeReviewService = A.Fake<IReviewService>();
 
-            A.CallTo(() => fakeReviewService.ViewFullReview(Id))
+            A.CallTo(() => fakeReviewService.ViewFullReview(reviewId))
                 .Returns(new ViewFullReviewViewModel());
 
             var reviewController = new ReviewController(fakeReviewService, null);
 
-            var result = reviewController.ViewReview(Id);
+            var result = reviewController.ViewReview(reviewId);
             var viewResult = Assert.IsType<ViewResult>(result);
 
             var model = Assert.IsAssignableFrom<ViewFullReviewViewModel>(viewResult.ViewData.Model);
@@ -38,25 +38,25 @@ namespace RentReview.Test
             Assert.IsType<ViewResult>(result);
         }
 
-        [Fact]
-        public void EditViewReturnViewWitchCorrectReview()
+        [Theory]
+        [InlineData("07c6134c-1a84-4b89-b6bf-60ce04de0ecd")]
+        public void EditViewReturnViewWitchCorrectReview(string reviewId)
         {
-            var Id = "07c6134c-1a84-4b89-b6bf-60ce04de0ecd";
-
             var fakeReviewService = A.Fake<IReviewService>();
             var reviewController = new ReviewController(fakeReviewService, null);
 
-            A.CallTo(() => fakeReviewService.ViewFullReview(Id))
+            A.CallTo(() => fakeReviewService.ViewFullReview(reviewId))
                 .Returns(new ViewFullReviewViewModel());
 
-            var result = reviewController.Edit(Id);
+            var result = reviewController.Edit(reviewId);
             var viewModel = Assert.IsType<ViewResult>(result);
 
             Assert.IsType<ViewFullReviewViewModel>(viewModel.Model);
         }
 
-        [Fact]
-        public void AddMethodShouldAdd()
+        [Theory]
+        [InlineData("22db8ef9-8c04-466a-be5c-1892b970765d", "7a0569e3-094b-4d60-bffb-858377dd2261")]
+        public void AddMethodShouldAdd(string userId, string propertyId)
         {
             var fakeReviewService = A.Fake<IReviewService>();
             var fakeUserManager = A.Fake<UserManager<IdentityUser>>();
@@ -85,15 +85,43 @@ namespace RentReview.Test
                 Rented = "12/01/2000",
                 Vacated = "14/04/2020"
             };
-            var testUser = new IdentityUser { Id = "22db8ef9-8c04-466a-be5c-1892b970765d" };
+            var testUser = new IdentityUser { Id = userId };
 
             A.CallTo(() => fakeReviewService.AddAsync(data, testUser, true))
                 .Returns(Task.FromResult("AddAsync"));
 
-            var result = reviewController.Add(data, "7a0569e3-094b-4d60-bffb-858377dd2261");
+            var result = reviewController.Add(data, propertyId);
 
             var actionResult = Assert.IsType<RedirectResult>(result.Result);
             Assert.Equal("/Review/All", actionResult.Url);
+        }
+
+        [Theory]
+        [InlineData("07c6134c-1a84-4b89-b6bf-60ce04de0ecd")]
+        public void EditMethodShouldEdit(string reviewId)
+        {
+            var fakeReviewService = A.Fake<IReviewService>();
+            var reviewController = new ReviewController(fakeReviewService, null);
+
+            var data = new ReviewDataModel
+            {
+                Cons = new List<string>() { "ima mishki" },
+                Pros = new List<string>() { "nqma mishki" },
+                LandlordReview = "stara babka vre si nosa",
+                NeighbourReview = "qka kaka prostira gola",
+                PropertyId = "7a0569e3-094b-4d60-bffb-858377dd2261",
+                PropertyReview = "stava za kuponi s tejki narkotici",
+                Rented = "12/01/2000",
+                Vacated = "14/04/2020"
+            };
+
+            A.CallTo(() => fakeReviewService.EditAsync(data, reviewId, true))
+            .Returns(Task.FromResult("EditAsync"));
+
+            var result = reviewController.Edit(data, reviewId);
+
+            var actionResult = Assert.IsType<RedirectResult>(result.Result);
+            Assert.Equal("/User/Profile", actionResult.Url);
         }
     }
 }
