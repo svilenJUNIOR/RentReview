@@ -3,13 +3,9 @@ using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
 using RentReview.Controllers;
-using RentReview.Data;
-using RentReview.Data.Models;
 using RentReview.Models.DataModels.Property;
 using RentReview.Models.ViewModels.Property;
 using RentReview.Services.Property;
-using RentReviewRepository;
-using System.Runtime.CompilerServices;
 using System.Security.Claims;
 
 namespace RentReview.Test
