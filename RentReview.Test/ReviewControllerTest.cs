@@ -139,5 +139,20 @@ namespace RentReview.Test
             var actionResult = Assert.IsType<RedirectResult>(result.Result);
             Assert.Equal("/User/Profile", actionResult.Url);
         }
+
+        [Fact]
+        public void AllMethodReturnsViewWithListOfReviews()
+        {
+            var fakeReviewService = A.Fake<IReviewService>();
+            var reviewController = new ReviewController(fakeReviewService, null);
+
+            A.CallTo(() => fakeReviewService.ViewReviews())
+                .Returns(new List<ViewReviewViewModel>(2));
+
+            var result = reviewController.All();
+            var viewResult = Assert.IsType<ViewResult>(result);
+
+            Assert.IsAssignableFrom<ICollection<ViewReviewViewModel>>(viewResult.ViewData.Model);
+        }
     }
 }

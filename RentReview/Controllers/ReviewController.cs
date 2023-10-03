@@ -20,6 +20,8 @@ namespace RentReview.Controllers
         }
 
         private async Task<IdentityUser> user() => await this.userManager.FindByNameAsync(this.User.Identity.Name);
+        public IActionResult All()
+        => View(this.reviewService.ViewReviews());
 
         public IActionResult ViewReview(string Id)
         => View(this.reviewService.ViewFullReview(Id));
@@ -72,8 +74,5 @@ namespace RentReview.Controllers
             await this.reviewService.Remove(Id);
             return Redirect("/User/Profile");
         }
-
-        public IActionResult All()
-        => View(this.reviewService.ViewReviews());
     }
 }
