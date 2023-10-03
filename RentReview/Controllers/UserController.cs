@@ -20,10 +20,9 @@ namespace RentReview.Controllers
         }
         private async Task<IdentityUser> user() => await this.userManager.FindByNameAsync(this.User.Identity.Name);
 
-        public IActionResult Register()
-        => View();
-        public IActionResult Login()
-        => View();
+        public IActionResult Register() => View();
+
+        public IActionResult Login() => View();
 
         [Authorize]
         public async Task<IActionResult> Profile()

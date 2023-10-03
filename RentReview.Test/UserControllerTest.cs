@@ -7,6 +7,7 @@ using Microsoft.AspNetCore.Identity;
 using RentReview.Models.ViewModels.Property;
 using Microsoft.AspNetCore.Http;
 using System.Security.Claims;
+using RentReview.Models.DataModels.User;
 
 namespace RentReview.Test
 {
@@ -60,6 +61,26 @@ namespace RentReview.Test
             var viewResult = Assert.IsType<ViewResult>(result.Result);
 
             Assert.IsAssignableFrom<ICollection<ViewPropertyViewModel>>(viewResult.ViewData.Model);
+        }
+
+        [Fact]
+        public void RegisterMethodRegistersUser()
+        {
+            var fakeUserService = A.Fake<IUserService>();
+            var userController = new UserController(fakeUserService, null, null);
+
+            var data = new RegisterUserDataModel
+            {
+                Email = "test_email@email.com",
+                Password = "test_password",
+                Username = "Seksi_mladej"
+            };
+
+            A.CallTo(() => fakeUserService.UserRegisterAsync(data, true))
+                .Returns(Task.FromResult("UserRegisterAsync"));
+
+            var result = userController.Register(data);
+            var viewResult = Assert.IsType<RedirectResult>(result.Result);
         }
     }
 }
