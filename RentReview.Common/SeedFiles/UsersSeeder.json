@@ -1,0 +1,18 @@
+[
+  {
+    "Id": "22db8ef9-8c04-466a-be5c-1892b970765d",
+    "UserName": "usernameSvilen",
+    "NormalizedUserName": "USERNAMESVILEN",
+    "Email": "svilen1@email.com",
+    "NormalizedEmail": "SVILEN1@EMAIL.COM",
+    "PasswordHash": "3f76cc25bf48a83195e13b2c7d650d0e6d68a0b274056d27f7177c934ccebeb2"
+  },
+  {
+    "Id": "b5b78b99-d6d0-4f8d-850d-c0a26caf5cd1",
+    "UserName": "gotinSurikat",
+    "NormalizedUserName": "GOTINSURIKAT",
+    "Email": "svilen2@email.com",
+    "NormalizedEmail": "SVILEN2@EMAIL.COM",
+    "PasswordHash": "27d079c773af30df9484ab0608392cb8dc3a91142d1e9d62520c69432a05235e"
+  }
+]

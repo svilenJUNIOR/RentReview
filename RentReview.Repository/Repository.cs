@@ -74,5 +74,8 @@ namespace RentReviewRepository
 
         public ICollection<IdentityUserRole<string>> GetUserRole()
         => this.context.UserRoles.ToList();
+
+        public async Task AddRangeAsync<T>(List<T> items) where T : class
+         => await this.context.Set<T>().AddRangeAsync(items);
     }
 }

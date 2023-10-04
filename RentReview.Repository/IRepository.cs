@@ -7,6 +7,7 @@ namespace RentReviewRepository
     {
         Task SaveChangesAsync();
         Task AddAsync<T>(T newItem) where T : class;
+        Task AddRangeAsync<T>(List<T> items) where T : class;
         void Remove<T>(T Item) where T : class;
         string ReturnReviewId(string propertyId);
         ICollection<T> GettAll<T>() where T : class;

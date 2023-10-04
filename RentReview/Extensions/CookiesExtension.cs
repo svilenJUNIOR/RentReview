@@ -1,9 +1,8 @@
 ﻿using Microsoft.AspNetCore.Mvc;
-using System.Runtime.CompilerServices;
 
 namespace RentReview.Extensions
 {
-    public static class CookiesEstension
+    public static class CookiesExtension
     {
         public static void SetCookie(this Controller controller, string email)
         {

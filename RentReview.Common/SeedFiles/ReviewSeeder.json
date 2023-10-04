@@ -1,0 +1,24 @@
+[
+  {
+    "Id": "07c6134c-1a84-4b89-b6bf-60ce04de0ecd",
+    "PropertyId": "7a0569e3-094b-4d60-bffb-858377dd2261",
+    "Rented": "2023-07-12",
+    "Vacated": "2023-07-19",
+    "Pros": "Near School / kindergarden*",
+    "Cons": "Noisy*",
+    "LandlordReview": "jason statham",
+    "NeighbourReview": "old lady too curious",
+    "PropertyReview": "has pool and a nice garden"
+  },
+  {
+    "Id": "3d547fe2-845c-4df0-9d45-2a664bd381bb",
+    "PropertyId": "8a7ccffb-f423-48a3-bd8b-52466aff066f",
+    "Rented": "2023-10-02",
+    "Vacated": "2023-10-11",
+    "Pros": "Near School / kindergarden*",
+    "Cons": "Noisy*",
+    "LandlordReview": "Lorem Ipsum is simply dummy text of the printing and typesetting industry.",
+    "NeighbourReview": "Lorem Ipsum is simply dummy text of the printing and typesetting industry.",
+    "PropertyReview": "Lorem Ipsum is simply dummy text of the printing and typesetting industry."
+  }
+]
