@@ -1,6 +1,7 @@
 ﻿using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
 using RentReview.Models;
+using RentReview.Services.SeederService;
 using System.Diagnostics;
 
 namespace RentReview.Controllers
@@ -8,9 +9,13 @@ namespace RentReview.Controllers
     public class HomeController : Controller
     {
         private readonly RoleManager<IdentityRole> roleManager;
+        private ISeeder seeder;
 
-        public HomeController(RoleManager<IdentityRole> roleManager)
-        => this.roleManager = roleManager;
+        public HomeController(RoleManager<IdentityRole> roleManager, ISeeder seeder)
+        {
+            this.roleManager = roleManager;
+            this.seeder = seeder;
+        }
 
         //public async Task<IActionResult> Index()
         //{
@@ -22,6 +27,16 @@ namespace RentReview.Controllers
 
         //    return RedirectToAction("All", "Review");
         //}
+        public async Task<IActionResult> Seed()
+        {
+            await this.seeder.SeedUsers();
+            await this.seeder.SeedRoles();
+            await this.seeder.SeedUserRole();
+            await this.seeder.SeedProperties();
+            await this.seeder.SeedReviews();
+
+            return Redirect("/");
+        }
 
         public IActionResult Index()
         {

@@ -53,6 +53,7 @@ namespace RentReview.Data.Migrations
                 columns: table => new
                 {
                     Id = table.Column<string>(type: "nvarchar(450)", nullable: false),
+                    UserId = table.Column<string>(type: "nvarchar(max)", nullable: false),
                     Address = table.Column<string>(type: "nvarchar(max)", nullable: false),
                     Price = table.Column<int>(type: "int", nullable: false),
                     ReviewOfLandlord = table.Column<string>(type: "nvarchar(max)", nullable: true),
@@ -60,8 +61,8 @@ namespace RentReview.Data.Migrations
                     ReviewOfNeighbour = table.Column<string>(type: "nvarchar(max)", nullable: true),
                     Pros = table.Column<string>(type: "nvarchar(max)", nullable: true),
                     Cons = table.Column<string>(type: "nvarchar(max)", nullable: true),
-                    Rented = table.Column<DateTime>(type: "Date", nullable: true),
-                    Vacated = table.Column<DateTime>(type: "Date", nullable: true),
+                    Rented = table.Column<string>(type: "nvarchar(max)", nullable: true),
+                    Vacated = table.Column<string>(type: "nvarchar(max)", nullable: true),
                     Picture = table.Column<string>(type: "nvarchar(max)", nullable: false),
                     Url = table.Column<string>(type: "nvarchar(max)", nullable: false)
                 },
@@ -75,26 +76,12 @@ namespace RentReview.Data.Migrations
                 columns: table => new
                 {
                     Id = table.Column<string>(type: "nvarchar(450)", nullable: false),
-                    TenantId = table.Column<string>(type: "nvarchar(max)", nullable: false),
+                    UserId = table.Column<string>(type: "nvarchar(max)", nullable: false),
                     PropertyId = table.Column<string>(type: "nvarchar(max)", nullable: false)
                 },
                 constraints: table =>
                 {
                     table.PrimaryKey("PK_Reviews", x => x.Id);
-                });
-
-            migrationBuilder.CreateTable(
-                name: "Tenants",
-                columns: table => new
-                {
-                    Id = table.Column<string>(type: "nvarchar(450)", nullable: false),
-                    FirstName = table.Column<string>(type: "nvarchar(max)", nullable: false),
-                    LastName = table.Column<string>(type: "nvarchar(max)", nullable: false),
-                    Age = table.Column<int>(type: "int", nullable: false)
-                },
-                constraints: table =>
-                {
-                    table.PrimaryKey("PK_Tenants", x => x.Id);
                 });
 
             migrationBuilder.CreateTable(
@@ -265,9 +252,6 @@ namespace RentReview.Data.Migrations
 
             migrationBuilder.DropTable(
                 name: "Reviews");
-
-            migrationBuilder.DropTable(
-                name: "Tenants");
 
             migrationBuilder.DropTable(
                 name: "AspNetRoles");

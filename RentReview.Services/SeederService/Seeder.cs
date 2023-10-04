@@ -1,4 +1,6 @@
-﻿using Newtonsoft.Json;
+﻿using Microsoft.AspNetCore.Identity;
+using Newtonsoft.Json;
+using RentReview.Common;
 using RentReviewRepository;
 
 namespace RentReview.Services.SeederService
@@ -10,32 +12,26 @@ namespace RentReview.Services.SeederService
          => this.repository = repository;
 
         public async Task SeedProperties()
-        {
-            var jsonString = File.ReadAllText(SeedFilesPaths.Profiles);
-
-            var toAdd = JsonConvert.DeserializeObject<List<Profile>>(jsonString);
-
-            await repository.AddRangeAsync(toAdd);
-        }
+        => await this.FileSeed<Data.Models.Property>(SeedFilesPaths.Properties);
 
         public async Task SeedReviews()
-        {
-            throw new NotImplementedException();
-        }
+        => await this.FileSeed<Data.Models.Review>(SeedFilesPaths.Reviews);
 
         public async Task SeedRoles()
-        {
-            throw new NotImplementedException();
-        }
+        => await this.FileSeed<IdentityRole>(SeedFilesPaths.Roles);
 
         public async Task SeedUserRole()
-        {
-            throw new NotImplementedException();
-        }
+        => await this.FileSeed<IdentityUserRole<string>>(SeedFilesPaths.UserRoles);
 
         public async Task SeedUsers()
+        => await this.FileSeed<IdentityUser>(SeedFilesPaths.Users);
+
+        private async Task FileSeed<T>(string path) where T : class
         {
-            throw new NotImplementedException();
+            var jsonString = File.ReadAllText(path);
+            var toAdd = JsonConvert.DeserializeObject<List<T>>(jsonString);
+            await repository.AddRangeAsync(toAdd);
+            await repository.SaveChangesAsync();
         }
     }
 }

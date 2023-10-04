@@ -175,3 +175,4 @@ C:\Users\svilen\OneDrive\Desktop\programing\Csharp\PROJECTS\RentReview\RentRevie
 C:\Users\svilen\OneDrive\Desktop\programing\Csharp\PROJECTS\RentReview\RentReview\bin\Debug\net6.0\Microsoft.Web.Infrastructure.dll
 C:\Users\svilen\OneDrive\Desktop\programing\Csharp\PROJECTS\RentReview\RentReview\bin\Debug\net6.0\RentReview.Common.dll
 C:\Users\svilen\OneDrive\Desktop\programing\Csharp\PROJECTS\RentReview\RentReview\bin\Debug\net6.0\RentReview.Common.pdb
+C:\Users\svilen\OneDrive\Desktop\programing\Csharp\PROJECTS\RentReview\RentReview\bin\Debug\net6.0\Newtonsoft.Json.dll

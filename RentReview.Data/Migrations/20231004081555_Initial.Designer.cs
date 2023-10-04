@@ -12,8 +12,8 @@ using RentReview.Data;
 namespace RentReview.Data.Migrations
 {
     [DbContext(typeof(RentDbContext))]
-    [Migration("20230718070723_Removed tenant")]
-    partial class Removedtenant
+    [Migration("20231004081555_Initial")]
+    partial class Initial
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
@@ -248,9 +248,8 @@ namespace RentReview.Data.Migrations
                     b.Property<string>("Pros")
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<DateTime?>("Rented")
-                        .HasColumnType("Date")
-                        .HasColumnName("Rented");
+                    b.Property<string>("Rented")
+                        .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("ReviewOfLandlord")
                         .HasColumnType("nvarchar(max)");
@@ -269,9 +268,8 @@ namespace RentReview.Data.Migrations
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<DateTime?>("Vacated")
-                        .HasColumnType("Date")
-                        .HasColumnName("Vacated");
+                    b.Property<string>("Vacated")
+                        .HasColumnType("nvarchar(max)");
 
                     b.HasKey("Id");
 

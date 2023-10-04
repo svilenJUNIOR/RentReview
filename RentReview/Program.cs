@@ -6,6 +6,7 @@ using RentReview.Services;
 using RentReview.Services.Admin;
 using RentReview.Services.Property;
 using RentReview.Services.Review;
+using RentReview.Services.SeederService;
 using RentReview.Services.User;
 using RentReviewRepository;
 
@@ -36,6 +37,7 @@ namespace RentReview
             builder.Services.AddScoped<IValidator, Validator>();
             builder.Services.AddScoped<IUserService, UserService>();
             builder.Services.AddScoped<IAdminService, AdminService>();
+            builder.Services.AddScoped<ISeeder, Seeder>();
 
             builder.Services.ConfigureApplicationCookie(options =>
             {

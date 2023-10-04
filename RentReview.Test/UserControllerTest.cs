@@ -82,8 +82,5 @@ namespace RentReview.Test
             var result = userController.Register(data);
             var viewResult = Assert.IsType<RedirectResult>(result.Result);
         }
-
-        [Fact]
-        
     }
 }
