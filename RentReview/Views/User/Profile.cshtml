@@ -5,14 +5,14 @@
 <div class="row">
     @foreach (var property in Model)
     {
-        <div class="card mb-3" style="max-width: 800px;">
+        <div class="card mb-3" style="max-width:1000px;">
             <div class="row g-0">
                 <div class="col-md-4">
                     <img src="@property.Picture" class="img-fluid rounded-start">
                 </div>
                 <div class="col-md-8">
                     <div class="card-body">
-                        <h5 class="card-title">@property.Address - @property.Price</h5>
+                        <h5 class="card-title">@property.Address - @property.Price $</h5>
                         @if (!property.HasReview)
                         {
                             <a href="/Review/Add?Id=@property.Id" id="AddReviewButton" class="btn btn-primary">Add Review</a>
@@ -23,8 +23,8 @@
                             <a href="/Review/Edit?Id=@property.ReviewId" id="EditReviewButton" class="btn btn-primary">Edit Review</a>
                             <a href="/Review/Delete?Id=@property.ReviewId" id="DeleteReviewButton" class="btn btn-primary">Delete Review</a>
                         }
-                        <a href="/Property/Edit?Id=@property.Id" id="EditButton" class="btn btn-primary">Edit</a>
-                        <a href="/Property/Delete?Id=@property.Id" id="DeleteButton" class="btn btn-primary">Delete</a>
+                        <a href="/Property/Edit?Id=@property.Id" id="EditButton" class="btn btn-primary">Edit Property</a>
+                        <a href="/Property/Delete?Id=@property.Id" id="DeleteButton" class="btn btn-primary">Delete Property</a>
                             
                     </div>
                 </div>
