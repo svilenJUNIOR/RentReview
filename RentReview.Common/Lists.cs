@@ -1,4 +1,6 @@
-﻿namespace RentReview.Common
+﻿using System.Diagnostics;
+
+namespace RentReview.Common
 {
     public static class Lists
     {
@@ -42,7 +44,31 @@
             {"Bad neighbours"},
             {"Bad landlord"}
         };
+
+        private static List<string> Extras = new List<string>
+        {
+            {"Near School / kindergarden"},
+            {"Near 24/7 pharmacy"},
+            {"Kid friendly"},
+        };
+
+        private static List<string> MinPrices = new List<string>
+        {
+            { "500"},
+            { "1000" },
+            { "1500" }
+        };
+
+        private static List<string> MaxPrices = new List<string>
+        {
+             { "1000" },
+            {  "1500" },
+            {  "1500+" }
+        };
         public static List<string> GetPros() => Pros;
         public static List<string> GetCons() => Cons;
+        public static List<string> GetExtras() => Extras;
+        public static List<string> GetMinPrices() => MinPrices;
+        public static List<string> GetMaxPrices() => MaxPrices;
     }
 }

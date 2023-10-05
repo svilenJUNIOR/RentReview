@@ -864,6 +864,16 @@
             "rid": "win"
           }
         }
+      },
+      "RentReview.Common/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v6.0",
+        "compile": {
+          "bin/placeholder/RentReview.Common.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/RentReview.Common.dll": {}
+        }
       }
     }
   },
@@ -2176,6 +2186,11 @@
         "useSharedDesignerContext.txt",
         "version.txt"
       ]
+    },
+    "RentReview.Common/1.0.0": {
+      "type": "project",
+      "path": "../RentReview.Common/RentReview.Common.csproj",
+      "msbuildProject": "../RentReview.Common/RentReview.Common.csproj"
     }
   },
   "projectFileDependencyGroups": {
@@ -2183,7 +2198,8 @@
       "Microsoft.AspNetCore.Identity.EntityFrameworkCore >= 6.0.11",
       "Microsoft.EntityFrameworkCore.Design >= 6.0.11",
       "Microsoft.EntityFrameworkCore.SqlServer >= 6.0.11",
-      "Microsoft.EntityFrameworkCore.Tools >= 6.0.11"
+      "Microsoft.EntityFrameworkCore.Tools >= 6.0.11",
+      "RentReview.Common >= 1.0.0"
     ]
   },
   "packageFolders": {
@@ -2218,7 +2234,11 @@
       "frameworks": {
         "net6.0": {
           "targetAlias": "net6.0",
-          "projectReferences": {}
+          "projectReferences": {
+            "C:\\Users\\svilen\\OneDrive\\Desktop\\programing\\Csharp\\PROJECTS\\RentReview\\RentReview.Common\\RentReview.Common.csproj": {
+              "projectPath": "C:\\Users\\svilen\\OneDrive\\Desktop\\programing\\Csharp\\PROJECTS\\RentReview\\RentReview.Common\\RentReview.Common.csproj"
+            }
+          }
         }
       },
       "warningProperties": {

@@ -1,5 +1,94 @@
 ﻿@model List<RentReview.Models.ViewModels.Property.ViewPropertyViewModel>
 
+<form method="POST">
+    <h1 style="text-align:center; margin-left:795px; font-size:larger">Select from the desired filters!</h1>
+
+    <div style="width:300px; height:30px;margin-top:15px; margin-left:800px">
+        <table style="margin-left:50px">
+            <ul class="list-group">
+
+            <tr>
+                <td align="center">Min Price</td>
+                <td align="center">Max Price</td>
+            </tr>
+
+            <tr>
+                    @{
+                        var obj = Model.First();
+                        var minPrices = obj.MinPrices;
+                        var maxPrices = obj.MaxPrices;
+
+                    <td>
+                            @foreach (var minPrice in minPrices)
+                            {
+                            <li class="list-group-item">
+                                <input type="radio" id="MinPrice" name="MinPrice" value=@minPrice>
+                                <label for="MinPrice">@minPrice</label><br>
+                            </li>
+                            }
+                    </td>
+                    <td>
+                            @foreach (var maxPrice in maxPrices)
+                            {
+                            <li class="list-group-item">
+                                <input type="radio" id="MinPrice" name="MinPrice" value=@maxPrice>
+                                <label for="MinPrice">@maxPrice</label><br>
+                            </li>
+                            }
+                    </td>
+                    }
+            </tr>
+
+            </ul>
+        </table>
+
+
+        <ul class="list-group" style="margin-top:10px">
+
+            @{
+                var temp = Model.First();
+                var extras = temp.Extras;
+                @foreach (var extra in extras)
+                {
+                    <li class="list-group-item">
+                        <input type="checkbox" id="Extras" name="Extras" value="@extra">
+                        <label for="Extras">@extra</label><br>
+                    </li>
+                }
+            }
+        </ul>
+
+        <table>
+            <ul class="list-group" style="margin-top:10px">
+
+            <tr>
+                <td>Countries</td>
+                <td>Cities</td>
+            </tr>
+
+            <tr>
+                <td>
+                    <li class="list-group-item">
+                        <input type="checkbox" id="Country" name="Country" value="France">
+                        <label for="Country">France</label><br>
+                    </li>
+                </td>
+                <td>
+                    <li class="list-group-item">
+                        <input type="checkbox" id="City" name="City" value="Paris">
+                        <label for="City">Paris</label><br>
+                    </li>
+                </td>
+            </tr>
+
+            </ul>
+        </table>
+
+        <button type="submit" class="btn btn-primary" style="margin-left:110px; margin-top:10px">Submit</button>
+    </div>
+</form>
+
+
 <div class="row">
     @foreach (var property in Model)
     {

@@ -4,6 +4,8 @@
     {
         public int MinPrice { get; set; }
         public int MaxPrice { get; set; }
-        public ICollection<string> Filters { get; set; } = new HashSet<string>();
+        public string Country { get; set; }
+        public string City { get; set; }
+        public List<string> Extras { get; set; } = new List<string>();
     }
 }

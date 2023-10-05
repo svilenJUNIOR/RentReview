@@ -81,5 +81,10 @@ namespace RentReview.Services.Property
         {
             throw new NotImplementedException();
         }
+
+        public ICollection<ViewPropertyViewModel> FilterProperties(FilterPropertyDataModel data)
+        {
+            throw new NotImplementedException();
+        }
     }
 }

@@ -19,9 +19,20 @@ namespace RentReview.Controllers
         }
 
         private async Task<IdentityUser> user() => await this.userManager.FindByNameAsync(this.User.Identity.Name);
-       
+
         public IActionResult All()
-         => View(propertyService.ViewProperties());
+        => View(propertyService.ViewProperties());
+
+        [HttpPost]
+        public IActionResult All(FilterPropertyDataModel data)
+        {
+            if (data != null)
+            {
+
+            }
+
+            return View(propertyService.ViewProperties());
+        }
 
         [Authorize]
         public IActionResult Add()
@@ -70,7 +81,7 @@ namespace RentReview.Controllers
             {
                 return this.CatchErrors(exception);
             }
-            
+
         }
     }
 }

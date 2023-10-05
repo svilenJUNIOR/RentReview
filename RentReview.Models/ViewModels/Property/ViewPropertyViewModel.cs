@@ -1,4 +1,6 @@
-﻿namespace RentReview.Models.ViewModels.Property
+﻿using RentReview.Common;
+
+namespace RentReview.Models.ViewModels.Property
 {
     public class ViewPropertyViewModel
     {
@@ -9,5 +11,10 @@
         public string Url { get; set; }
         public bool HasReview { get; set; }
         public string? ReviewId { get; set; }
+        public List<string> Cities { get; set; } = new List<string>();
+        public List<string> Countries { get; set; } = new List<string>();
+        public List<string> Extras { get; set; } = Lists.GetExtras().ToList();
+        public List<string> MinPrices { get; set; } = Lists.GetMinPrices().ToList();
+        public List<string> MaxPrices { get; set; } = Lists.GetMaxPrices().ToList();
     }
 }

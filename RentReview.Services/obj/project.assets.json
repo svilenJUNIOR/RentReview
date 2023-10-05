@@ -1408,7 +1408,8 @@
         "framework": ".NETCoreApp,Version=v6.0",
         "dependencies": {
           "Microsoft.AspNetCore.Identity.EntityFrameworkCore": "6.0.11",
-          "Microsoft.EntityFrameworkCore.SqlServer": "6.0.11"
+          "Microsoft.EntityFrameworkCore.SqlServer": "6.0.11",
+          "RentReview.Common": "1.0.0"
         },
         "compile": {
           "bin/placeholder/RentReview.Models.dll": {}
