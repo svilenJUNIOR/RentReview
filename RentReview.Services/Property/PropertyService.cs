@@ -2,6 +2,8 @@
 using RentReview.Models.DataModels.Property;
 using RentReview.Models.ViewModels.Property;
 using RentReviewRepository;
+using System.Collections.Generic;
+using System.Text;
 
 namespace RentReview.Services.Property
 {
@@ -45,6 +47,10 @@ namespace RentReview.Services.Property
 
             return bindService.BindProperties(properties).ToList();
         }
+
+        public ICollection<ViewPropertyViewModel> ViewProperties(List<Data.Models.Property> properties)
+        => bindService.BindProperties(properties).ToList();
+
         public ViewPropertyViewModel ViewPropertyForEdit(string Id)
         {
             var property = this.repository.FindById<Data.Models.Property>(Id);
@@ -87,9 +93,34 @@ namespace RentReview.Services.Property
             throw new NotImplementedException();
         }
 
-        public ICollection<ViewPropertyViewModel> FilterProperties(FilterPropertyDataModel data)
+        public List<Data.Models.Property> FilterProperties(FilterPropertyDataModel data)
         {
-            throw new NotImplementedException();
+            var properties = this.repository.GettAll<Data.Models.Property>().ToList();
+
+            if (data.Country != null)
+                properties = properties.Where(x => x.Country == data.Country).ToList();
+
+            if (data.City != null)
+                properties = properties.Where(x => x.City == data.City).ToList();
+
+            if (data.MinPrice > 0 && data.MaxPrice == 0)
+                properties = properties.Where(x => x.Price >= data.MinPrice).ToList();
+
+            if (data.MinPrice == 0 && data.MaxPrice > 0)
+                properties = properties.Where(x => x.Price <= data.MaxPrice).ToList();
+
+            if (data.MinPrice > 0 && data.MaxPrice > 0)
+                properties = properties.Where(x => x.Price >= data.MinPrice && x.Price <= data.MaxPrice).ToList();
+
+            StringBuilder stringBuilder = new StringBuilder();
+
+            for (int i = 0; i < data.Extras.Count(); i++)
+                stringBuilder.Append(data.Extras[i] + "*");
+
+            if (data.Extras.Count() > 0)
+                properties = properties.Where(x => x.Pros == stringBuilder.ToString()).ToList();
+
+            return properties.ToList();
         }
     }
 }

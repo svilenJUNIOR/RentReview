@@ -28,7 +28,12 @@ namespace RentReview.Controllers
         {
             if (data != null)
             {
+                var properties = propertyService.FilterProperties(data);
 
+                if (properties.Count() > 0)
+                    return View(propertyService.ViewProperties(properties));
+                else
+                    return View(propertyService.ViewProperties());
             }
 
             return View(propertyService.ViewProperties());

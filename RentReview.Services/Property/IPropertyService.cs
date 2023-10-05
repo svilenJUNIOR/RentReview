@@ -8,10 +8,11 @@ namespace RentReview.Services.Property
     {
         Task AddAsync(AddNewPropertyDataModel model, IdentityUser user, bool check);
         ICollection<ViewPropertyViewModel> ViewProperties();
+        ICollection<ViewPropertyViewModel> ViewProperties(List<Data.Models.Property> properties);
         ViewPropertyViewModel ViewPropertyForEdit(string Id);
         Task Edit(EditPropertyDataModel data, bool check);
         Task Remove(string Id);
         void ChangeStatus();
-        ICollection<ViewPropertyViewModel> FilterProperties(FilterPropertyDataModel data);
+        List<Data.Models.Property> FilterProperties(FilterPropertyDataModel data);
     }
 }
