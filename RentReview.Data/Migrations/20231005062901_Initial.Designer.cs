@@ -12,7 +12,7 @@ using RentReview.Data;
 namespace RentReview.Data.Migrations
 {
     [DbContext(typeof(RentDbContext))]
-    [Migration("20231004082709_Initial")]
+    [Migration("20231005062901_Initial")]
     partial class Initial
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)

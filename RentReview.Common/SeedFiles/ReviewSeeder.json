@@ -8,5 +8,35 @@
     "Id": "3d547fe2-845c-4df0-9d45-2a664bd381bb",
     "UserId": "22db8ef9-8c04-466a-be5c-1892b970765d",
     "PropertyId": "8a7ccffb-f423-48a3-bd8b-52466aff066f"
+  },
+  {
+    "Id": "dca843c7-158e-4db2-860d-0afe1d4ffb74",
+    "UserId": "9a1a2d8d-253e-4db7-a3c3-29597fadfbd4",
+    "PropertyId": "85df20d8-9202-4ca0-9a33-0deb2f486b02"
+  },
+  {
+    "Id": "c6876137-feac-4709-9358-33937adf94aa",
+    "UserId": "8cb10214-378d-4b29-b2f4-09f85f015cfa",
+    "PropertyId": "df8ec244-96c9-4881-99e7-921e50bcabc1"
+  },
+  {
+    "Id": "ca54eb64-dc0b-47da-8fdc-769ea1911509",
+    "UserId": "908e0a7f-c079-4ab6-8834-1634f1a854f0",
+    "PropertyId": "99019df5-fecf-448a-bbcd-0c86398acc2e"
+  },
+  {
+    "Id": "88644cff-8a03-4d22-a6b3-313dd1326d35",
+    "UserId": "4231715e-da6f-456b-aa79-bd9cd218a30d",
+    "PropertyId": "f230c426-0e18-47fb-b971-52a7035de56a"
+  },
+  {
+    "Id": "b50ad0c9-fc6e-4007-8606-92673f92760b",
+    "UserId": "32290958-dd81-4602-a514-fcfe2dbcc07b",
+    "PropertyId": "151eb400-392c-4d7a-adb8-62a11b4b3969"
+  },
+  {
+    "Id": "b913a40a-9725-4a69-bf4b-5b84527a96a2",
+    "UserId": "e73d5799-2abf-4de1-9932-0b9eed617134",
+    "PropertyId": "da0b2ecd-5a47-4ff1-a72b-0635f29ef4d7"
   }
 ]
