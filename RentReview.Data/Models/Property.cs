@@ -10,7 +10,9 @@ namespace RentReview.Data.Models
         public string UserId { get; set; }
 
         [Required]
-        public string Address { get; set; }
+        public string Country { get; set; }
+        [Required]
+        public string City { get; set; }
         [Required]
         public int Price { get; set; }
         public string? ReviewOfLandlord { get; set; }

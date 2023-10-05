@@ -27,7 +27,8 @@ namespace RentReview.Services
                 return errors;
             }
 
-            if (data.Address.Length < 10) errors.Add(new Exception(Messages.AddressTooShort));
+            if (data.City.Length < 3) errors.Add(new Exception(Messages.CityTooShort));
+            if (data.Country.Length < 3) errors.Add(new Exception(Messages.CountryTooShort));
             if (data.Price < 0) errors.Add(new Exception(Messages.PriceBelowZero));
 
             return errors;

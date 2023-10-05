@@ -10,5 +10,7 @@ namespace RentReview.Services
         ICollection<ViewReviewViewModel> BindReviews(ICollection<Data.Models.Review> reviews);
         ViewFullReviewViewModel ViewFullReview(Data.Models.Property property);
         Data.Models.Property BindReviewToProperty(Data.Models.Property property, ReviewDataModel data);
+        ICollection<string> FillCities();
+        ICollection<string> FillCountries();
     }
 }

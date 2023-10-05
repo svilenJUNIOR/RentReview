@@ -5,7 +5,8 @@
         public static readonly string EmptyFields = "Form cannot contain empty fields";
 
         // Add property errors
-        public static readonly string AddressTooShort = "Address must be at least 10 symbols long!";
+        public static readonly string CityTooShort = "City name must be at least 3 symbols long!";
+        public static readonly string CountryTooShort = "Country name must be at least 3 symbols long!";
         public static readonly string PriceBelowZero = "Price can not be less than zero!";
 
         // Add review errors

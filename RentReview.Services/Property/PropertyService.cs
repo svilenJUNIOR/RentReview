@@ -23,9 +23,13 @@ namespace RentReview.Services.Property
             var errors = this.validator.ValidateProperty(data, check);
             if (errors.Any()) this.validator.ThrowErrors(errors);
 
+            char.ToUpper(data.City[0]);
+            char.ToUpper(data.Country[0]);
+
             var prop = new Data.Models.Property
             {
-                Address = data.Address,
+                City = data.City,
+                Country = data.Country,
                 Url = data.Url,
                 Price = data.Price,
                 Picture = data.Picture,
@@ -57,7 +61,8 @@ namespace RentReview.Services.Property
 
             var property = this.repository.FindById<Data.Models.Property>(data.Id);
 
-            property.Address = data.Address;
+            property.City = data.City;
+            property.Country = data.Country;
             property.Price = data.Price;
             property.Picture = data.PictureUrl;
 

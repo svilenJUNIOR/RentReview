@@ -14,10 +14,8 @@
 
             <tr>
                     @{
-                        var obj = Model.First();
-                        var minPrices = obj.MinPrices;
-                        var maxPrices = obj.MaxPrices;
-
+                        var minPrices = Model.First().MinPrices;
+                        var maxPrices = Model.First().MaxPrices;
                     <td>
                             @foreach (var minPrice in minPrices)
                             {
@@ -46,8 +44,7 @@
         <ul class="list-group" style="margin-top:10px">
 
             @{
-                var temp = Model.First();
-                var extras = temp.Extras;
+                var extras = Model.First().Extras;
                 @foreach (var extra in extras)
                 {
                     <li class="list-group-item">
@@ -58,27 +55,39 @@
             }
         </ul>
 
-        <table>
+        <table style="margin-left:50px">
             <ul class="list-group" style="margin-top:10px">
 
             <tr>
-                <td>Countries</td>
-                <td>Cities</td>
+                <td align="center">Countries</td>
+                <td align="center">Cities</td>
             </tr>
 
             <tr>
-                <td>
-                    <li class="list-group-item">
-                        <input type="checkbox" id="Country" name="Country" value="France">
-                        <label for="Country">France</label><br>
-                    </li>
-                </td>
-                <td>
-                    <li class="list-group-item">
-                        <input type="checkbox" id="City" name="City" value="Paris">
-                        <label for="City">Paris</label><br>
-                    </li>
-                </td>
+                    @{
+                        var Countries = Model.First().Countries;
+                        var Cities = Model.First().Cities;
+                    <td>
+                            @foreach (var country in Countries)
+                            {
+
+                            <li class="list-group-item">
+                                <input type="checkbox" id="Country" name="Country" value="@country">
+                                <label for="Country">@country</label><br>
+                            </li>
+                            }
+                    </td>
+                    <td>
+                            @foreach (var city in Cities)
+                            {
+                            <li class="list-group-item">
+                                <input type="checkbox" id="City" name="City" value="@city">
+                                <label for="City">@city</label><br>
+                            </li>
+                            }
+
+                    </td>
+                    }
             </tr>
 
             </ul>
@@ -99,7 +108,7 @@
                 </div>
                 <div class="col-md-8">
                     <div class="card-body">
-                        <h5 class="card-title">@property.Address - @property.Price $</h5>
+                        <h5 class="card-title">@property.Country, @property.City - @property.Price $</h5>
                         @if (!property.HasReview)
                         {
                             <a href="/Review/Add?Id=@property.Id" id="AddReviewButton" class="btn btn-primary">Add Review</a>

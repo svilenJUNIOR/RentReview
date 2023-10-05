@@ -12,7 +12,7 @@ using RentReview.Data;
 namespace RentReview.Data.Migrations
 {
     [DbContext(typeof(RentDbContext))]
-    [Migration("20231005062901_Initial")]
+    [Migration("20231005094439_Initial")]
     partial class Initial
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -231,11 +231,15 @@ namespace RentReview.Data.Migrations
                     b.Property<string>("Id")
                         .HasColumnType("nvarchar(450)");
 
-                    b.Property<string>("Address")
+                    b.Property<string>("City")
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("Cons")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("Country")
+                        .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("Picture")

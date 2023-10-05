@@ -54,7 +54,8 @@ namespace RentReview.Data.Migrations
                 {
                     Id = table.Column<string>(type: "nvarchar(450)", nullable: false),
                     UserId = table.Column<string>(type: "nvarchar(max)", nullable: false),
-                    Address = table.Column<string>(type: "nvarchar(max)", nullable: false),
+                    Country = table.Column<string>(type: "nvarchar(max)", nullable: false),
+                    City = table.Column<string>(type: "nvarchar(max)", nullable: false),
                     Price = table.Column<int>(type: "int", nullable: false),
                     ReviewOfLandlord = table.Column<string>(type: "nvarchar(max)", nullable: true),
                     ReviewOfProperty = table.Column<string>(type: "nvarchar(max)", nullable: true),

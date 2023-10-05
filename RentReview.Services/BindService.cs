@@ -10,19 +10,22 @@ namespace RentReview.Services
     {
         private readonly IRepository repository;
         public BindService(IRepository repository)
-         =>  this.repository = repository;
+         => this.repository = repository;
 
         public ICollection<ViewPropertyViewModel> BindProperties(ICollection<Data.Models.Property> properties)
         {
             var bindedProperties = properties.Select(x => new ViewPropertyViewModel
             {
-                Address = x.Address,
+                City = x.City,
+                Country = x.Country,
                 Id = x.Id,
                 Picture = x.Picture,
                 Price = x.Price,
                 Url = x.Url,
                 HasReview = this.repository.GettAll<Data.Models.Review>().Any(c => c.PropertyId == x.Id),
-                ReviewId = this.repository.ReturnReviewId(x.Id)
+                ReviewId = this.repository.ReturnReviewId(x.Id),
+                Cities = this.FillCities().ToList(),
+                Countries = this.FillCountries().ToList(),
             });
 
             return bindedProperties.ToList();
@@ -31,7 +34,7 @@ namespace RentReview.Services
         {
             var bindedReviews = reviews.Select(x => new ViewReviewViewModel
             {
-                Address = this.repository.GettAll<Data.Models.Property>().Where(c => c.Id == x.PropertyId).FirstOrDefault().Address,
+                Address = this.repository.GettAll<Data.Models.Property>().Where(c => c.Id == x.PropertyId).FirstOrDefault().Country + " - " + this.repository.GettAll<Data.Models.Property>().Where(c => c.Id == x.PropertyId).FirstOrDefault().City,
                 PictureUrl = this.repository.GettAll<Data.Models.Property>().Where(c => c.Id == x.PropertyId).FirstOrDefault().Picture,
                 PropertyReview = this.repository.GettAll<Data.Models.Property>().Where(c => c.Id == x.PropertyId).FirstOrDefault().ReviewOfProperty,
                 PropertyId = this.repository.GettAll<Data.Models.Property>().Where(c => c.Id == x.PropertyId).FirstOrDefault().Id,
@@ -44,7 +47,8 @@ namespace RentReview.Services
         {
             var review = new ViewFullReviewViewModel
             {
-                Address = property.Address,
+                City = property.City,
+                Country = property.Country,
                 Picture = property.Picture,
                 Price = property.Price,
                 Rented = property.Rented,
@@ -80,5 +84,28 @@ namespace RentReview.Services
 
             return property;
         }
+
+        public ICollection<string> FillCities()
+        {
+            var cities = new List<string>();
+
+            foreach (var property in this.Properties())
+                cities.Add(property.City);
+
+            return cities.ToList();
+        }
+
+        public ICollection<string> FillCountries()
+        {
+            var cities = new List<string>();
+
+            foreach (var property in this.Properties())
+                cities.Add(property.Country);
+
+            return cities.ToList();
+        }
+
+        private List<Data.Models.Property> Properties()
+         => this.repository.GettAll<Data.Models.Property>().ToList();
     }
 }
