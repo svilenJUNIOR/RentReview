@@ -1,0 +1,47 @@
+﻿.multipleSelection {
+    width: 300px;
+}
+
+.selectBox {
+    position: relative;
+}
+
+    .selectBox select {
+        width: 100%;
+        font-weight: bold;
+    }
+
+.overSelect {
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+}
+
+#checkBoxes {
+    display: none;
+    border: 1px black solid;
+}
+
+    #checkBoxes label {
+        display: block;
+    }
+
+        #checkBoxes label:hover {
+            background-color: lightgray;
+        }
+
+
+#checkBoxes2 {
+    display: none;
+    border: 1px black solid;
+}
+
+    #checkBoxes2 label {
+        display: block;
+    }
+
+        #checkBoxes2 label:hover {
+            background-color: lightgray;
+        }

@@ -17,6 +17,10 @@
       "PackagePath": "staticwebassets\\css\\Property\\Edit.css"
     },
     {
+      "Id": "C:\\Users\\svilen\\OneDrive\\Desktop\\programing\\Csharp\\PROJECTS\\RentReview\\RentReview\\wwwroot\\css\\Property\\selectExtras.css",
+      "PackagePath": "staticwebassets\\css\\Property\\selectExtras.css"
+    },
+    {
       "Id": "C:\\Users\\svilen\\OneDrive\\Desktop\\programing\\Csharp\\PROJECTS\\RentReview\\RentReview\\wwwroot\\css\\Review\\Add.css",
       "PackagePath": "staticwebassets\\css\\Review\\Add.css"
     },
@@ -39,6 +43,10 @@
     {
       "Id": "C:\\Users\\svilen\\OneDrive\\Desktop\\programing\\Csharp\\PROJECTS\\RentReview\\RentReview\\wwwroot\\favicon.ico",
       "PackagePath": "staticwebassets\\favicon.ico"
+    },
+    {
+      "Id": "C:\\Users\\svilen\\OneDrive\\Desktop\\programing\\Csharp\\PROJECTS\\RentReview\\RentReview\\wwwroot\\js\\selectBoxes.js",
+      "PackagePath": "staticwebassets\\js\\selectBoxes.js"
     },
     {
       "Id": "C:\\Users\\svilen\\OneDrive\\Desktop\\programing\\Csharp\\PROJECTS\\RentReview\\RentReview\\wwwroot\\js\\site.js",

@@ -40,20 +40,60 @@
             </ul>
         </table>
 
+        <div style="margin-top:10px">
+            <form>
+                <div class="multipleSelection">
+                    <div class="selectBox"
+                         onclick="showCheckboxes()">
+                        <select>
+                            <option>Select Extras</option>
+                        </select>
+                        <div class="overSelect"></div>
+                    </div>
 
-        <ul class="list-group" style="margin-top:10px">
+                    <div id="checkBoxes">
+                        @{
+                            var extras = Model.First().Extras;
+                            @foreach (var extra in extras)
+                            {
+                                <label for="Extras" id="Extras">
+                                    <input type="checkbox" id="Extras" name="Extras" />@extra
+                                </label>
+                            }
+                        }
+                    </div>
+                </div>
+            </form>
+        </div>
 
-            @{
-                var extras = Model.First().Extras;
-                @foreach (var extra in extras)
-                {
-                    <li class="list-group-item">
-                        <input type="checkbox" id="Extras" name="Extras" value="@extra">
-                        <label for="Extras">@extra</label><br>
-                    </li>
-                }
-            }
-        </ul>
+
+
+        <div style="margin-top:10px">
+            <form>
+                <div class="multipleSelection">
+                    <div class="selectBox"
+                         onclick="showCheckboxes2()">
+                        <select>
+                            <option>Select Extras</option>
+                        </select>
+                        <div class="overSelect"></div>
+                    </div>
+
+                    <div id="checkBoxes2">
+                        @{
+                            var extrass = Model.First().Extras;
+                            @foreach (var extra in extrass)
+                            {
+                                <label for="Extras" id="Extras">
+                                    <input type="checkbox" id="Extras" name="Extras" />efga
+                                </label>
+                            }
+                        }
+                    </div>
+                </div>
+            </form>
+        </div>
+
 
         <table style="margin-left:50px">
             <ul class="list-group" style="margin-top:10px">
@@ -125,3 +165,6 @@
 </div>
 
 <link rel="stylesheet" href="~/css/Property/All.css"></link>
+<link rel="stylesheet" href="~/css/Property/selectExtras.css"></link>
+<script src="~/js/selectBoxes.js"></script>
+

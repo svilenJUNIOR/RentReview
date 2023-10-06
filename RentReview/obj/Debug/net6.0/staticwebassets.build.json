@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "MybyP34Ji5FsvxLTA23pDGQTObG2uP1VZszQmH2mkyM=",
+  "Hash": "PJA1guzMf7pTKhq6VOieEPlMeCm+NuE7Oiv54H62L4E=",
   "Source": "RentReview",
   "BasePath": "_content/RentReview",
   "Mode": "Default",
@@ -1122,6 +1122,23 @@
       "OriginalItemSpec": "wwwroot\\css\\Property\\Edit.css"
     },
     {
+      "Identity": "C:\\Users\\svilen\\OneDrive\\Desktop\\programing\\Csharp\\PROJECTS\\RentReview\\RentReview\\wwwroot\\css\\Property\\selectExtras.css",
+      "SourceId": "RentReview",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\svilen\\OneDrive\\Desktop\\programing\\Csharp\\PROJECTS\\RentReview\\RentReview\\wwwroot\\",
+      "BasePath": "_content/RentReview",
+      "RelativePath": "css/Property/selectExtras.css",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\css\\Property\\selectExtras.css"
+    },
+    {
       "Identity": "C:\\Users\\svilen\\OneDrive\\Desktop\\programing\\Csharp\\PROJECTS\\RentReview\\RentReview\\wwwroot\\css\\Review\\Add.css",
       "SourceId": "RentReview",
       "SourceType": "Discovered",
@@ -1222,6 +1239,23 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\favicon.ico"
+    },
+    {
+      "Identity": "C:\\Users\\svilen\\OneDrive\\Desktop\\programing\\Csharp\\PROJECTS\\RentReview\\RentReview\\wwwroot\\js\\selectBoxes.js",
+      "SourceId": "RentReview",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\svilen\\OneDrive\\Desktop\\programing\\Csharp\\PROJECTS\\RentReview\\RentReview\\wwwroot\\",
+      "BasePath": "_content/RentReview",
+      "RelativePath": "js/selectBoxes.js",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\js\\selectBoxes.js"
     },
     {
       "Identity": "C:\\Users\\svilen\\OneDrive\\Desktop\\programing\\Csharp\\PROJECTS\\RentReview\\RentReview\\wwwroot\\js\\site.js",
