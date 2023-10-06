@@ -41,98 +41,78 @@
         </table>
 
         <div style="margin-top:10px">
-            <form>
-                <div class="multipleSelection">
-                    <div class="selectBox"
-                         onclick="showCheckboxes()">
-                        <select>
-                            <option>Select Extras</option>
-                        </select>
-                        <div class="overSelect"></div>
-                    </div>
-
-                    <div id="checkBoxes">
-                        @{
-                            var extras = Model.First().Extras;
-                            @foreach (var extra in extras)
-                            {
-                                <label for="Extras" id="Extras">
-                                    <input type="checkbox" id="Extras" name="Extras" />@extra
-                                </label>
-                            }
-                        }
-                    </div>
+            <div class="multipleSelection">
+                <div class="selectBox"
+                     onclick="showCheckboxes()">
+                    <select>
+                        <option>Select Extras</option>
+                    </select>
+                    <div class="overSelect"></div>
                 </div>
-            </form>
-        </div>
 
-
-
-        <div style="margin-top:10px">
-            <form>
-                <div class="multipleSelection">
-                    <div class="selectBox"
-                         onclick="showCheckboxes2()">
-                        <select>
-                            <option>Select Extras</option>
-                        </select>
-                        <div class="overSelect"></div>
-                    </div>
-
-                    <div id="checkBoxes2">
-                        @{
-                            var extrass = Model.First().Extras;
-                            @foreach (var extra in extrass)
-                            {
-                                <label for="Extras" id="Extras">
-                                    <input type="checkbox" id="Extras" name="Extras" />efga
-                                </label>
-                            }
+                <div id="checkBoxes">
+                    @{
+                        var extras = Model.First().Extras;
+                        @foreach (var extra in extras)
+                        {
+                            <label for="Extras" id="Extras">
+                                <input type="checkbox" id="Extras" name="Extras" value="@extra"/>@extra
+                            </label>
                         }
-                    </div>
+                    }
                 </div>
-            </form>
-        </div>
 
+            </div>
+             </div>
 
-        <table style="margin-left:50px">
-            <ul class="list-group" style="margin-top:10px">
+            <div style="margin-top:10px">
+            <div class="multipleSelection">
+                <div class="selectBox"
+                     onclick="showCheckboxes2()">
+                    <select>
+                        <option>Select Countries</option>
+                    </select>
+                    <div class="overSelect"></div>
+                </div>
 
-            <tr>
-                <td align="center">Countries</td>
-                <td align="center">Cities</td>
-            </tr>
-
-            <tr>
+                <div id="checkBoxes2">
                     @{
                         var Countries = Model.First().Countries;
-                        var Cities = Model.First().Cities;
-                    <td>
-                            @foreach (var country in Countries)
-                            {
-
-                            <li class="list-group-item">
-                                <input type="checkbox" id="Country" name="Country" value="@country">
-                                <label for="Country">@country</label><br>
-                            </li>
-                            }
-                    </td>
-                    <td>
-                            @foreach (var city in Cities)
-                            {
-                            <li class="list-group-item">
-                                <input type="checkbox" id="City" name="City" value="@city">
-                                <label for="City">@city</label><br>
-                            </li>
-                            }
-
-                    </td>
+                        @foreach (var country in Countries)
+                        {
+                            <label for="Country" id="Country">
+                                <input type="radio" id="Country" name="Country" value="@country" />@country
+                            </label>
+                        }
                     }
-            </tr>
+                </div>
+            </div>
+            </div>
 
-            </ul>
-        </table>
+            <div style="margin-top:10px">
+            <div class="multipleSelection">
+                <div class="selectBox"
+                     onclick="showCheckboxes3()">
+                    <select>
+                        <option>Select Cities</option>
+                    </select>
+                    <div class="overSelect"></div>
+                </div>
 
+                <div id="checkBoxes3">
+                    @{
+                        var Citites = Model.First().Cities;
+                        @foreach (var city in Citites)
+                        {
+                            <label for="City" id="City">
+                                <input type="radio" id="City" name="City" value="@city"/>@city
+                            </label>
+                        }
+                    }
+                </div>
+            </div>
+
+        </div>
         <button type="submit" class="btn btn-primary" style="margin-left:110px; margin-top:10px">Submit</button>
     </div>
 </form>

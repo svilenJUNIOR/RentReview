@@ -45,3 +45,16 @@
         #checkBoxes2 label:hover {
             background-color: lightgray;
         }
+
+#checkBoxes3 {
+    display: none;
+    border: 1px black solid;
+}
+
+    #checkBoxes3 label {
+        display: block;
+    }
+
+        #checkBoxes3 label:hover {
+            background-color: lightgray;
+        }

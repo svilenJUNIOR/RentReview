@@ -25,3 +25,16 @@ function showCheckboxes2() {
         show = true;
     }
 }
+
+function showCheckboxes3() {
+    var checkboxes =
+        document.getElementById("checkBoxes3");
+
+    if (show) {
+        checkboxes.style.display = "block";
+        show = false;
+    } else {
+        checkboxes.style.display = "none";
+        show = true;
+    }
+}

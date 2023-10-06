@@ -24,8 +24,8 @@ namespace RentReview.Services
                 Url = x.Url,
                 HasReview = this.repository.GettAll<Data.Models.Review>().Any(c => c.PropertyId == x.Id),
                 ReviewId = this.repository.ReturnReviewId(x.Id),
-                Cities = this.FillCities().ToList(),
-                Countries = this.FillCountries().ToList(),
+                Cities = this.FillCities().ToHashSet(),
+                Countries = this.FillCountries().ToHashSet(),
             });
 
             return bindedProperties.ToList();
