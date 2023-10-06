@@ -120,6 +120,9 @@ namespace RentReview.Services.Property
             if (data.Extras.Count() > 0)
                 properties = properties.Where(x => x.Pros == stringBuilder.ToString()).ToList();
 
+            if (data.OnlyWithReview == "on")
+                properties = properties.Where(x => x.ReviewOfLandlord != null && x.ReviewOfNeighbour != null && x.ReviewOfProperty != null).ToList();
+
             return properties.ToList();
         }
     }

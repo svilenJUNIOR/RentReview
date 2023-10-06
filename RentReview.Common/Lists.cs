@@ -45,13 +45,6 @@ namespace RentReview.Common
             {"Bad landlord"}
         };
 
-        private static List<string> Extras = new List<string>
-        {
-            {"Near School / kindergarden"},
-            {"Near 24/7 pharmacy"},
-            {"Kid friendly"},
-        };
-
         private static List<string> MinPrices = new List<string>
         {
             { "500"},
@@ -63,11 +56,11 @@ namespace RentReview.Common
         {
              { "1000" },
             {  "1500" },
-            {  "1500+" }
+            {  "2000" }
         };
         public static List<string> GetPros() => Pros;
         public static List<string> GetCons() => Cons;
-        public static List<string> GetExtras() => Extras;
+        public static List<string> GetExtras() => Pros;
         public static List<string> GetMinPrices() => MinPrices;
         public static List<string> GetMaxPrices() => MaxPrices;
     }
