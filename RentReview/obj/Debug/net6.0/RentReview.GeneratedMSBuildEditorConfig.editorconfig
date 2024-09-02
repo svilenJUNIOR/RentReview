@@ -9,99 +9,99 @@ build_property.EnforceExtendedAnalyzerRules =
 build_property._SupportedPlatformList = Linux,macOS,Windows
 build_property.RootNamespace = RentReview
 build_property.RootNamespace = RentReview
-build_property.ProjectDir = C:\Users\svilq\Desktop\Programming\C#\eg\RentReview\RentReview\
+build_property.ProjectDir = C:\Users\svilq\Desktop\Programming\C#\eg\re\RentReview\RentReview\
 build_property.EnableComHosting = 
 build_property.EnableGeneratedComInterfaceComImportInterop = 
 build_property.RazorLangVersion = 6.0
 build_property.SupportLocalizedComponentNames = 
 build_property.GenerateRazorMetadataSourceChecksumAttributes = 
-build_property.MSBuildProjectDirectory = C:\Users\svilq\Desktop\Programming\C#\eg\RentReview\RentReview
+build_property.MSBuildProjectDirectory = C:\Users\svilq\Desktop\Programming\C#\eg\re\RentReview\RentReview
 build_property._RazorSourceGeneratorDebug = 
 
-[C:/Users/svilq/Desktop/Programming/C\#/eg/RentReview/RentReview/Areas/Admin/Views/Home/Index.cshtml]
+[C:/Users/svilq/Desktop/Programming/C\#/eg/re/RentReview/RentReview/Areas/Admin/Views/Home/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQWRtaW5cVmlld3NcSG9tZVxJbmRleC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/svilq/Desktop/Programming/C\#/eg/RentReview/RentReview/Areas/Admin/Views/User/Manage.cshtml]
+[C:/Users/svilq/Desktop/Programming/C\#/eg/re/RentReview/RentReview/Areas/Admin/Views/User/Manage.cshtml]
 build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQWRtaW5cVmlld3NcVXNlclxNYW5hZ2UuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/svilq/Desktop/Programming/C\#/eg/RentReview/RentReview/Areas/Identity/Pages/_ViewStart.cshtml]
+[C:/Users/svilq/Desktop/Programming/C\#/eg/re/RentReview/RentReview/Areas/Identity/Pages/_ViewStart.cshtml]
 build_metadata.AdditionalFiles.TargetPath = QXJlYXNcSWRlbnRpdHlcUGFnZXNcX1ZpZXdTdGFydC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/svilq/Desktop/Programming/C\#/eg/RentReview/RentReview/Views/Home/Index.cshtml]
+[C:/Users/svilq/Desktop/Programming/C\#/eg/re/RentReview/RentReview/Views/Home/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxJbmRleC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/svilq/Desktop/Programming/C\#/eg/RentReview/RentReview/Views/Home/Privacy.cshtml]
+[C:/Users/svilq/Desktop/Programming/C\#/eg/re/RentReview/RentReview/Views/Home/Privacy.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxQcml2YWN5LmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/svilq/Desktop/Programming/C\#/eg/RentReview/RentReview/Views/Property/Add.cshtml]
+[C:/Users/svilq/Desktop/Programming/C\#/eg/re/RentReview/RentReview/Views/Property/Add.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUHJvcGVydHlcQWRkLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/svilq/Desktop/Programming/C\#/eg/RentReview/RentReview/Views/Property/All.cshtml]
+[C:/Users/svilq/Desktop/Programming/C\#/eg/re/RentReview/RentReview/Views/Property/All.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUHJvcGVydHlcQWxsLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/svilq/Desktop/Programming/C\#/eg/RentReview/RentReview/Views/Property/Edit.cshtml]
+[C:/Users/svilq/Desktop/Programming/C\#/eg/re/RentReview/RentReview/Views/Property/Edit.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUHJvcGVydHlcRWRpdC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/svilq/Desktop/Programming/C\#/eg/RentReview/RentReview/Views/Property/EmptyList.cshtml]
+[C:/Users/svilq/Desktop/Programming/C\#/eg/re/RentReview/RentReview/Views/Property/EmptyList.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUHJvcGVydHlcRW1wdHlMaXN0LmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/svilq/Desktop/Programming/C\#/eg/RentReview/RentReview/Views/Review/Add.cshtml]
+[C:/Users/svilq/Desktop/Programming/C\#/eg/re/RentReview/RentReview/Views/Review/Add.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUmV2aWV3XEFkZC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/svilq/Desktop/Programming/C\#/eg/RentReview/RentReview/Views/Review/All.cshtml]
+[C:/Users/svilq/Desktop/Programming/C\#/eg/re/RentReview/RentReview/Views/Review/All.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUmV2aWV3XEFsbC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/svilq/Desktop/Programming/C\#/eg/RentReview/RentReview/Views/Review/Edit.cshtml]
+[C:/Users/svilq/Desktop/Programming/C\#/eg/re/RentReview/RentReview/Views/Review/Edit.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUmV2aWV3XEVkaXQuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/svilq/Desktop/Programming/C\#/eg/RentReview/RentReview/Views/Review/ViewReview.cshtml]
+[C:/Users/svilq/Desktop/Programming/C\#/eg/re/RentReview/RentReview/Views/Review/ViewReview.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUmV2aWV3XFZpZXdSZXZpZXcuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/svilq/Desktop/Programming/C\#/eg/RentReview/RentReview/Views/Shared/Error.cshtml]
+[C:/Users/svilq/Desktop/Programming/C\#/eg/re/RentReview/RentReview/Views/Shared/Error.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXEVycm9yLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/svilq/Desktop/Programming/C\#/eg/RentReview/RentReview/Views/Shared/_LoginPartial.cshtml]
+[C:/Users/svilq/Desktop/Programming/C\#/eg/re/RentReview/RentReview/Views/Shared/_LoginPartial.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9Mb2dpblBhcnRpYWwuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/svilq/Desktop/Programming/C\#/eg/RentReview/RentReview/Views/Shared/_ValidationScriptsPartial.cshtml]
+[C:/Users/svilq/Desktop/Programming/C\#/eg/re/RentReview/RentReview/Views/Shared/_ValidationScriptsPartial.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9WYWxpZGF0aW9uU2NyaXB0c1BhcnRpYWwuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/svilq/Desktop/Programming/C\#/eg/RentReview/RentReview/Views/User/Login.cshtml]
+[C:/Users/svilq/Desktop/Programming/C\#/eg/re/RentReview/RentReview/Views/User/Login.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcVXNlclxMb2dpbi5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/svilq/Desktop/Programming/C\#/eg/RentReview/RentReview/Views/User/Profile.cshtml]
+[C:/Users/svilq/Desktop/Programming/C\#/eg/re/RentReview/RentReview/Views/User/Profile.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcVXNlclxQcm9maWxlLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/svilq/Desktop/Programming/C\#/eg/RentReview/RentReview/Views/User/Register.cshtml]
+[C:/Users/svilq/Desktop/Programming/C\#/eg/re/RentReview/RentReview/Views/User/Register.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcVXNlclxSZWdpc3Rlci5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/svilq/Desktop/Programming/C\#/eg/RentReview/RentReview/Views/_ViewImports.cshtml]
+[C:/Users/svilq/Desktop/Programming/C\#/eg/re/RentReview/RentReview/Views/_ViewImports.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcX1ZpZXdJbXBvcnRzLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/svilq/Desktop/Programming/C\#/eg/RentReview/RentReview/Views/_ViewStart.cshtml]
+[C:/Users/svilq/Desktop/Programming/C\#/eg/re/RentReview/RentReview/Views/_ViewStart.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcX1ZpZXdTdGFydC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/svilq/Desktop/Programming/C\#/eg/RentReview/RentReview/Views/Shared/_Layout.cshtml]
+[C:/Users/svilq/Desktop/Programming/C\#/eg/re/RentReview/RentReview/Views/Shared/_Layout.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9MYXlvdXQuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = b-zdjn2ballo

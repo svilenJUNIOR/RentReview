@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "TrHFL5atuzU=",
+  "dgSpecHash": "z8287WFauDs=",
   "success": true,
-  "projectFilePath": "C:\\Users\\svilq\\Desktop\\Programming\\C#\\eg\\RentReview\\RentReview.Test\\RentReview.Test.csproj",
+  "projectFilePath": "C:\\Users\\svilq\\Desktop\\Programming\\C#\\eg\\re\\RentReview\\RentReview.Test\\RentReview.Test.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\svilq\\.nuget\\packages\\castle.core\\4.3.1\\castle.core.4.3.1.nupkg.sha512",
     "C:\\Users\\svilq\\.nuget\\packages\\coverlet.collector\\3.2.0\\coverlet.collector.3.2.0.nupkg.sha512",

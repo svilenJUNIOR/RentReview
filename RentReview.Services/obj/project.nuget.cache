@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "DoR4F8vQ1vs=",
+  "dgSpecHash": "911UUvfAi5c=",
   "success": true,
-  "projectFilePath": "C:\\Users\\svilq\\Desktop\\Programming\\C#\\eg\\RentReview\\RentReview.Services\\RentReview.Services.csproj",
+  "projectFilePath": "C:\\Users\\svilq\\Desktop\\Programming\\C#\\eg\\re\\RentReview\\RentReview.Services\\RentReview.Services.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\svilq\\.nuget\\packages\\humanizer.core\\2.8.26\\humanizer.core.2.8.26.nupkg.sha512",
     "C:\\Users\\svilq\\.nuget\\packages\\microsoft.aspnet.mvc\\5.2.9\\microsoft.aspnet.mvc.5.2.9.nupkg.sha512",

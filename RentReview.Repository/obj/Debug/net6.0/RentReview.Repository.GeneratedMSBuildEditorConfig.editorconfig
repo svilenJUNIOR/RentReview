@@ -8,6 +8,6 @@ build_property.PlatformNeutralAssembly =
 build_property.EnforceExtendedAnalyzerRules = 
 build_property._SupportedPlatformList = Linux,macOS,Windows
 build_property.RootNamespace = RentReview.Repository
-build_property.ProjectDir = C:\Users\svilq\Desktop\Programming\C#\eg\RentReview\RentReview.Repository\
+build_property.ProjectDir = C:\Users\svilq\Desktop\Programming\C#\eg\re\RentReview\RentReview.Repository\
 build_property.EnableComHosting = 
 build_property.EnableGeneratedComInterfaceComImportInterop = 

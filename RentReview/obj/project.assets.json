@@ -3521,11 +3521,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\svilq\\Desktop\\Programming\\C#\\eg\\RentReview\\RentReview\\RentReview.csproj",
+      "projectUniqueName": "C:\\Users\\svilq\\Desktop\\Programming\\C#\\eg\\re\\RentReview\\RentReview\\RentReview.csproj",
       "projectName": "RentReview",
-      "projectPath": "C:\\Users\\svilq\\Desktop\\Programming\\C#\\eg\\RentReview\\RentReview\\RentReview.csproj",
+      "projectPath": "C:\\Users\\svilq\\Desktop\\Programming\\C#\\eg\\re\\RentReview\\RentReview\\RentReview.csproj",
       "packagesPath": "C:\\Users\\svilq\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\svilq\\Desktop\\Programming\\C#\\eg\\RentReview\\RentReview\\obj\\",
+      "outputPath": "C:\\Users\\svilq\\Desktop\\Programming\\C#\\eg\\re\\RentReview\\RentReview\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "D:\\programs\\vs\\tools\\NuGetPackages"
@@ -3547,14 +3547,14 @@
         "net6.0": {
           "targetAlias": "net6.0",
           "projectReferences": {
-            "C:\\Users\\svilq\\Desktop\\Programming\\C#\\eg\\RentReview\\RentReview.Data\\RentReview.Data.csproj": {
-              "projectPath": "C:\\Users\\svilq\\Desktop\\Programming\\C#\\eg\\RentReview\\RentReview.Data\\RentReview.Data.csproj"
+            "C:\\Users\\svilq\\Desktop\\Programming\\C#\\eg\\re\\RentReview\\RentReview.Data\\RentReview.Data.csproj": {
+              "projectPath": "C:\\Users\\svilq\\Desktop\\Programming\\C#\\eg\\re\\RentReview\\RentReview.Data\\RentReview.Data.csproj"
             },
-            "C:\\Users\\svilq\\Desktop\\Programming\\C#\\eg\\RentReview\\RentReview.Repository\\RentReview.Repository.csproj": {
-              "projectPath": "C:\\Users\\svilq\\Desktop\\Programming\\C#\\eg\\RentReview\\RentReview.Repository\\RentReview.Repository.csproj"
+            "C:\\Users\\svilq\\Desktop\\Programming\\C#\\eg\\re\\RentReview\\RentReview.Repository\\RentReview.Repository.csproj": {
+              "projectPath": "C:\\Users\\svilq\\Desktop\\Programming\\C#\\eg\\re\\RentReview\\RentReview.Repository\\RentReview.Repository.csproj"
             },
-            "C:\\Users\\svilq\\Desktop\\Programming\\C#\\eg\\RentReview\\RentReview.Services\\RentReview.Services.csproj": {
-              "projectPath": "C:\\Users\\svilq\\Desktop\\Programming\\C#\\eg\\RentReview\\RentReview.Services\\RentReview.Services.csproj"
+            "C:\\Users\\svilq\\Desktop\\Programming\\C#\\eg\\re\\RentReview\\RentReview.Services\\RentReview.Services.csproj": {
+              "projectPath": "C:\\Users\\svilq\\Desktop\\Programming\\C#\\eg\\re\\RentReview\\RentReview.Services\\RentReview.Services.csproj"
             }
           }
         }
