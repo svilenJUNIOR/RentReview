@@ -97,20 +97,10 @@ namespace RentReview.Services.Property
         {
             var properties = this.repository.GettAll<Data.Models.Property>().ToList();
 
-            if (data.Country != null)
-                properties = properties.Where(x => x.Country == data.Country).ToList();
+            var isDataCorrect = data.Country != null && data.City != null && data.MaxPrice > 0 && data.MinPrice > 0;
 
-            if (data.City != null)
-                properties = properties.Where(x => x.City == data.City).ToList();
-
-            if (data.MinPrice > 0 && data.MaxPrice == 0)
-                properties = properties.Where(x => x.Price >= data.MinPrice).ToList();
-
-            if (data.MinPrice == 0 && data.MaxPrice > 0)
-                properties = properties.Where(x => x.Price <= data.MaxPrice).ToList();
-
-            if (data.MinPrice > 0 && data.MaxPrice > 0)
-                properties = properties.Where(x => x.Price >= data.MinPrice && x.Price <= data.MaxPrice).ToList();
+            if (isDataCorrect)
+                properties = properties.Where(x => x.Country == data.Country && x.City == data.City && x.Price >= data.MinPrice && x.Price <= data.MaxPrice).ToList();
 
             StringBuilder stringBuilder = new StringBuilder();
 
