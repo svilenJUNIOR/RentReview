@@ -10,3 +10,15 @@ C:\Users\svilen\OneDrive\Desktop\programing\Csharp\PROJECTS\RentReview\RentRevie
 C:\Users\svilen\OneDrive\Desktop\programing\Csharp\PROJECTS\RentReview\RentReview.Common\obj\Debug\net6.0\refint\RentReview.Common.dll
 C:\Users\svilen\OneDrive\Desktop\programing\Csharp\PROJECTS\RentReview\RentReview.Common\obj\Debug\net6.0\RentReview.Common.pdb
 C:\Users\svilen\OneDrive\Desktop\programing\Csharp\PROJECTS\RentReview\RentReview.Common\obj\Debug\net6.0\ref\RentReview.Common.dll
+C:\Users\svilq\Desktop\Programming\C#\eg\RentReview\RentReview.Common\bin\Debug\net6.0\RentReview.Common.deps.json
+C:\Users\svilq\Desktop\Programming\C#\eg\RentReview\RentReview.Common\bin\Debug\net6.0\RentReview.Common.dll
+C:\Users\svilq\Desktop\Programming\C#\eg\RentReview\RentReview.Common\bin\Debug\net6.0\RentReview.Common.pdb
+C:\Users\svilq\Desktop\Programming\C#\eg\RentReview\RentReview.Common\obj\Debug\net6.0\RentReview.Common.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\svilq\Desktop\Programming\C#\eg\RentReview\RentReview.Common\obj\Debug\net6.0\RentReview.Common.AssemblyInfoInputs.cache
+C:\Users\svilq\Desktop\Programming\C#\eg\RentReview\RentReview.Common\obj\Debug\net6.0\RentReview.Common.AssemblyInfo.cs
+C:\Users\svilq\Desktop\Programming\C#\eg\RentReview\RentReview.Common\obj\Debug\net6.0\RentReview.Common.csproj.CoreCompileInputs.cache
+C:\Users\svilq\Desktop\Programming\C#\eg\RentReview\RentReview.Common\obj\Debug\net6.0\RentReview.Common.sourcelink.json
+C:\Users\svilq\Desktop\Programming\C#\eg\RentReview\RentReview.Common\obj\Debug\net6.0\RentReview.Common.dll
+C:\Users\svilq\Desktop\Programming\C#\eg\RentReview\RentReview.Common\obj\Debug\net6.0\refint\RentReview.Common.dll
+C:\Users\svilq\Desktop\Programming\C#\eg\RentReview\RentReview.Common\obj\Debug\net6.0\RentReview.Common.pdb
+C:\Users\svilq\Desktop\Programming\C#\eg\RentReview\RentReview.Common\obj\Debug\net6.0\ref\RentReview.Common.dll

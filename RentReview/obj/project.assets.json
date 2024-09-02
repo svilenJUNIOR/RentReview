@@ -3515,23 +3515,23 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\svilen\\.nuget\\packages\\": {},
-    "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages": {}
+    "C:\\Users\\svilq\\.nuget\\packages\\": {},
+    "D:\\programs\\vs\\tools\\NuGetPackages": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\svilen\\OneDrive\\Desktop\\programing\\Csharp\\PROJECTS\\RentReview\\RentReview\\RentReview.csproj",
+      "projectUniqueName": "C:\\Users\\svilq\\Desktop\\Programming\\C#\\eg\\RentReview\\RentReview\\RentReview.csproj",
       "projectName": "RentReview",
-      "projectPath": "C:\\Users\\svilen\\OneDrive\\Desktop\\programing\\Csharp\\PROJECTS\\RentReview\\RentReview\\RentReview.csproj",
-      "packagesPath": "C:\\Users\\svilen\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\svilen\\OneDrive\\Desktop\\programing\\Csharp\\PROJECTS\\RentReview\\RentReview\\obj\\",
+      "projectPath": "C:\\Users\\svilq\\Desktop\\Programming\\C#\\eg\\RentReview\\RentReview\\RentReview.csproj",
+      "packagesPath": "C:\\Users\\svilq\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\svilq\\Desktop\\Programming\\C#\\eg\\RentReview\\RentReview\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
-        "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
+        "D:\\programs\\vs\\tools\\NuGetPackages"
       ],
       "configFilePaths": [
-        "C:\\Users\\svilen\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\svilq\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
@@ -3541,21 +3541,20 @@
       "sources": {
         "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
         "C:\\Program Files\\dotnet\\library-packs": {},
-        "C:\\Program Files\\dotnet\\sdk\\7.0.306\\Sdks\\Microsoft.NET.Sdk.Web\\library-packs": {},
         "https://api.nuget.org/v3/index.json": {}
       },
       "frameworks": {
         "net6.0": {
           "targetAlias": "net6.0",
           "projectReferences": {
-            "C:\\Users\\svilen\\OneDrive\\Desktop\\programing\\Csharp\\PROJECTS\\RentReview\\RentReview.Data\\RentReview.Data.csproj": {
-              "projectPath": "C:\\Users\\svilen\\OneDrive\\Desktop\\programing\\Csharp\\PROJECTS\\RentReview\\RentReview.Data\\RentReview.Data.csproj"
+            "C:\\Users\\svilq\\Desktop\\Programming\\C#\\eg\\RentReview\\RentReview.Data\\RentReview.Data.csproj": {
+              "projectPath": "C:\\Users\\svilq\\Desktop\\Programming\\C#\\eg\\RentReview\\RentReview.Data\\RentReview.Data.csproj"
             },
-            "C:\\Users\\svilen\\OneDrive\\Desktop\\programing\\Csharp\\PROJECTS\\RentReview\\RentReview.Repository\\RentReview.Repository.csproj": {
-              "projectPath": "C:\\Users\\svilen\\OneDrive\\Desktop\\programing\\Csharp\\PROJECTS\\RentReview\\RentReview.Repository\\RentReview.Repository.csproj"
+            "C:\\Users\\svilq\\Desktop\\Programming\\C#\\eg\\RentReview\\RentReview.Repository\\RentReview.Repository.csproj": {
+              "projectPath": "C:\\Users\\svilq\\Desktop\\Programming\\C#\\eg\\RentReview\\RentReview.Repository\\RentReview.Repository.csproj"
             },
-            "C:\\Users\\svilen\\OneDrive\\Desktop\\programing\\Csharp\\PROJECTS\\RentReview\\RentReview.Services\\RentReview.Services.csproj": {
-              "projectPath": "C:\\Users\\svilen\\OneDrive\\Desktop\\programing\\Csharp\\PROJECTS\\RentReview\\RentReview.Services\\RentReview.Services.csproj"
+            "C:\\Users\\svilq\\Desktop\\Programming\\C#\\eg\\RentReview\\RentReview.Services\\RentReview.Services.csproj": {
+              "projectPath": "C:\\Users\\svilq\\Desktop\\Programming\\C#\\eg\\RentReview\\RentReview.Services\\RentReview.Services.csproj"
             }
           }
         }
@@ -3564,6 +3563,11 @@
         "warnAsError": [
           "NU1605"
         ]
+      },
+      "restoreAuditProperties": {
+        "enableAudit": "true",
+        "auditLevel": "low",
+        "auditMode": "direct"
       }
     },
     "frameworks": {
@@ -3616,7 +3620,7 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.306\\RuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.400\\RuntimeIdentifierGraph.json"
       }
     }
   },

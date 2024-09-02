@@ -908,7 +908,10 @@
       },
       "RentReview.Common/1.0.0": {
         "runtime": {
-          "RentReview.Common.dll": {}
+          "RentReview.Common.dll": {
+            "assemblyVersion": "1.0.0",
+            "fileVersion": "1.0.0.0"
+          }
         }
       },
       "RentReview.Data/1.0.0": {
@@ -917,7 +920,10 @@
           "Microsoft.EntityFrameworkCore.SqlServer": "6.0.11"
         },
         "runtime": {
-          "RentReview.Data.dll": {}
+          "RentReview.Data.dll": {
+            "assemblyVersion": "1.0.0",
+            "fileVersion": "1.0.0.0"
+          }
         }
       },
       "RentReview.Models/1.0.0": {
@@ -927,7 +933,10 @@
           "RentReview.Common": "1.0.0"
         },
         "runtime": {
-          "RentReview.Models.dll": {}
+          "RentReview.Models.dll": {
+            "assemblyVersion": "1.0.0",
+            "fileVersion": "1.0.0.0"
+          }
         }
       },
       "RentReview.Repository/1.0.0": {
@@ -937,7 +946,10 @@
           "RentReview.Data": "1.0.0"
         },
         "runtime": {
-          "RentReview.Repository.dll": {}
+          "RentReview.Repository.dll": {
+            "assemblyVersion": "1.0.0",
+            "fileVersion": "1.0.0.0"
+          }
         }
       }
     }

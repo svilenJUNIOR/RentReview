@@ -21,7 +21,14 @@ namespace RentReview.Controllers
         private async Task<IdentityUser> user() => await this.userManager.FindByNameAsync(this.User.Identity.Name);
 
         public IActionResult All()
-        => View(propertyService.ViewProperties());
+        {
+
+            if (propertyService.ViewProperties().Count < 1)
+            {
+                return View("EmptyList");
+            }
+            return View(propertyService.ViewProperties());
+        }
 
         [HttpPost]
         public IActionResult All(FilterPropertyDataModel data)

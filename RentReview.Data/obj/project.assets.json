@@ -2187,23 +2187,23 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\svilen\\.nuget\\packages\\": {},
-    "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages": {}
+    "C:\\Users\\svilq\\.nuget\\packages\\": {},
+    "D:\\programs\\vs\\tools\\NuGetPackages": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\svilen\\OneDrive\\Desktop\\programing\\Csharp\\PROJECTS\\RentReview\\RentReview.Data\\RentReview.Data.csproj",
+      "projectUniqueName": "C:\\Users\\svilq\\Desktop\\Programming\\C#\\eg\\RentReview\\RentReview.Data\\RentReview.Data.csproj",
       "projectName": "RentReview.Data",
-      "projectPath": "C:\\Users\\svilen\\OneDrive\\Desktop\\programing\\Csharp\\PROJECTS\\RentReview\\RentReview.Data\\RentReview.Data.csproj",
-      "packagesPath": "C:\\Users\\svilen\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\svilen\\OneDrive\\Desktop\\programing\\Csharp\\PROJECTS\\RentReview\\RentReview.Data\\obj\\",
+      "projectPath": "C:\\Users\\svilq\\Desktop\\Programming\\C#\\eg\\RentReview\\RentReview.Data\\RentReview.Data.csproj",
+      "packagesPath": "C:\\Users\\svilq\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\svilq\\Desktop\\Programming\\C#\\eg\\RentReview\\RentReview.Data\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
-        "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
+        "D:\\programs\\vs\\tools\\NuGetPackages"
       ],
       "configFilePaths": [
-        "C:\\Users\\svilen\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\svilq\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
@@ -2225,6 +2225,11 @@
         "warnAsError": [
           "NU1605"
         ]
+      },
+      "restoreAuditProperties": {
+        "enableAudit": "true",
+        "auditLevel": "low",
+        "auditMode": "direct"
       }
     },
     "frameworks": {
@@ -2268,7 +2273,7 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.306\\RuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.400\\RuntimeIdentifierGraph.json"
       }
     }
   }
