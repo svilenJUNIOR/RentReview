@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\svilq\\Desktop\\Programming\\C#\\eg\\re\\RentReview\\RentReview.Repository\\RentReview.Repository.csproj": {}
+    "C:\\Users\\svilq\\Desktop\\Programming\\C#\\Projects\\RentReview\\RentReview.Repository\\RentReview.Repository.csproj": {}
   },
   "projects": {
-    "C:\\Users\\svilq\\Desktop\\Programming\\C#\\eg\\re\\RentReview\\RentReview.Data\\RentReview.Data.csproj": {
+    "C:\\Users\\svilq\\Desktop\\Programming\\C#\\Projects\\RentReview\\RentReview.Data\\RentReview.Data.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\svilq\\Desktop\\Programming\\C#\\eg\\re\\RentReview\\RentReview.Data\\RentReview.Data.csproj",
+        "projectUniqueName": "C:\\Users\\svilq\\Desktop\\Programming\\C#\\Projects\\RentReview\\RentReview.Data\\RentReview.Data.csproj",
         "projectName": "RentReview.Data",
-        "projectPath": "C:\\Users\\svilq\\Desktop\\Programming\\C#\\eg\\re\\RentReview\\RentReview.Data\\RentReview.Data.csproj",
+        "projectPath": "C:\\Users\\svilq\\Desktop\\Programming\\C#\\Projects\\RentReview\\RentReview.Data\\RentReview.Data.csproj",
         "packagesPath": "C:\\Users\\svilq\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\svilq\\Desktop\\Programming\\C#\\eg\\re\\RentReview\\RentReview.Data\\obj\\",
+        "outputPath": "C:\\Users\\svilq\\Desktop\\Programming\\C#\\Projects\\RentReview\\RentReview.Data\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "D:\\programs\\vs\\tools\\NuGetPackages"
@@ -91,14 +91,14 @@
         }
       }
     },
-    "C:\\Users\\svilq\\Desktop\\Programming\\C#\\eg\\re\\RentReview\\RentReview.Repository\\RentReview.Repository.csproj": {
+    "C:\\Users\\svilq\\Desktop\\Programming\\C#\\Projects\\RentReview\\RentReview.Repository\\RentReview.Repository.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\svilq\\Desktop\\Programming\\C#\\eg\\re\\RentReview\\RentReview.Repository\\RentReview.Repository.csproj",
+        "projectUniqueName": "C:\\Users\\svilq\\Desktop\\Programming\\C#\\Projects\\RentReview\\RentReview.Repository\\RentReview.Repository.csproj",
         "projectName": "RentReview.Repository",
-        "projectPath": "C:\\Users\\svilq\\Desktop\\Programming\\C#\\eg\\re\\RentReview\\RentReview.Repository\\RentReview.Repository.csproj",
+        "projectPath": "C:\\Users\\svilq\\Desktop\\Programming\\C#\\Projects\\RentReview\\RentReview.Repository\\RentReview.Repository.csproj",
         "packagesPath": "C:\\Users\\svilq\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\svilq\\Desktop\\Programming\\C#\\eg\\re\\RentReview\\RentReview.Repository\\obj\\",
+        "outputPath": "C:\\Users\\svilq\\Desktop\\Programming\\C#\\Projects\\RentReview\\RentReview.Repository\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "D:\\programs\\vs\\tools\\NuGetPackages"
@@ -120,8 +120,8 @@
           "net6.0": {
             "targetAlias": "net6.0",
             "projectReferences": {
-              "C:\\Users\\svilq\\Desktop\\Programming\\C#\\eg\\re\\RentReview\\RentReview.Data\\RentReview.Data.csproj": {
-                "projectPath": "C:\\Users\\svilq\\Desktop\\Programming\\C#\\eg\\re\\RentReview\\RentReview.Data\\RentReview.Data.csproj"
+              "C:\\Users\\svilq\\Desktop\\Programming\\C#\\Projects\\RentReview\\RentReview.Data\\RentReview.Data.csproj": {
+                "projectPath": "C:\\Users\\svilq\\Desktop\\Programming\\C#\\Projects\\RentReview\\RentReview.Data\\RentReview.Data.csproj"
               }
             }
           }

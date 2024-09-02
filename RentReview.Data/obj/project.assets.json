@@ -2193,11 +2193,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\svilq\\Desktop\\Programming\\C#\\eg\\re\\RentReview\\RentReview.Data\\RentReview.Data.csproj",
+      "projectUniqueName": "C:\\Users\\svilq\\Desktop\\Programming\\C#\\Projects\\RentReview\\RentReview.Data\\RentReview.Data.csproj",
       "projectName": "RentReview.Data",
-      "projectPath": "C:\\Users\\svilq\\Desktop\\Programming\\C#\\eg\\re\\RentReview\\RentReview.Data\\RentReview.Data.csproj",
+      "projectPath": "C:\\Users\\svilq\\Desktop\\Programming\\C#\\Projects\\RentReview\\RentReview.Data\\RentReview.Data.csproj",
       "packagesPath": "C:\\Users\\svilq\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\svilq\\Desktop\\Programming\\C#\\eg\\re\\RentReview\\RentReview.Data\\obj\\",
+      "outputPath": "C:\\Users\\svilq\\Desktop\\Programming\\C#\\Projects\\RentReview\\RentReview.Data\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "D:\\programs\\vs\\tools\\NuGetPackages"
