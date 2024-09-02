@@ -19,8 +19,8 @@ namespace RentReview.Controllers
 
         //public async Task<IActionResult> Index()
         //{
-        //    var adminRole = new IdentityRole { Name= "admin" };
-        //    var userRole = new IdentityRole { Name= "user" };
+        //    var adminRole = new IdentityRole { Name = "admin" };
+        //    var userRole = new IdentityRole { Name = "user" };
 
         //    await this.roleManager.CreateAsync(adminRole);
         //    await this.roleManager.CreateAsync(userRole);
