@@ -16,7 +16,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("RentReview")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+981a59d9b9b2123282fb4eb92bd8acf859cf8288")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+91020b2e4a9b3f083e470c83f4ae2a911101dd82")]
 [assembly: System.Reflection.AssemblyProductAttribute("RentReview")]
 [assembly: System.Reflection.AssemblyTitleAttribute("RentReview")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
