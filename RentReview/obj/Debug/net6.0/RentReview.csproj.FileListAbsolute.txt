@@ -444,7 +444,6 @@ C:\Users\svilq\Desktop\Programming\C#\Projects\RentReview\RentReview\obj\Debug\n
 C:\Users\svilq\Desktop\Programming\C#\Projects\RentReview\RentReview\obj\Debug\net6.0\RentReview.MvcApplicationPartsAssemblyInfo.cache
 C:\Users\svilq\Desktop\Programming\C#\Projects\RentReview\RentReview\obj\Debug\net6.0\RentReview.RazorAssemblyInfo.cache
 C:\Users\svilq\Desktop\Programming\C#\Projects\RentReview\RentReview\obj\Debug\net6.0\RentReview.RazorAssemblyInfo.cs
-C:\Users\svilq\Desktop\Programming\C#\Projects\RentReview\RentReview\obj\Debug\net6.0\RentReview.sourcelink.json
 C:\Users\svilq\Desktop\Programming\C#\Projects\RentReview\RentReview\obj\Debug\net6.0\staticwebassets.build.json
 C:\Users\svilq\Desktop\Programming\C#\Projects\RentReview\RentReview\obj\Debug\net6.0\staticwebassets.development.json
 C:\Users\svilq\Desktop\Programming\C#\Projects\RentReview\RentReview\obj\Debug\net6.0\staticwebassets\msbuild.RentReview.Microsoft.AspNetCore.StaticWebAssets.props

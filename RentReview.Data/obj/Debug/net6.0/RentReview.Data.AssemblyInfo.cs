@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("RentReview.Data")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+981a59d9b9b2123282fb4eb92bd8acf859cf8288")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0")]
 [assembly: System.Reflection.AssemblyProductAttribute("RentReview.Data")]
 [assembly: System.Reflection.AssemblyTitleAttribute("RentReview.Data")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

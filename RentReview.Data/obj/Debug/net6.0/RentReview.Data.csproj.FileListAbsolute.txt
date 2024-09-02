@@ -65,7 +65,6 @@ C:\Users\svilq\Desktop\Programming\C#\Projects\RentReview\RentReview.Data\obj\De
 C:\Users\svilq\Desktop\Programming\C#\Projects\RentReview\RentReview.Data\obj\Debug\net6.0\RentReview.Data.AssemblyInfoInputs.cache
 C:\Users\svilq\Desktop\Programming\C#\Projects\RentReview\RentReview.Data\obj\Debug\net6.0\RentReview.Data.AssemblyInfo.cs
 C:\Users\svilq\Desktop\Programming\C#\Projects\RentReview\RentReview.Data\obj\Debug\net6.0\RentReview.Data.csproj.CoreCompileInputs.cache
-C:\Users\svilq\Desktop\Programming\C#\Projects\RentReview\RentReview.Data\obj\Debug\net6.0\RentReview.Data.sourcelink.json
 C:\Users\svilq\Desktop\Programming\C#\Projects\RentReview\RentReview.Data\obj\Debug\net6.0\RentReview.Data.dll
 C:\Users\svilq\Desktop\Programming\C#\Projects\RentReview\RentReview.Data\obj\Debug\net6.0\refint\RentReview.Data.dll
 C:\Users\svilq\Desktop\Programming\C#\Projects\RentReview\RentReview.Data\obj\Debug\net6.0\RentReview.Data.pdb

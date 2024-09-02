@@ -76,7 +76,6 @@ C:\Users\svilq\Desktop\Programming\C#\Projects\RentReview\RentReview.Models\obj\
 C:\Users\svilq\Desktop\Programming\C#\Projects\RentReview\RentReview.Models\obj\Debug\net6.0\RentReview.Models.AssemblyInfoInputs.cache
 C:\Users\svilq\Desktop\Programming\C#\Projects\RentReview\RentReview.Models\obj\Debug\net6.0\RentReview.Models.AssemblyInfo.cs
 C:\Users\svilq\Desktop\Programming\C#\Projects\RentReview\RentReview.Models\obj\Debug\net6.0\RentReview.Models.csproj.CoreCompileInputs.cache
-C:\Users\svilq\Desktop\Programming\C#\Projects\RentReview\RentReview.Models\obj\Debug\net6.0\RentReview.Models.sourcelink.json
 C:\Users\svilq\Desktop\Programming\C#\Projects\RentReview\RentReview.Models\obj\Debug\net6.0\RentRevi.8BD1833B.Up2Date
 C:\Users\svilq\Desktop\Programming\C#\Projects\RentReview\RentReview.Models\obj\Debug\net6.0\RentReview.Models.dll
 C:\Users\svilq\Desktop\Programming\C#\Projects\RentReview\RentReview.Models\obj\Debug\net6.0\refint\RentReview.Models.dll
