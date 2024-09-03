@@ -97,8 +97,14 @@ namespace RentReview.Services.Property
         {
             var properties = this.repository.GettAll<Data.Models.Property>().ToList();
 
-            if (data.MinPrice > 0 || data.MaxPrice > 0)
-                properties = this.FilterByPrice(properties, data);
+            if (data.MaxPrice != 0)
+                properties = this.FilterByMaxPrice(properties, data.MaxPrice);
+
+            if (data.MinPrice != 0)
+                properties = this.FilterByMinPrice(properties, data.MinPrice);
+
+            if (data.Country != null)
+                properties = this.FilterByCountry(properties, data.Country);
 
             StringBuilder stringBuilder = new StringBuilder();
 
@@ -114,15 +120,12 @@ namespace RentReview.Services.Property
             return properties.ToList();
         }
 
-        private List<Data.Models.Property> FilterByPrice(List<Data.Models.Property> properties, FilterPropertyDataModel data)
-        {
-            if (data.MaxPrice > 0)
-                properties = properties.Where(x => x.Price <= data.MaxPrice).ToList();
+        private List<Data.Models.Property> FilterByMaxPrice(List<Data.Models.Property> properties, int maxPrice)
+            => properties.Where(x => x.Price <= maxPrice).ToList();
 
-            else if (data.MinPrice < 0)
-                properties = properties.Where(x => x.Price <= data.MinPrice).ToList();
-
-            return properties.ToList();
-        }
+        private List<Data.Models.Property> FilterByMinPrice(List<Data.Models.Property> properties, int minPrice)
+            => properties.Where(x => x.Price >= minPrice).ToList();
+        private List<Data.Models.Property> FilterByCountry(List<Data.Models.Property> properties, string country)
+            => properties.Where(x => x.Country == country).ToList();
     }
 }
