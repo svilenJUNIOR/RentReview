@@ -106,6 +106,9 @@ namespace RentReview.Services.Property
             if (data.Country != null)
                 properties = this.FilterByCountry(properties, data.Country);
 
+            if (data.City != null)
+                properties = this.FilterByCity(properties, data.City);
+
             StringBuilder stringBuilder = new StringBuilder();
 
             for (int i = 0; i < data.Extras.Count(); i++)
@@ -125,7 +128,11 @@ namespace RentReview.Services.Property
 
         private List<Data.Models.Property> FilterByMinPrice(List<Data.Models.Property> properties, int minPrice)
             => properties.Where(x => x.Price >= minPrice).ToList();
+
         private List<Data.Models.Property> FilterByCountry(List<Data.Models.Property> properties, string country)
             => properties.Where(x => x.Country == country).ToList();
+
+        private List<Data.Models.Property> FilterByCity(List<Data.Models.Property> properties, string city)
+            => properties.Where(x => x.City == city).ToList();
     }
 }
