@@ -97,10 +97,8 @@ namespace RentReview.Services.Property
         {
             var properties = this.repository.GettAll<Data.Models.Property>().ToList();
 
-            var isDataCorrect = data.Country != null && data.City != null && data.MaxPrice > 0 && data.MinPrice > 0;
-
-            if (isDataCorrect)
-                properties = properties.Where(x => x.Country == data.Country && x.City == data.City && x.Price >= data.MinPrice && x.Price <= data.MaxPrice).ToList();
+            if (data.MinPrice > 0 || data.MaxPrice > 0)
+                properties = this.FilterByPrice(properties, data);
 
             StringBuilder stringBuilder = new StringBuilder();
 
@@ -112,6 +110,17 @@ namespace RentReview.Services.Property
 
             if (data.OnlyWithReview == "on")
                 properties = properties.Where(x => x.ReviewOfLandlord != null && x.ReviewOfNeighbour != null && x.ReviewOfProperty != null).ToList();
+
+            return properties.ToList();
+        }
+
+        private List<Data.Models.Property> FilterByPrice(List<Data.Models.Property> properties, FilterPropertyDataModel data)
+        {
+            if (data.MaxPrice > 0)
+                properties = properties.Where(x => x.Price <= data.MaxPrice).ToList();
+
+            else if (data.MinPrice < 0)
+                properties = properties.Where(x => x.Price <= data.MinPrice).ToList();
 
             return properties.ToList();
         }
