@@ -1,5 +1,6 @@
 ﻿using RentReview.Data;
 using RentReview.Data.Models;
+using RentReview.Repository.Contracts;
 
 namespace RentReview.Repository
 {

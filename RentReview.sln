@@ -15,6 +15,8 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "RentReview.Repository", "Re
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "RentReview.Common", "RentReview.Common\RentReview.Common.csproj", "{CC743899-C480-41B9-9F48-1146841ED423}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RentReview.Api", "RentReview.Api\RentReview.Api.csproj", "{28030857-1580-4979-AB6D-0849C3A44C8E}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -45,6 +47,10 @@ Global
 		{CC743899-C480-41B9-9F48-1146841ED423}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{CC743899-C480-41B9-9F48-1146841ED423}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{CC743899-C480-41B9-9F48-1146841ED423}.Release|Any CPU.Build.0 = Release|Any CPU
+		{28030857-1580-4979-AB6D-0849C3A44C8E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{28030857-1580-4979-AB6D-0849C3A44C8E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{28030857-1580-4979-AB6D-0849C3A44C8E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{28030857-1580-4979-AB6D-0849C3A44C8E}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

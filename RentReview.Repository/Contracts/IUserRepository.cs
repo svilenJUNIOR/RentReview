@@ -1,6 +1,6 @@
 ﻿using Microsoft.AspNetCore.Identity;
 
-namespace RentReview.Repository
+namespace RentReview.Repository.Contracts
 {
     public interface IUserRepository
     {

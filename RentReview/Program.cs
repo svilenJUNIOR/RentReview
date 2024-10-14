@@ -2,6 +2,7 @@ using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
 using RentReview.Data;
 using RentReview.Repository;
+using RentReview.Repository.Contracts;
 using RentReview.Services;
 using RentReview.Services.Admin;
 using RentReview.Services.Property;

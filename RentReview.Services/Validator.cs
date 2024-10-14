@@ -1,8 +1,8 @@
-﻿using RentReview.Repository;
-using RentReview.Common;
+﻿using RentReview.Common;
 using RentReview.Models.DataModels.User;
 using RentReview.Models.DataModels.Property;
 using RentReview.Models.DataModels.Review;
+using RentReview.Repository.Contracts;
 
 namespace RentReview.Services
 {

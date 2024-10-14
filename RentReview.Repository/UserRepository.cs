@@ -1,6 +1,7 @@
 ﻿using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
 using RentReview.Data;
+using RentReview.Repository.Contracts;
 
 namespace RentReview.Repository
 {

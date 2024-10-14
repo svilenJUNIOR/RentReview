@@ -1,7 +1,7 @@
 ﻿using Microsoft.AspNetCore.Identity;
 using RentReview.Data.Models;
 
-namespace RentReview.Repository
+namespace RentReview.Repository.Contracts
 {
     public interface IRepository
     {
@@ -11,7 +11,7 @@ namespace RentReview.Repository
         void Remove<T>(T Item) where T : class;
         string ReturnReviewId(string propertyId);
         IQueryable<T> GettAll<T>() where T : class;
-       
+
         T FindById<T>(string Id) where T : class;
         Property FindPropertyByReviewId(string ReviewId);
         Review FindReviewByPropertyId(string PropertyId);

@@ -1,7 +1,7 @@
 ﻿using Microsoft.AspNetCore.Identity;
 using RentReview.Models.DataModels.User;
 using RentReview.Models.ViewModels.Property;
-using RentReview.Repository;
+using RentReview.Repository.Contracts;
 
 namespace RentReview.Services.User
 {
