@@ -18,10 +18,6 @@ namespace RentReview
         {
             var builder = WebApplication.CreateBuilder(args);
 
-            var connectionString = builder.Configuration.GetConnectionString("DefaultConnection");
-            builder.Services.AddDbContext<RentDbContext>(options => options.UseSqlServer(connectionString));
-            builder.Services.AddDatabaseDeveloperPageExceptionFilter();
-
             builder.Services.AddDefaultIdentity<IdentityUser>
                 (options => options.SignIn.RequireConfirmedAccount = true)
                 .AddRoles<IdentityRole>()
@@ -39,6 +35,8 @@ namespace RentReview
             builder.Services.AddScoped<IAdminService, AdminService>();
             builder.Services.AddScoped<ISeeder, Seeder>();
             builder.Services.AddScoped<IUserRepository, UserRepository>();
+
+            builder.Services.AddHttpClient();
 
             builder.Services.ConfigureApplicationCookie(options =>
             {

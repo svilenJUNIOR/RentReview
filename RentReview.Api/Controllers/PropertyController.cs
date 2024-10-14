@@ -1,4 +1,5 @@
 ﻿using Microsoft.AspNetCore.Mvc;
+using RentReview.Services.Property;
 
 namespace RentReview.Api.Controllers
 {
@@ -6,10 +7,18 @@ namespace RentReview.Api.Controllers
     [ApiController]
     public class PropertyController : Controller
     {
+        private readonly IPropertyService propertyService;
+
+        public PropertyController(IPropertyService propertyService) => this.propertyService = propertyService;
+
         [HttpGet]
-        public IActionResult Index()
+        public IActionResult All()
         {
-            return Ok("rabotq");
+            if (propertyService.ViewProperties().Count < 1)
+            {
+                return View("EmptyList");
+            }
+            return Ok(propertyService.ViewProperties());
         }
     }
 }
