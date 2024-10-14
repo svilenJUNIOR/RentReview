@@ -1,8 +1,10 @@
 ﻿using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
+using Newtonsoft.Json;
 using RentReview.Extensions;
 using RentReview.Models.DataModels.Property;
+using RentReview.Models.ViewModels.Property;
 using RentReview.Services.Property;
 
 namespace RentReview.Controllers
@@ -11,7 +13,6 @@ namespace RentReview.Controllers
     {
         private readonly IPropertyService propertyService;
         private readonly UserManager<IdentityUser> userManager;
-
         public PropertyController(IPropertyService propertyService, UserManager<IdentityUser> userManager)
         {
             this.propertyService = propertyService;
@@ -20,14 +21,17 @@ namespace RentReview.Controllers
 
         private async Task<IdentityUser> user() => await this.userManager.FindByNameAsync(this.User.Identity.Name);
 
-        public IActionResult All()
+        public async Task<IActionResult> All()
         {
+            var client = new HttpClient();
+            var result = await client.GetAsync("https://localhost:44315/api/Property");
 
-            if (propertyService.ViewProperties().Count < 1)
-            {
-                return View("EmptyList");
-            }
-            return View(propertyService.ViewProperties());
+            var jsonString = await result.Content.ReadAsStringAsync();
+
+            // Deserialize the JSON string to a list of ViewPropertyViewModel
+            var toAdd = JsonConvert.DeserializeObject<List<ViewPropertyViewModel>>(jsonString);
+
+            return View(toAdd);
         }
 
         [HttpPost]

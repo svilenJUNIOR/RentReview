@@ -23,6 +23,10 @@ namespace RentReview
                 .AddRoles<IdentityRole>()
                 .AddEntityFrameworkStores<RentDbContext>();
 
+            var connectionString = builder.Configuration.GetConnectionString("DefaultConnection");
+            builder.Services.AddDbContext<RentDbContext>(options =>
+                options.UseSqlServer(connectionString));
+
             builder.Services.AddControllersWithViews().AddMvcOptions(options => {});
 
             builder.Services.AddScoped<IPropertyService, PropertyService>();
