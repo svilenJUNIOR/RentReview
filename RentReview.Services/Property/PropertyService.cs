@@ -45,7 +45,7 @@ namespace RentReview.Services.Property
         {
             var properties = this.repository.GettAll<Data.Models.Property>();
 
-            return bindService.BindProperties(properties).ToList();
+            return bindService.BindProperties(properties.ToList()).ToList();
         }
 
         public ICollection<ViewPropertyViewModel> ViewProperties(List<Data.Models.Property> properties)

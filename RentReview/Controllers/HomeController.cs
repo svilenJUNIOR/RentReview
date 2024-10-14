@@ -27,16 +27,16 @@ namespace RentReview.Controllers
 
         //    return RedirectToAction("All", "Review");
         //}
-        public async Task<IActionResult> Seed()
-        {
-            await this.seeder.SeedUsers();
-            await this.seeder.SeedRoles();
-            await this.seeder.SeedUserRole();
-            await this.seeder.SeedProperties();
-            await this.seeder.SeedReviews();
+        //public async Task<IActionResult> Seed()
+        //{
+        //    await this.seeder.SeedUsers();
+        //    await this.seeder.SeedRoles();
+        //    await this.seeder.SeedUserRole();
+        //    await this.seeder.SeedProperties();
+        //    await this.seeder.SeedReviews();
 
-            return Redirect("/");
-        }
+        //    return Redirect("/");
+        //}
 
         public IActionResult Index()
         {

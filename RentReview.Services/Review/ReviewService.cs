@@ -46,7 +46,7 @@ namespace RentReview.Services.Review
         public ICollection<ViewReviewViewModel> ViewReviews()
         {
             var reviews = this.repository.GettAll<Data.Models.Review>();
-            return this.bindService.BindReviews(reviews).ToList();
+            return this.bindService.BindReviews(reviews.ToList()).ToList();
         }
 
         public async Task EditAsync(ReviewDataModel data, string reviewId, bool hasNulls)

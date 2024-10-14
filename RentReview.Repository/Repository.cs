@@ -47,8 +47,8 @@ namespace RentReviewRepository
         public async Task<IdentityUser> FindUserByIdAsync(string Id)
         => await this.userManager.FindByIdAsync(Id);
 
-        public ICollection<T> GettAll<T>() where T : class
-        => this.context.Set<T>().ToList();
+        public IQueryable<T> GettAll<T>() where T : class
+        => this.context.Set<T>();
 
         public void Remove<T>(T Item) where T : class
         => this.context.Set<T>().Remove(Item);
@@ -72,8 +72,8 @@ namespace RentReviewRepository
         public void Update<T>(T item) where T : class
         => this.context.Set<T>().Update(item);
 
-        public ICollection<IdentityUserRole<string>> GetUserRole()
-        => this.context.UserRoles.ToList();
+        public IQueryable<IdentityUserRole<string>> GetUserRole()
+        => this.context.UserRoles;
 
         public async Task AddRangeAsync<T>(List<T> items) where T : class
          => await this.context.Set<T>().AddRangeAsync(items);

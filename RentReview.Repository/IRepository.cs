@@ -10,7 +10,7 @@ namespace RentReviewRepository
         Task AddRangeAsync<T>(List<T> items) where T : class;
         void Remove<T>(T Item) where T : class;
         string ReturnReviewId(string propertyId);
-        ICollection<T> GettAll<T>() where T : class;
+        IQueryable<T> GettAll<T>() where T : class;
         Task<IdentityUser> FindUserByEmailAsync(string email);
         Task<IdentityUser> FindUserByPasswordAsync(string password);
         Task<IdentityUser> FindUserByUsernameAsync(string username);
@@ -20,6 +20,6 @@ namespace RentReviewRepository
         Property FindPropertyByReviewId(string ReviewId);
         Review FindReviewByPropertyId(string PropertyId);
         void Update<T>(T item) where T : class;
-        ICollection<IdentityUserRole<string>> GetUserRole();
+        IQueryable<IdentityUserRole<string>> GetUserRole();
     }
 }
