@@ -1,7 +1,7 @@
 ﻿using Microsoft.AspNetCore.Identity;
 using RentReview.Models.DataModels.User;
 using RentReview.Models.ViewModels.Property;
-using RentReviewRepository;
+using RentReview.Repository;
 
 namespace RentReview.Services.User
 {
@@ -13,7 +13,8 @@ namespace RentReview.Services.User
         private readonly SignInManager<IdentityUser> signInManager;
         private readonly UserManager<IdentityUser> userManager;
         private readonly IBindService bindService;
-        public UserService(IRepository repository, IHasher hasher, IValidator validator, SignInManager<IdentityUser> signInManager, UserManager<IdentityUser> userManager, IBindService bindService)
+        private readonly IUserRepository userRepository;
+        public UserService(IRepository repository, IHasher hasher, IValidator validator, SignInManager<IdentityUser> signInManager, UserManager<IdentityUser> userManager, IBindService bindService, IUserRepository userRepository)
         {
             this.repository = repository;
             this.hasher = hasher;
@@ -21,6 +22,7 @@ namespace RentReview.Services.User
             this.signInManager = signInManager;
             this.userManager = userManager;
             this.bindService = bindService;
+            this.userRepository = userRepository;
         }
 
         public async Task UserRegisterAsync(RegisterUserDataModel data, bool check)
@@ -48,7 +50,7 @@ namespace RentReview.Services.User
             var errors = await this.validator.ValidateUserLoginAsync(data, check);
             if (errors.Any()) this.validator.ThrowErrors(errors);
 
-            var user = await this.repository.FindUserByEmailAsync(data.Email);
+            var user = await this.userRepository.FindUserByEmailAsync(data.Email);
             await this.signInManager.SignInAsync(user, true);
         }
         public ICollection<ViewPropertyViewModel> LoadMyData(IdentityUser user)

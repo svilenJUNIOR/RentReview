@@ -1,4 +1,4 @@
-﻿using RentReviewRepository;
+﻿using RentReview.Repository;
 using RentReview.Common;
 using RentReview.Models.DataModels.User;
 using RentReview.Models.DataModels.Property;
@@ -10,11 +10,13 @@ namespace RentReview.Services
     {
         private IRepository repository;
         private IHasher hasher;
+        private IUserRepository userRepository;
 
-        public Validator(IRepository repository, IHasher hasher)
+        public Validator(IRepository repository, IHasher hasher, IUserRepository userRepository)
         {
             this.repository = repository;
             this.hasher = hasher;
+            this.userRepository = userRepository;
         }
 
         public ICollection<Exception> ValidateProperty(PropertyDataModel data, bool isValid)
@@ -64,10 +66,10 @@ namespace RentReview.Services
             }
 
             if (!data.Email.EndsWith("@email.com")) errors.Add(new Exception(Messages.WrongEmailFormat));
-            if (await repository.FindUserByEmailAsync(data.Email) != null) errors.Add(new Exception(Messages.EmailExists));
+            if (await userRepository.FindUserByEmailAsync(data.Email) != null) errors.Add(new Exception(Messages.EmailExists));
             if (data.Password.Length < 8) errors.Add(new Exception(Messages.ShortPassword));
             if (!data.Password.Any(char.IsUpper) || !data.Password.Any(char.IsDigit)) errors.Add(new Exception(Messages.WeakPassword));
-            if (await repository.FindUserByUsernameAsync(data.Username) != null) errors.Add(new Exception(Messages.UsernameExists));
+            if (await userRepository.FindUserByUsernameAsync(data.Username) != null) errors.Add(new Exception(Messages.UsernameExists));
             if (data.Username.Length < 6) errors.Add(new Exception(Messages.UsernameTooShort));
             if (!data.Username.All(char.IsLetter)) errors.Add(new Exception(Messages.WrongUsernameFormat));
             return errors;
@@ -84,8 +86,8 @@ namespace RentReview.Services
 
             var hashedPassword = this.hasher.Hash(data.Password);
 
-            if (await this.repository.FindUserByEmailAsync(data.Email) == null) errors.Add(new Exception(Messages.UnExistingEmail));
-            if (await this.repository.FindUserByPasswordAsync(hashedPassword) == null) errors.Add(new Exception(Messages.UnExistingPassword));
+            if (await this.userRepository.FindUserByEmailAsync(data.Email) == null) errors.Add(new Exception(Messages.UnExistingEmail));
+            if (await this.userRepository.FindUserByPasswordAsync(hashedPassword) == null) errors.Add(new Exception(Messages.UnExistingPassword));
             
             return errors;
         }

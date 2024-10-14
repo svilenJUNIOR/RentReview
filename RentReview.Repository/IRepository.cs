@@ -1,7 +1,7 @@
 ﻿using Microsoft.AspNetCore.Identity;
 using RentReview.Data.Models;
 
-namespace RentReviewRepository
+namespace RentReview.Repository
 {
     public interface IRepository
     {
@@ -11,15 +11,10 @@ namespace RentReviewRepository
         void Remove<T>(T Item) where T : class;
         string ReturnReviewId(string propertyId);
         IQueryable<T> GettAll<T>() where T : class;
-        Task<IdentityUser> FindUserByEmailAsync(string email);
-        Task<IdentityUser> FindUserByPasswordAsync(string password);
-        Task<IdentityUser> FindUserByUsernameAsync(string username);
-        Task<IdentityUser> FindUserByIdAsync(string Id);
-        Task<IdentityRole> FindRoleByIdAsync(string Id);
+       
         T FindById<T>(string Id) where T : class;
         Property FindPropertyByReviewId(string ReviewId);
         Review FindReviewByPropertyId(string PropertyId);
         void Update<T>(T item) where T : class;
-        IQueryable<IdentityUserRole<string>> GetUserRole();
     }
 }

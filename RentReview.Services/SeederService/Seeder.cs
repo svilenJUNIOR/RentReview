@@ -1,7 +1,7 @@
 ﻿using Microsoft.AspNetCore.Identity;
 using Newtonsoft.Json;
 using RentReview.Common;
-using RentReviewRepository;
+using RentReview.Repository;
 
 namespace RentReview.Services.SeederService
 {

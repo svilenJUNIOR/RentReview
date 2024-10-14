@@ -1,7 +1,7 @@
 ﻿using RentReview.Models.DataModels.Review;
 using RentReview.Models.ViewModels.Property;
 using RentReview.Models.ViewModels.Review;
-using RentReviewRepository;
+using RentReview.Repository;
 using System.Text;
 
 namespace RentReview.Services

@@ -1,14 +1,13 @@
-using Microsoft.AspNetCore.Authentication.Cookies;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
 using RentReview.Data;
+using RentReview.Repository;
 using RentReview.Services;
 using RentReview.Services.Admin;
 using RentReview.Services.Property;
 using RentReview.Services.Review;
 using RentReview.Services.SeederService;
 using RentReview.Services.User;
-using RentReviewRepository;
 
 namespace RentReview
 {
@@ -30,7 +29,7 @@ namespace RentReview
             builder.Services.AddControllersWithViews().AddMvcOptions(options => {});
 
             builder.Services.AddScoped<IPropertyService, PropertyService>();
-            builder.Services.AddScoped<IRepository, Repository>();
+            builder.Services.AddScoped<IRepository, RentReview.Repository.Repository>();
             builder.Services.AddScoped<IBindService, BindService>();
             builder.Services.AddScoped<IReviewService, ReviewService>();
             builder.Services.AddScoped<IHasher, Hasher>();
@@ -38,6 +37,7 @@ namespace RentReview
             builder.Services.AddScoped<IUserService, UserService>();
             builder.Services.AddScoped<IAdminService, AdminService>();
             builder.Services.AddScoped<ISeeder, Seeder>();
+            builder.Services.AddScoped<IUserRepository, UserRepository>();
 
             builder.Services.ConfigureApplicationCookie(options =>
             {

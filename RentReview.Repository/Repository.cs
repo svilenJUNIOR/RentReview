@@ -1,22 +1,13 @@
-﻿using Microsoft.AspNetCore.Identity;
-using Microsoft.EntityFrameworkCore;
-using RentReview.Data;
+﻿using RentReview.Data;
 using RentReview.Data.Models;
 
-namespace RentReviewRepository
+namespace RentReview.Repository
 {
     public class Repository : IRepository
     {
         private readonly RentDbContext context;
-        private readonly UserManager<IdentityUser> userManager;
-        private readonly RoleManager<IdentityRole> roleManager;
 
-        public Repository(RentDbContext context, UserManager<IdentityUser> userManager, RoleManager<IdentityRole> roleManager)
-        {
-            this.context = context;
-            this.userManager = userManager;
-            this.roleManager = roleManager;
-        }
+        public Repository(RentDbContext context) => this.context = context;
 
         public Property FindPropertyByReviewId(string ReviewId)
         {
@@ -34,19 +25,6 @@ namespace RentReviewRepository
 
         public T FindById<T>(string Id) where T : class
          => this.context.Find<T>(Id);
-
-        public async Task<IdentityRole> FindRoleByIdAsync(string Id)
-         => await this.roleManager.FindByIdAsync(Id);
-
-        public async Task<IdentityUser> FindUserByEmailAsync(string email)
-        => await this.userManager.FindByEmailAsync(email);
-
-        public async Task<IdentityUser> FindUserByPasswordAsync(string password) // password is hashed
-         => await this.context.Users.Where(x => x.PasswordHash == password).FirstOrDefaultAsync();
-
-        public async Task<IdentityUser> FindUserByIdAsync(string Id)
-        => await this.userManager.FindByIdAsync(Id);
-
         public IQueryable<T> GettAll<T>() where T : class
         => this.context.Set<T>();
 
@@ -55,9 +33,6 @@ namespace RentReviewRepository
 
         public async Task SaveChangesAsync()
         => await this.context.SaveChangesAsync();
-
-        public async Task<IdentityUser> FindUserByUsernameAsync(string username)
-         => await this.context.Users.Where(x => x.UserName == username).FirstOrDefaultAsync();
 
         public string ReturnReviewId(string propertyId)
         {
@@ -71,10 +46,7 @@ namespace RentReviewRepository
 
         public void Update<T>(T item) where T : class
         => this.context.Set<T>().Update(item);
-
-        public IQueryable<IdentityUserRole<string>> GetUserRole()
-        => this.context.UserRoles;
-
+      
         public async Task AddRangeAsync<T>(List<T> items) where T : class
          => await this.context.Set<T>().AddRangeAsync(items);
     }
