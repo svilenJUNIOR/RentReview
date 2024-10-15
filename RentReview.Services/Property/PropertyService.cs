@@ -108,15 +108,17 @@ namespace RentReview.Services.Property
             if (data.City != null)
                 properties = this.FilterByCity(properties, data.City);
 
-            StringBuilder stringBuilder = new StringBuilder();
+            if (data.Extras != null)
+            {
+                StringBuilder stringBuilder = new StringBuilder();
 
-            for (int i = 0; i < data.Extras.Count(); i++)
-                stringBuilder.Append(data.Extras[i] + "*");
+                for (int i = 0; i < data.Extras.Count(); i++)
+                    stringBuilder.Append(data.Extras[i] + "*");
 
-            if (data.Extras.Count() > 0)
-                properties = properties.Where(x => x.Pros == stringBuilder.ToString()).ToList();
+                properties = properties.Where(x => x.Pros == stringBuilder.ToString().Remove(stringBuilder.Length - 1)).ToList();
+            }
 
-            if (data.OnlyWithReview == "on")
+            if (data.OnlyWithReview != null)
                 properties = properties.Where(x => x.ReviewOfLandlord != null && x.ReviewOfNeighbour != null && x.ReviewOfProperty != null).ToList();
 
             return properties.ToList();

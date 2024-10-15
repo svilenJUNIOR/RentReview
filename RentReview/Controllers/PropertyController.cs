@@ -6,6 +6,8 @@ using RentReview.Extensions;
 using RentReview.Models.DataModels.Property;
 using RentReview.Models.ViewModels.Property;
 using RentReview.Services.Property;
+using System.Net;
+using System.Text;
 
 namespace RentReview.Controllers
 {
@@ -28,26 +30,35 @@ namespace RentReview.Controllers
 
             var jsonString = await result.Content.ReadAsStringAsync();
 
-            // Deserialize the JSON string to a list of ViewPropertyViewModel
             var toAdd = JsonConvert.DeserializeObject<List<ViewPropertyViewModel>>(jsonString);
 
             return View(toAdd);
         }
 
         [HttpPost]
-        public IActionResult All(FilterPropertyDataModel data)
+        public async Task<IActionResult> All(FilterPropertyDataModel data) // RETURNS FILTERED PROPERTIES
         {
-            if (data != null)
+            using (var client = new HttpClient())
             {
-                var properties = propertyService.FilterProperties(data);
+                // Serialize the filter data to JSON
+                var jsonContent = JsonConvert.SerializeObject(data);
+                var content = new StringContent(jsonContent, Encoding.UTF8, "application/json");
 
-                if (properties.Count() > 0)
-                    return View(propertyService.ViewProperties(properties));
-                else
-                    return View("EmptyFiltered");
+                // Send POST request to the API
+                var result = await client.PostAsync("https://localhost:44315/api/Property/filter", content);
+
+                // Ensure the request was successful
+                if (result.IsSuccessStatusCode)
+                {
+                    var jsonString = await result.Content.ReadAsStringAsync();
+                    var toAdd = JsonConvert.DeserializeObject<List<ViewPropertyViewModel>>(jsonString);
+                    return View(toAdd);
+                }
+
+                return View("EmptyFiltered"); // Return empty view
+
             }
 
-            return View(propertyService.ViewProperties());
         }
 
         [Authorize]

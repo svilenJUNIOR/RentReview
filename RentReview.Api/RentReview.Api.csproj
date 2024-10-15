@@ -25,10 +25,6 @@
   </ItemGroup>
 
   <ItemGroup>
-    <Folder Include="Services\" />
-  </ItemGroup>
-
-  <ItemGroup>
     <ProjectReference Include="..\RentReview.Data\RentReview.Data.csproj" />
     <ProjectReference Include="..\RentReview.Services\RentReview.Services.csproj" />
   </ItemGroup>
