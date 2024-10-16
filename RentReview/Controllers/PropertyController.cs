@@ -40,8 +40,7 @@ namespace RentReview.Controllers
         }
 
         [Authorize]
-        public IActionResult Add()
-          => View();
+        public IActionResult Add() => View();
 
         [Authorize]
         public async Task<IActionResult> Edit(string Id)
@@ -77,19 +76,9 @@ namespace RentReview.Controllers
         [Authorize]
         public async Task<IActionResult> Add(AddNewPropertyDataModel data)
         {
-            var client = new HttpClient();
-
-            var jsonContent = JsonConvert.SerializeObject(data);
-            var content = new StringContent(jsonContent, Encoding.UTF8, "application/json");
-
-            // Send POST request to the API
-            var result = await client.PostAsync("https://localhost:44315/api/Property/Add", content);
-
-            // if (result.IsSuccessStatusCode) View("User/Profile");
-
-            return Redirect("All");
-
-
+            var user = await this.user();
+            await this.apiService.Add(data, user.Id,"/Add");
+            return View();
         }
 
         [HttpPost]

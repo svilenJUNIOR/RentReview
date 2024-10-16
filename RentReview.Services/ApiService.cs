@@ -2,6 +2,7 @@
 using RentReview.Models.DataModels.Property;
 using RentReview.Models.ViewModels.Property;
 using System.Text;
+using static System.Runtime.InteropServices.JavaScript.JSType;
 
 namespace RentReview.Services
 {
@@ -31,6 +32,15 @@ namespace RentReview.Services
 
             var value = JsonConvert.DeserializeObject<List<ViewPropertyViewModel>>(resultAsJson);
             return value;
+        }
+
+        public async Task<bool> Add(AddNewPropertyDataModel data, string userId, string action)
+        {
+            var jsonContent = JsonConvert.SerializeObject(data);
+            var content = new StringContent(jsonContent, Encoding.UTF8, "application/json");
+            client.DefaultRequestHeaders.Add("UserId", userId);
+            var result = await client.PostAsync(url + action, content);
+            return true;
         }
     }
 }

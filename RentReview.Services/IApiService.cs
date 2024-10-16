@@ -7,5 +7,6 @@ namespace RentReview.Services
     {
         Task<List<ViewPropertyViewModel>> GetAllPropertiesAsync();
         Task<List<ViewPropertyViewModel>> GetFilteredPropertiesAsync(FilterPropertyDataModel data, string action);
+        Task<bool> Add(AddNewPropertyDataModel data, string userId,string action);
     }
 }

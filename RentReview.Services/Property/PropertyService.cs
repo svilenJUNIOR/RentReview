@@ -19,7 +19,7 @@ namespace RentReview.Services.Property
             this.bindService = bindService;
         }
 
-        public async Task AddAsync(AddNewPropertyDataModel data, IdentityUser user, bool check)
+        public async Task AddAsync(AddNewPropertyDataModel data, string userId, bool check)
         {
             var errors = this.validator.ValidateProperty(data, check);
             if (errors.Any()) this.validator.ThrowErrors(errors);
@@ -34,7 +34,7 @@ namespace RentReview.Services.Property
                 Url = data.Url,
                 Price = data.Price,
                 Picture = data.Picture,
-                UserId = user.Id,
+                UserId = userId,
             };
 
             await this.repository.AddAsync<Data.Models.Property>(prop);

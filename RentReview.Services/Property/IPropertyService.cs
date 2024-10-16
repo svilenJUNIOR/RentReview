@@ -6,7 +6,7 @@ namespace RentReview.Services.Property
 {
     public interface IPropertyService
     {
-        Task AddAsync(AddNewPropertyDataModel model, IdentityUser user, bool check);
+        Task AddAsync(AddNewPropertyDataModel model, string userId, bool check);
         ICollection<ViewPropertyViewModel> ViewProperties();
         ICollection<ViewPropertyViewModel> ViewProperties(List<Data.Models.Property> properties);
         ViewPropertyViewModel ViewPropertyForEdit(string Id);

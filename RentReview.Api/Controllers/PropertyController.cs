@@ -1,10 +1,7 @@
-﻿using Microsoft.AspNetCore.Http.HttpResults;
-using Microsoft.AspNetCore.Identity;
-using Microsoft.AspNetCore.Mvc;
+﻿using Microsoft.AspNetCore.Mvc;
+using RentReview.Api.Extensions;
 using RentReview.Models.DataModels.Property;
 using RentReview.Services.Property;
-using RentReview.Api.Extensions;
-using System;
 
 namespace RentReview.Api.Controllers
 {
@@ -13,14 +10,11 @@ namespace RentReview.Api.Controllers
     public class PropertyController : Controller
     {
         private readonly IPropertyService propertyService;
-        private readonly UserManager<IdentityUser> userManager;
-        public PropertyController(IPropertyService propertyService, UserManager<IdentityUser> userManager)
+        public PropertyController(IPropertyService propertyService)
         {
             this.propertyService = propertyService;
-            this.userManager = userManager;
         }
 
-        private async Task<IdentityUser> user() => await this.userManager.FindByNameAsync(this.User.Identity.Name);
 
         [HttpGet]
         public IActionResult All()
@@ -60,21 +54,22 @@ namespace RentReview.Api.Controllers
         [HttpPost("Add")]
         public async Task<IActionResult> Add(AddNewPropertyDataModel data)
         {
-            bool check = this.ModelState.IsValid;
 
-            if (check)
+            try
             {
-                try
-                {
-                    var user = await this.user();
-                    await this.propertyService.AddAsync(data, user, check);
-                }
+                bool check = this.ModelState.IsValid;
 
-                catch (AggregateException exception)
+                if (Request.Headers.TryGetValue("UserId", out var userId))
                 {
-                    return this.CatchErrors(exception);
+                    await this.propertyService.AddAsync(data, userId, check);
                 }
             }
+
+            catch (AggregateException exception)
+            {
+                return this.CatchErrors(exception);
+            }
+
             return Ok();
         }
     }
