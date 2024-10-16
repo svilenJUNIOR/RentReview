@@ -26,33 +26,17 @@ namespace RentReview.Controllers
         private async Task<IdentityUser> user() => await this.userManager.FindByNameAsync(this.User.Identity.Name);
 
         public async Task<IActionResult> All()
-        => View(await this.apiService.GetAllPropertiesAsync("/Property"));
+        => View(await this.apiService.GetAllPropertiesAsync());
 
 
         [HttpPost]
         public async Task<IActionResult> All(FilterPropertyDataModel data) // RETURNS FILTERED PROPERTIES
         {
-            using (var client = new HttpClient())
-            {
-                // Serialize the filter data to JSON
-                var jsonContent = JsonConvert.SerializeObject(data);
-                var content = new StringContent(jsonContent, Encoding.UTF8, "application/json");
+            var properties = await this.apiService.GetFilteredPropertiesAsync(data, "/Filtered");
 
-                // Send POST request to the API
-                var result = await client.PostAsync("https://localhost:44315/api/Property/Filter", content);
+            if (properties.Any()) return View(properties);
 
-                // Ensure the request was successful
-                if (result.IsSuccessStatusCode)
-                {
-                    var jsonString = await result.Content.ReadAsStringAsync();
-                    var toAdd = JsonConvert.DeserializeObject<List<ViewPropertyViewModel>>(jsonString);
-                    return View(toAdd);
-                }
-
-                return View("EmptyFiltered"); // Return empty view
-
-            }
-
+            return View("EmptyFiltered");
         }
 
         [Authorize]

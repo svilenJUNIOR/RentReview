@@ -108,7 +108,7 @@ namespace RentReview.Services.Property
             if (data.City != null)
                 properties = this.FilterByCity(properties, data.City);
 
-            if (data.Extras != null)
+            if (data.Extras.Any())
             {
                 StringBuilder stringBuilder = new StringBuilder();
 

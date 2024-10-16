@@ -32,7 +32,7 @@ namespace RentReview.Api.Controllers
             return Ok(propertyService.ViewProperties());
         }
 
-        [HttpPost("Filter")]
+        [HttpPost("Filtered")]
         public IActionResult All(FilterPropertyDataModel data)
         {
             if (data != null)
