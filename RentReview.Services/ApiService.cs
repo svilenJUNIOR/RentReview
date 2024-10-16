@@ -53,5 +53,15 @@ namespace RentReview.Services
 
             return property;
         }
+
+        public async Task<bool> Delete(string action)
+        {
+            var result = await client.DeleteAsync(url + action);
+
+            var jsonString = await result.Content.ReadAsStringAsync();
+            var property = JsonConvert.DeserializeObject<bool>(jsonString);
+
+            return property;
+        }
     }
 }

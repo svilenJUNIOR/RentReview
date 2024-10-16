@@ -11,7 +11,7 @@ namespace RentReview.Services.Property
         ICollection<ViewPropertyViewModel> ViewProperties(List<Data.Models.Property> properties);
         ViewPropertyViewModel ViewPropertyForEdit(string Id);
         Task Edit(EditPropertyDataModel data, bool check);
-        Task Remove(string Id);
+        Task<bool> Remove(string Id);
         void ChangeStatus();
         List<Data.Models.Property> FilterProperties(FilterPropertyDataModel data);
     }

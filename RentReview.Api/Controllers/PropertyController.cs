@@ -45,7 +45,7 @@ namespace RentReview.Api.Controllers
         => Ok(this.propertyService.ViewPropertyForEdit(Id));
 
         [HttpDelete("Delete/{Id}")]
-        public async Task Delete([FromRoute] string Id)
+        public async Task<bool> Delete([FromRoute] string Id)
         => await this.propertyService.Remove(Id);
 
         [HttpPost("Add")]

@@ -73,7 +73,7 @@ namespace RentReview.Services.Property
 
             await this.repository.SaveChangesAsync();
         }
-        public async Task Remove(string Id)
+        public async Task<bool> Remove(string Id)
         {
             var property = this.repository.FindById<Data.Models.Property>(Id);
             var review = this.repository.FindReviewByPropertyId(property.Id);
@@ -84,6 +84,8 @@ namespace RentReview.Services.Property
                 this.repository.Remove<Data.Models.Review>(review);
 
             await this.repository.SaveChangesAsync();
+
+            return true;
         }
 
         // when the time comes

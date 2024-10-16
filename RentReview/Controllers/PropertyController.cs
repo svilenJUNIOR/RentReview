@@ -55,12 +55,9 @@ namespace RentReview.Controllers
         [Authorize]
         public async Task<IActionResult> Delete(string Id)
         {
-            var client = new HttpClient();
-            var result = await client.DeleteAsync("https://localhost:44315/api/Property/Delete/" + Id);
+            var result = await this.apiService.Delete("/Delete/" + Id);
 
-            if (result.IsSuccessStatusCode) View("User/Profile");
-
-            return View("User/Profile");
+            return Redirect("/User/Profile");
         }
 
         [HttpPost]
@@ -69,7 +66,7 @@ namespace RentReview.Controllers
         {
             var user = await this.user();
             await this.apiService.Add(data, user.Id,"/Add");
-            return View();
+            return Redirect("/User/Profile");
         }
 
         [HttpPost]
