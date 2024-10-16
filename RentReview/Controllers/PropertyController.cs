@@ -6,7 +6,6 @@ using RentReview.Extensions;
 using RentReview.Models.DataModels.Property;
 using RentReview.Models.ViewModels.Property;
 using RentReview.Services.Property;
-using System.Net;
 using System.Text;
 
 namespace RentReview.Controllers
@@ -33,6 +32,7 @@ namespace RentReview.Controllers
             var toAdd = JsonConvert.DeserializeObject<List<ViewPropertyViewModel>>(jsonString);
 
             return View(toAdd);
+
         }
 
         [HttpPost]
@@ -45,7 +45,7 @@ namespace RentReview.Controllers
                 var content = new StringContent(jsonContent, Encoding.UTF8, "application/json");
 
                 // Send POST request to the API
-                var result = await client.PostAsync("https://localhost:44315/api/Property/filter", content);
+                var result = await client.PostAsync("https://localhost:44315/api/Property/Filter", content);
 
                 // Ensure the request was successful
                 if (result.IsSuccessStatusCode)
@@ -66,30 +66,52 @@ namespace RentReview.Controllers
           => View();
 
         [Authorize]
-        public IActionResult Edit(string Id)
-        => View(this.propertyService.ViewPropertyForEdit(Id));
+        public async Task<IActionResult> Edit(string Id)
+        {
+            var client = new HttpClient();
+
+            // Send POST request to the API
+            var result = await client.GetAsync("https://localhost:44315/api/Property/Edit/" + Id);
+
+            // Ensure the request was successful
+            if (result.IsSuccessStatusCode)
+            {
+                var jsonString = await result.Content.ReadAsStringAsync();
+                var toAdd = JsonConvert.DeserializeObject<ViewPropertyViewModel>(jsonString);
+                return View(toAdd);
+            }
+
+            return View("EmptyFiltered"); // Return empty view
+        }
 
         [Authorize]
         public async Task<IActionResult> Delete(string Id)
         {
-            await this.propertyService.Remove(Id);
-            return Redirect("/User/Profile");
+            var client = new HttpClient();
+            var result = await client.DeleteAsync("https://localhost:44315/api/Property/Delete/" + Id);
+
+            if (result.IsSuccessStatusCode) View("User/Profile");
+
+            return View("User/Profile");
         }
 
         [HttpPost]
         [Authorize]
         public async Task<IActionResult> Add(AddNewPropertyDataModel data)
         {
-            try
-            {
-                bool check = this.ModelState.IsValid;
-                await this.propertyService.AddAsync(data, await this.user(), check);
-                return Redirect("All");
-            }
-            catch (AggregateException exception)
-            {
-                return this.CatchErrors(exception);
-            }
+            var client = new HttpClient();
+
+            var jsonContent = JsonConvert.SerializeObject(data);
+            var content = new StringContent(jsonContent, Encoding.UTF8, "application/json");
+
+            // Send POST request to the API
+            var result = await client.PostAsync("https://localhost:44315/api/Property/Add", content);
+
+            // if (result.IsSuccessStatusCode) View("User/Profile");
+
+            return Redirect("All");
+
+
         }
 
         [HttpPost]
