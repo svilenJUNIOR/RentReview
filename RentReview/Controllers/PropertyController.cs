@@ -45,20 +45,11 @@ namespace RentReview.Controllers
         [Authorize]
         public async Task<IActionResult> Edit(string Id)
         {
-            var client = new HttpClient();
+            var property = await this.apiService.Edit("/Edit/" + Id);
 
-            // Send POST request to the API
-            var result = await client.GetAsync("https://localhost:44315/api/Property/Edit/" + Id);
+            if (property != null) View(property);
 
-            // Ensure the request was successful
-            if (result.IsSuccessStatusCode)
-            {
-                var jsonString = await result.Content.ReadAsStringAsync();
-                var toAdd = JsonConvert.DeserializeObject<ViewPropertyViewModel>(jsonString);
-                return View(toAdd);
-            }
-
-            return View("EmptyFiltered"); // Return empty view
+            return View();
         }
 
         [Authorize]

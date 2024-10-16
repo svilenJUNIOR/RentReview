@@ -9,6 +9,7 @@ namespace RentReview.Services
     public class ApiService : IApiService
     {
         private readonly HttpClient client = new HttpClient();
+
         private string url = "https://localhost:44315/api/Property";
 
         public async Task<List<ViewPropertyViewModel>> GetAllPropertiesAsync()
@@ -41,6 +42,16 @@ namespace RentReview.Services
             client.DefaultRequestHeaders.Add("UserId", userId);
             var result = await client.PostAsync(url + action, content);
             return true;
+        }
+
+        public async Task<ViewPropertyViewModel> Edit(string action)
+        {
+            var result = await client.GetAsync(url + action);
+
+            var jsonString = await result.Content.ReadAsStringAsync();
+            var property = JsonConvert.DeserializeObject<ViewPropertyViewModel>(jsonString);
+
+            return property;
         }
     }
 }

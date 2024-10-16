@@ -10,10 +10,7 @@ namespace RentReview.Api.Controllers
     public class PropertyController : Controller
     {
         private readonly IPropertyService propertyService;
-        public PropertyController(IPropertyService propertyService)
-        {
-            this.propertyService = propertyService;
-        }
+        public PropertyController(IPropertyService propertyService) => this.propertyService = propertyService;
 
 
         [HttpGet]
