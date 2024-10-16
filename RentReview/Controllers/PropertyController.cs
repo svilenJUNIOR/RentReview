@@ -5,6 +5,7 @@ using Newtonsoft.Json;
 using RentReview.Extensions;
 using RentReview.Models.DataModels.Property;
 using RentReview.Models.ViewModels.Property;
+using RentReview.Services;
 using RentReview.Services.Property;
 using System.Text;
 
@@ -13,27 +14,20 @@ namespace RentReview.Controllers
     public class PropertyController : Controller
     {
         private readonly IPropertyService propertyService;
+        private readonly IApiService apiService;
         private readonly UserManager<IdentityUser> userManager;
-        public PropertyController(IPropertyService propertyService, UserManager<IdentityUser> userManager)
+        public PropertyController(IPropertyService propertyService, UserManager<IdentityUser> userManager, IApiService apiService)
         {
             this.propertyService = propertyService;
             this.userManager = userManager;
+            this.apiService = apiService;
         }
 
         private async Task<IdentityUser> user() => await this.userManager.FindByNameAsync(this.User.Identity.Name);
 
         public async Task<IActionResult> All()
-        {
-            var client = new HttpClient();
-            var result = await client.GetAsync("https://localhost:44315/api/Property");
+        => View(await this.apiService.GetAllPropertiesAsync("/Property"));
 
-            var jsonString = await result.Content.ReadAsStringAsync();
-
-            var toAdd = JsonConvert.DeserializeObject<List<ViewPropertyViewModel>>(jsonString);
-
-            return View(toAdd);
-
-        }
 
         [HttpPost]
         public async Task<IActionResult> All(FilterPropertyDataModel data) // RETURNS FILTERED PROPERTIES

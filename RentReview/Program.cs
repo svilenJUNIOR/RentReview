@@ -30,6 +30,7 @@ namespace RentReview
             builder.Services.AddControllersWithViews().AddMvcOptions(options => {});
 
             builder.Services.AddScoped<IPropertyService, PropertyService>();
+            builder.Services.AddScoped<IApiService, ApiService>();
             builder.Services.AddScoped<IRepository, RentReview.Repository.Repository>();
             builder.Services.AddScoped<IBindService, BindService>();
             builder.Services.AddScoped<IReviewService, ReviewService>();
