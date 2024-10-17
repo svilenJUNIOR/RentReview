@@ -34,7 +34,7 @@ namespace RentReview.Services
             return value;
         }
 
-        public async Task<bool> Add(AddNewPropertyDataModel data, string userId, string action)
+        public async Task<bool> AddProperty(AddNewPropertyDataModel data, string userId, string action)
         {
             var jsonContent = JsonConvert.SerializeObject(data);
             var content = new StringContent(jsonContent, Encoding.UTF8, "application/json");
@@ -51,7 +51,7 @@ namespace RentReview.Services
             return true;
         }
 
-        public async Task<ViewPropertyViewModel> Edit(string action)
+        public async Task<ViewPropertyViewModel> EditProperty(string action)
         {
             var result = await client.GetAsync(url + action);
 
@@ -61,7 +61,7 @@ namespace RentReview.Services
             return property;
         }
 
-        public async Task<bool> Delete(string action)
+        public async Task<bool> DeleteProperty(string action)
         {
             var result = await client.DeleteAsync(url + action);
 

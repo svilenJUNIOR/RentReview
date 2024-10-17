@@ -42,7 +42,7 @@ namespace RentReview.Controllers
         [Authorize]
         public async Task<IActionResult> Edit(string Id)
         {
-            var property = await this.apiService.Edit("/Edit/" + Id);
+            var property = await this.apiService.EditProperty("/Edit/" + Id);
 
             if (property != null) View(property);
 
@@ -52,7 +52,7 @@ namespace RentReview.Controllers
         [Authorize]
         public async Task<IActionResult> Delete(string Id)
         {
-            var result = await this.apiService.Delete("/Delete/" + Id);
+            var result = await this.apiService.DeleteProperty("/Delete/" + Id);
 
             return Redirect("/User/Profile");
         }
@@ -66,12 +66,12 @@ namespace RentReview.Controllers
                 bool check = this.ModelState.IsValid;
 
                 var user = await this.user();
-                await this.apiService.Add(data, user.Id, $"/Add?isModelStateValid={check}");
+                await this.apiService.AddProperty(data, user.Id, $"/Add?isModelStateValid={check}");
             }
 
-            catch (HttpRequestException ex)
+            catch (AggregateException exeption)
             {
-                return View("Error", new { Errors = new[] { ex.Message } });
+                return this.CatchErrors(exeption);
             }
            
 
