@@ -10,7 +10,7 @@ namespace RentReview.Api.Extensions
 
             foreach (var error in exception.InnerExceptions) errors.Add(error.Message);
 
-            return controller.View("./Error", errors);
+            return new JsonResult(new { Errors = errors }) { StatusCode = 500 };
         }
     }
 }

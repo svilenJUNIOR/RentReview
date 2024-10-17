@@ -44,7 +44,11 @@ namespace RentReview.Api
             builder.Services.AddScoped<ISeeder, Seeder>();
             builder.Services.AddScoped<IUserRepository, UserRepository>();
 
-            builder.Services.AddControllers();
+            builder.Services.AddControllers(options =>
+            {
+                // Configure options to allow nulls (if needed)
+                options.SuppressImplicitRequiredAttributeForNonNullableReferenceTypes = true;
+            });
             // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
             builder.Services.AddEndpointsApiExplorer();
             builder.Services.AddSwaggerGen();

@@ -2,7 +2,6 @@
 using RentReview.Models.DataModels.Property;
 using RentReview.Models.ViewModels.Property;
 using System.Text;
-using static System.Runtime.InteropServices.JavaScript.JSType;
 
 namespace RentReview.Services
 {
@@ -40,7 +39,15 @@ namespace RentReview.Services
             var jsonContent = JsonConvert.SerializeObject(data);
             var content = new StringContent(jsonContent, Encoding.UTF8, "application/json");
             client.DefaultRequestHeaders.Add("UserId", userId);
+
             var result = await client.PostAsync(url + action, content);
+
+            if (!result.IsSuccessStatusCode)
+            {
+                var errors = await result.Content.ReadAsStringAsync();
+                var json = JsonConvert.DeserializeObject(errors);
+            }
+
             return true;
         }
 
@@ -62,6 +69,15 @@ namespace RentReview.Services
             var property = JsonConvert.DeserializeObject<bool>(jsonString);
 
             return property;
+        }
+
+        public async Task<bool> Edit(AddNewPropertyDataModel data, string userId, string action)
+        {
+            var jsonContent = JsonConvert.SerializeObject(data);
+            var content = new StringContent(jsonContent, Encoding.UTF8, "application/json");
+            client.DefaultRequestHeaders.Add("UserId", userId);
+            var result = await client.PostAsync(url + action, content);
+            return true;
         }
     }
 }

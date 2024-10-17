@@ -1,13 +1,10 @@
 ﻿using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
-using Newtonsoft.Json;
 using RentReview.Extensions;
 using RentReview.Models.DataModels.Property;
-using RentReview.Models.ViewModels.Property;
 using RentReview.Services;
 using RentReview.Services.Property;
-using System.Text;
 
 namespace RentReview.Controllers
 {
@@ -64,8 +61,20 @@ namespace RentReview.Controllers
         [Authorize]
         public async Task<IActionResult> Add(AddNewPropertyDataModel data)
         {
-            var user = await this.user();
-            await this.apiService.Add(data, user.Id,"/Add");
+            try
+            {
+                bool check = this.ModelState.IsValid;
+
+                var user = await this.user();
+                await this.apiService.Add(data, user.Id, $"/Add?isModelStateValid={check}");
+            }
+
+            catch (HttpRequestException ex)
+            {
+                return View("Error", new { Errors = new[] { ex.Message } });
+            }
+           
+
             return Redirect("/User/Profile");
         }
 
@@ -73,6 +82,8 @@ namespace RentReview.Controllers
         [Authorize]
         public async Task<IActionResult> Edit(EditPropertyDataModel data, string Id)
         {
+            // data.id is property Id
+
             data.Id = Id;
 
             try

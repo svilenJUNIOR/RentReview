@@ -49,22 +49,18 @@ namespace RentReview.Api.Controllers
         => await this.propertyService.Remove(Id);
 
         [HttpPost("Add")]
-        public async Task<IActionResult> Add(AddNewPropertyDataModel data)
+        public async Task<IActionResult> Add([FromBody] AddNewPropertyDataModel data, [FromQuery] bool isModelStateValid)
         {
-
-            try
+            if (Request.Headers.TryGetValue("UserId", out var userId))
             {
-                bool check = this.ModelState.IsValid;
-
-                if (Request.Headers.TryGetValue("UserId", out var userId))
+                try
                 {
-                    await this.propertyService.AddAsync(data, userId, check);
+                    await this.propertyService.AddAsync(data, userId, isModelStateValid);
                 }
-            }
-
-            catch (AggregateException exception)
-            {
-                return this.CatchErrors(exception);
+                catch (AggregateException exception)
+                {
+                    return this.CatchErrors(exception);
+                }
             }
 
             return Ok();
