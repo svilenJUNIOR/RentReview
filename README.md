@@ -1,2 +1,4 @@
 Known bugs
- - Add new property method does not return exeptions - MVC -> Api Service -> Api controller -> property service
+ - Add new property method does not return exeptions
+TODO:
+    Unit Test
