@@ -1,6 +1,7 @@
+ - Currently under development
+
 Known bugs
  - Add new property method does not return exeptions
-TODO:
+ - TODO:
  -  Unit Test
  
- - Currently under development
